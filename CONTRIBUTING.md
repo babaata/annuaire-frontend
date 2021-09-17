@@ -4,7 +4,7 @@
 2. Clone le projet forke
 3. Ajouter le référentiel du projet en tant 'upstream' remote
 ```sh
-git remote add upstream `https://github.com/USERNAME/`
+git remote add upstream `https://github.com/USERNAME/annuaire-frontend.git`
 ```
 4. Verifier les remotes URL
 ```sh
