@@ -10,15 +10,11 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY yarn.lock ./
 COPY package.json ./
 #COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm install --no-package-lock
+RUN npm install react-scripts@3.4.1 -g
 
 # add app
 COPY . ./
+EXPOSE 3000
 # start app
-RUN npm run build
-
-FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
