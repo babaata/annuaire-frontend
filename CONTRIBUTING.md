@@ -24,9 +24,7 @@ git checkout -b dev-USERNAME
 git push origin dev-USERNAME
 ```
 9. Creer un pull request et valider
-10. Supprimer branch apres le pull request
-11. Supprimer votre branch en local `dev-USERNAME`
 12. Synchroniser les changements
 ```sh
-git pull upstream master
+git pull upstream main
 ```
