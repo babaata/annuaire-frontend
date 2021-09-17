@@ -16,12 +16,12 @@ git pull upstream main
 ```
 6. Creer une branch dev
 ```sh
-git checkout -b dev-USERNAME
+git checkout -b dev
 ```
 7. Ajouter vos changements et faites un commit
 8. Envoyer vos changements
 ```sh
-git push origin dev-USERNAME
+git push origin dev
 ```
 9. Creer un pull request et valider
 12. Synchroniser les changements
