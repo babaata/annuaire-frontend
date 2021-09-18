@@ -1,6 +1,6 @@
-import React from 'react'
-import './banner.css';
-import SearchBar from './SearchBar';
+import React from "react";
+import "./banner.css";
+import SearchBar from "./SearchBar";
 
 export default function Banner() {
     return (

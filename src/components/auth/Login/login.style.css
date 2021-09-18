@@ -1,0 +1,17 @@
+.btn-login {
+    margin-right: 5px;
+    background-color: transparent !important;
+    text-decoration: none;
+    padding: 5px 28px;
+    min-height: 34px;
+    cursor: pointer;
+    color: #5F439A !important;
+    border: 3px solid #5F439A !important;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.btn-login:hover, .btn-login:focus {
+    box-shadow: none!important;
+}
+

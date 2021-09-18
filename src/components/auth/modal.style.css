@@ -1,0 +1,91 @@
+.auth-modal {
+  width: 100%;
+  display: flex;
+  border: 1px solid #ccc;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.btn-submit:focus {
+  box-shadow: none!important;
+}
+
+.modal-backdrop.in {
+  opacity: 0.9 !important;
+}
+
+.auth-modal .modal-body {
+  background: transparent;
+  opacity: 1;
+}
+
+.auth-modal .content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  max-height: 100%;
+  padding: 8px;
+}
+
+.auth-modal .content .formContainer {
+  background-color: white;
+  width: 681px;
+  padding: 15px 117px 55px;
+}
+
+.formContainer .form-label {
+  letter-spacing: -0.54px;
+  color: #5F439A;
+  opacity: 1;
+}
+
+.formContainer .btn-submit-container {
+  text-align: center;
+}
+
+.formContainer .btn-submit {
+  text-align: center;
+  background: #5F439A 0 0 no-repeat padding-box;
+  border-radius: 3px;
+  border-color: #5F439A;
+  margin: 39px 0 26px;
+}
+
+
+.auth-modal .modal-content {
+  background-color: #5f439a30;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+}
+
+.modal.fade .modal-dialog {
+  transition: none;
+}
+
+.form-title {
+  text-align: center;
+  font: normal normal 600 59px/80px Open Sans;
+  letter-spacing: -1.77px;
+  color: #5F439A;
+  opacity: 1;
+  margin-bottom: 36px;
+}
+
+.form-footer {
+  text-align: center;
+  letter-spacing: -0.64px;
+  color: #5F439A61;
+  opacity: 1;
+}
+
+.form-footer a {
+  text-decoration: underline;
+  letter-spacing: -0.64px;
+  color: #5F439A;
+  opacity: 1;
+}
+
+.close {
+  cursor: pointer;
+  margin: 15px;
+}

@@ -1,7 +1,7 @@
 version: '3.2'
 networks:
   proxy_https_default:
-     external: true
+    external: true
 services:
   front:
     build: .
