@@ -1,4 +1,4 @@
-.Banner{
+.Banner {
     background: url("./banner.png");
     min-width: 90vw;
     height: 496px;
@@ -16,7 +16,8 @@
     width: 100%;
     align-items: center;
 }
-.firstText{
+
+.firstText {
     color: #fff;
     /* letter-spacing: -1.77px; */
     margin-bottom: 50px;
