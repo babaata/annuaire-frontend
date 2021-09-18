@@ -1,0 +1,21 @@
+version: '3.2'
+networks:
+  proxy_https_default:
+     external: true
+services:
+  front:
+    build: .
+    image: annuaire-front:0.0.1
+    container_name: annuaire-front
+    volumes:
+      - ./share_data:/share_data
+    networks:
+      - default
+      - proxy_https_default
+    environment:
+      - VIRTUAL_HOST=${DOMAIN}
+      - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=${DOMAIN}
+      - LETSENCRYPT_EMAIL=dev.harouna@gmail.com
+    ports:
+      - "3080:3000"
