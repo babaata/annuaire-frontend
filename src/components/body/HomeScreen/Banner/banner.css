@@ -7,7 +7,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+.banner_content{
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
 }
 .firstText{
     color: #fff;

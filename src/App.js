@@ -10,7 +10,7 @@ import Menubar from './components/body/HomeScreen/Navbar/Menubar';
 function App() {
   return (
     <div className="App">
-      <Menubar/>
+      <Menubar />
       <Banner />
       <PopularProfil />
       <Inscription />
