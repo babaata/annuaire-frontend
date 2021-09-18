@@ -1,0 +1,35 @@
+.statistique{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2%;
+}
+.statistique__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(228, 228, 228);
+    width: 100%;
+}
+.statistique:last-child{
+    border-right: none;
+}
+.statistique__card h3{
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom:0 ;
+}
+.statistique__card .circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+.statistique__card p{
+    font-size: 25px;
+    color: rgb(185, 185, 185);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Open sans light";
+}
