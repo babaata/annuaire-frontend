@@ -11,6 +11,10 @@
     opacity: 1;
 }
 
+.form-input {
+    margin: .5rem 0;
+}
+
 .btn-login:hover, .btn-login:focus {
     box-shadow: none!important;
 }

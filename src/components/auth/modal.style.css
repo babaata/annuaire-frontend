@@ -6,6 +6,10 @@
   visibility: visible;
 }
 
+.btn-submit {
+
+}
+
 .btn-submit:focus {
   box-shadow: none!important;
 }
@@ -45,6 +49,7 @@
 
 .formContainer .btn-submit {
   text-align: center;
+  color: #ffffff;
   background: #5F439A 0 0 no-repeat padding-box;
   border-radius: 3px;
   border-color: #5F439A;
