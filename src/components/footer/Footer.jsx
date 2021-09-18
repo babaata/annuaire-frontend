@@ -19,7 +19,7 @@ function Footer() {
         <div className="news__letter">
           <form>
             <div className="news__letter__form">
-              <i className="fas fa-envelope"></i>
+              <i className="fas fa-envelope fa-1x"></i>
               <input type="text" placeholder="Newsletter" />
               <button>
                 <i className="fas fa-paper-plane"></i>
