@@ -8,13 +8,13 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY yarn.lock ./
-#COPY package.json ./
+COPY package.json ./
 #COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm install --no-package-lock
+RUN npm install react-scripts@3.4.1 -g
 
 # add app
 COPY . ./
-
+EXPOSE 3000
 # start app
 CMD ["npm", "start"]
