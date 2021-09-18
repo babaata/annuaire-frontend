@@ -8,7 +8,7 @@
 }
 .footer__content__top{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 2%;
 }
@@ -40,18 +40,19 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    width: 100%;
+    width: 200%;
     padding: 5% 0%;
     padding-right: 15%;
     padding-left: 15%;
     border-radius: 4px;
+    margin-left: 330%;
 }
 .footer__content__top .news__letter__form button{
     background-color: none;
     background-color: #472985d6;
     border:none;
-    width: 100%;
-    padding: 4%;
+    width: 15%;
+    padding: 1%;
     border-radius: 2px;
 }
 .footer__content__top .news__letter__form input{
