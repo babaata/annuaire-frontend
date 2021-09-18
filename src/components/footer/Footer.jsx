@@ -6,13 +6,13 @@ function Footer() {
     <div className="footer">
       <div className="footer__content__top">
         <div className="social__media">
-          <a href="#">
+          <a href="/">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="#">
+          <a href="/">
             <i className="fab fa-twitter"></i>
           </a>
-          <a href="#">
+          <a href="/">
             <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
@@ -33,10 +33,10 @@ function Footer() {
         <span>Copyright</span>
         <ul>
           <li>
-            <a href="#">A propos</a>
+            <a href="/">A propos</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="/">Contact</a>
           </li>
         </ul>
       </div>

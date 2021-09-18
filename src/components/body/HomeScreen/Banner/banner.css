@@ -1,5 +1,6 @@
 .Banner{
     background: url("./banner.png");
+    border: 1px solid black;
     min-width: 90vw;
     height: 496px;
     background-size: cover;
