@@ -32,10 +32,9 @@
     justify-content: center;
     align-items: center;
 }
-
-.search__bar .inputBar::after {
-    content: "";
-    border-right: 1px solid #838383f5;
+.search__bar .inputBar::after{
+  content: "";
+  border-right:1px solid #020101f5;
     margin-right: 2%;
     height: 35px;
 }

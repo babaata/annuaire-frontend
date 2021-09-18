@@ -19,7 +19,7 @@ function Footer() {
         <div className="news__letter">
           <form>
             <div className="news__letter__form">
-              <i className="fas fa-envelope fa-1x"></i>
+              <i className="fas fa-envelope"></i>
               <input type="text" placeholder="Newsletter" />
               <button>
                 <i className="fas fa-paper-plane"></i>
@@ -30,7 +30,7 @@ function Footer() {
       </div>
       <hr />
       <div className="footer__content__bottom">
-        <span>Copyright</span>
+        <span>Copyright@2021</span>
         <ul>
           <li>
             <a href="/">A propos</a>

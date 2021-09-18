@@ -19,16 +19,15 @@
 }
 
 .footer__content__top .social__media a i {
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff;
-    margin-right: 5%;
-    padding: 4%;
-    position: relative;
-    border-radius: 50px;
-    line-height: 20px;
-    text-align: center;
-   color:black;
+    width: 40px;
+height: 40px;
+background-color: #ffffff;
+margin-right: 5%;
+position: relative;
+border-radius: 50px;
+line-height: 40px;
+text-align: center;
+color: black;
 }
 
 .footer__content__top .news__letter__form button i {
@@ -49,7 +48,7 @@
     padding-right: 15%;
     padding-left: 15%;
     border-radius: 4px;
-    margin-left: 330%;
+    margin-left: 280%;
 }
 .footer__content__top .news__letter__form button{
 
@@ -75,7 +74,7 @@
     list-style: none;
     display: flex;
     justify-content: space-between;
-    width: 10%;
+    width: 15%;
 }
 .footer__content__bottom ul li a{
     text-decoration: none;

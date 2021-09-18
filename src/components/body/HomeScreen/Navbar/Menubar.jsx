@@ -1,5 +1,8 @@
 import React from "react";
 import "./Menubar.css";
+import Login from "../../../auth/Login/login.component";
+import Register from "../../../auth/Register/register.component";
+
 export default function Menubar() {
   return (
     <div className="menubar">
@@ -9,12 +12,10 @@ export default function Menubar() {
       <div className="link_button">
         <ul>
           <li>
-            <a href="/">Connexion</a>
+            <Login />
           </li>
           <li>
-            <a href="/" className="active">
-              Inscription
-            </a>
+            <Register />
           </li>
         </ul>
       </div>
