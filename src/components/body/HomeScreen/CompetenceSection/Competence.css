@@ -6,6 +6,7 @@
 }
 .competences hr{
   color: rgb(248, 248, 248);
+  margin:2% 2%;
 }
 .competence__left {
     display: flex;
