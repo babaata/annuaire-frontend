@@ -6,20 +6,20 @@ function Footer() {
     <div className="footer">
       <div className="footer__content__top">
         <div className="social__media">
-          <a href="#">
+          <a href="/">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="#">
+          <a href="/">
             <i className="fab fa-twitter"></i>
           </a>
-          <a href="#">
+          <a href="/">
             <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
         <div className="news__letter">
           <form>
             <div className="news__letter__form">
-              <i className="fas fa-envelope"></i>
+              <i className="fas fa-envelope fa-1x"></i>
               <input type="text" placeholder="Newsletter" />
               <button>
                 <i className="fas fa-paper-plane"></i>
@@ -33,10 +33,10 @@ function Footer() {
         <span>Copyright</span>
         <ul>
           <li>
-            <a href="#">A propos</a>
+            <a href="/">A propos</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="/">Contact</a>
           </li>
         </ul>
       </div>
