@@ -30,7 +30,7 @@ function Footer() {
       </div>
       <hr />
       <div className="footer__content__bottom">
-        <span>Copyright</span>
+        <span>Copyright@2021</span>
         <ul>
           <li>
             <a href="/">A propos</a>

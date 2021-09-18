@@ -12,7 +12,7 @@ function SearchPage() {
         margin="3%"
         text="Resultat de Recherche:UX design"
       />
-      <SearchContain />
+      <SearchContain/>
     </div>
   );
 }
