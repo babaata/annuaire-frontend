@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import SearchPage from "./pages/SearchPage";
+import Home from "./Pages/Home";
+import SearchPage from "./Pages/SearchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ProfilList from "./pages/ProfilList";
+import ProfilList from "./Pages/ProfilList";
 function App() {
   return (
     <Router>
