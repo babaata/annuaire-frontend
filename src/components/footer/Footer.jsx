@@ -33,7 +33,7 @@ function Footer() {
         <span>Copyright</span>
         <ul>
           <li>
-            <a href="/">A propos</a>
+            <a href="/">A propos</a> 
           </li>
           <li>
             <a href="/">Contact</a>

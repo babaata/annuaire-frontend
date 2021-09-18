@@ -1,23 +1,18 @@
-import './App.css';
-import Banner from "./components/body/HomeScreen/Banner/Banner";
-import Competences from "./components/body/HomeScreen/CompetenceSection/Competences";
-import Inscription from "./components/body/HomeScreen/InscriptionSection/Inscription";
-import Menubar from "./components/body/HomeScreen/Navbar/Menubar";
-import PopularProfil from "./components/body/HomeScreen/profils/PopularProfil";
-import StatistiqueSection from "./components/body/HomeScreen/StatistiqueSection/StatistiqueSection";
-import Footer from "./components/footer/Footer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home";
+import SearchPage from "./Pages/SearchPage";
 
 function App() {
   return (
-    <div className="App">
-      <Menubar />
-      <Banner />
-      <PopularProfil />
-      <Inscription />
-      <Competences />
-      <StatistiqueSection />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/SearchPage" exact component={SearchPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
