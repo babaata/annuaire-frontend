@@ -1,0 +1,35 @@
+.profiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+
+}
+
+.profiles button {
+    background: none;
+    border: 3px solid #472985d6;
+    color: #472985d6;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: "Open sans semiBold";
+    font-size: 20px;
+    margin: 2%;
+    cursor: pointer;
+    transition: all 0.25s ease-in;
+}
+
+.profiles button:hover {
+    background-color: #472985d6;
+    color: white;
+}
+
+.profiles button i {
+    margin-left: 5px;
+}
