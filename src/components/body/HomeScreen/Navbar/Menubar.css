@@ -13,11 +13,25 @@
     width: 180px;
     transform: translate(0, -8px);
 }
-
-.link_button {
-    width: 23%;
-    margin: auto 6px;
+.link_button{
+    width: 30%;
+    display: flex;
+align-items: center;
+justify-content: center;
 }
+/* .link_button .avaatar{
+    display: flex;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color:#5F439A ;
+}
+.link_button .avaatar i{
+    line-height: 35px;
+    text-align: center;
+    color:white;
+} */
 
 .link_button ul {
     display: flex;
@@ -33,6 +47,7 @@
     border: 1px solid #5F439A;;
     padding: 5px 28px;
     margin: 70px 8px;
+    border-radius: 2px;
 }
 
 .active {
