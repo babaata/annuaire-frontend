@@ -1,10 +1,21 @@
 .searchContainleft{
     width: 40%;
-    border:1px solid black;
     margin-left: 50px;
     padding-left: 50px;
 }
 .header_title{
     color:#5F439A;
     font-size: 45px;
+    padding: 20px;
+}
+.fonction_name{
+    color: #5F439A;
+    width: 35%;
+    font-size: 28px;
+    margin-left: 26px;
+    background: #F3F3F3;
+}
+.activepoint {
+    background-image: linear-gradient(to right top, #5f439a, #533a86, #473272, #3b2a5f, #30224d);
+    color: #fff;
 }

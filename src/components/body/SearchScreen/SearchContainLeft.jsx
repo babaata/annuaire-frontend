@@ -6,16 +6,16 @@ function SearchContainLeft() {
             <div className="header_title">
                 <h2>Profession</h2>
             </div>
-            <div>
+            <div className="fonction_name">
                 <p>Comptable</p>
             </div>
-            <div>
+            <div className="fonction_name">
                 <p>Juriste</p>
             </div>
-            <div>
+            <div className="fonction_name activepoint">
                 <p>Comptable</p>
             </div>
-            <div>
+            <div className="fonction_name">
                 <p>Comptable</p>
             </div>
         </div>
