@@ -4,15 +4,17 @@
     align-items: center;
     justify-content: center;
 }
-.card__section{
+
+.card__section {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 50px;
-   
+
 }
-.profiles button{
+
+.profiles button {
     background: none;
-    border:3px solid #472985d6;
+    border: 3px solid #472985d6;
     color: #472985d6;
     padding: 10px;
     border-radius: 4px;
@@ -22,10 +24,12 @@
     cursor: pointer;
     transition: all 0.25s ease-in;
 }
-.profiles button:hover{
+
+.profiles button:hover {
     background-color: #472985d6;
-    color:white;
+    color: white;
 }
-.profiles button i{
+
+.profiles button i {
     margin-left: 5px;
 }

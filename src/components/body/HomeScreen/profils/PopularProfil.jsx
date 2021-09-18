@@ -16,7 +16,9 @@ function PopularProfil() {
         <CardProfile image="./images/kabaci.jpeg" color="#FBB017" />
         <CardProfile image="./images/woman.jpeg" color="#1CA5A0" />
       </div>
-      <button>Voir tous les profiles <i className="fas fa-plus"></i></button>
+      <button>
+        Voir tous les profiles <i className="fas fa-plus"></i>
+      </button>
     </div>
   );
 }
