@@ -1,4 +1,4 @@
-.inscription{
+.inscription {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,23 +6,26 @@
     background-color: rgb(51, 51, 51);
     padding: 6%;
     border-radius: 10px;
-    background-blend-mode:soft-light;
+    background-blend-mode: soft-light;
     object-fit: cover;
     background-position: top;
     margin:0 3%;
     background-repeat:no-repeat;
 }
-.inscription::before{
+
+.inscription::before {
     content: "";
     background-color: black;
     background-blend-mode: multiply;
     z-index: 1;
 }
-.inscription h2{
-    color:white;
+
+.inscription h2 {
+    color: white;
     font-size: 33px;
 }
-.inscription button{
+
+.inscription button {
     padding: 10px;
     background-color: #fbb017;
     border: none;

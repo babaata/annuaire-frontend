@@ -1,5 +1,5 @@
-import React from 'react'
-import "./Inscription.css"
+import React from "react";
+import "./Inscription.css";
 
 function Inscription(props) {
   return (

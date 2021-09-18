@@ -1,1 +1,10 @@
-rfce
+.searchContainleft{
+    width: 40%;
+    border:1px solid black;
+    margin-left: 50px;
+    padding-left: 50px;
+}
+.header_title{
+    color:#5F439A;
+    font-size: 45px;
+}
