@@ -10,11 +10,12 @@ function SearchContainCard() {
         <h5>Abdoul Goudoussy Diallo</h5>
         <p>Comptable</p>
         <span>
-          <i className="fas fa-map-marker-alt"> Conakry</i>
+          <i className="fas fa-map-marker-alt"></i>
+          Conakry
         </span>
       </div>
       <div className="info_plus">
-        <a href="#">Consulter</a>
+        <a href="#">Consulter <i className="fas fa-angle-double-right"></i></a>
       </div>
     </div>
   );
