@@ -25,6 +25,21 @@ export default function CompetenceComponent() {
                       Design d'interface
                 </p>
                 </div>
+                <div className="competencetitle">
+                <p>
+                      Design d'interface
+                </p>
+                </div>
+                <div className="competencetitle">
+                <p>
+                      Design d'interface
+                </p>
+                </div>
+                <div className="competencetitle">
+                <p>
+                      Design d'interface
+                </p>
+                </div>
             </div>
         </div>
     )
