@@ -1,5 +1,6 @@
 .menubar {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 31px 80px;
     width: 100%;
@@ -55,4 +56,11 @@
 
 .btn-register:hover, .btn-register:focus {
     box-shadow: none!important;
+}
+
+@media screen and (min-width: 768px) {
+/* TODO : Les 2 boutons connexion/Inscription à  checker en mobile */
+    .menubar {
+        flex-direction: row;
+    }
 }

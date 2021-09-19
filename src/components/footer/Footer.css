@@ -10,24 +10,25 @@
 .footer__content__top {
     display: flex;
     justify-content: flex-start;
+    flex-direction:column;
     align-items: center;
     margin-bottom: 2%;
 }
 
 .footer__content__top .social__media {
-    width: 15%;
+    width: 100%;
 }
 
 .footer__content__top .social__media a i {
     width: 40px;
-height: 40px;
-background-color: #ffffff;
-margin-right: 5%;
-position: relative;
-border-radius: 50px;
-line-height: 40px;
-text-align: center;
-color: black;
+    height: 40px;
+    background-color: #ffffff;
+    margin-right: 5%;
+    position: relative;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    color: black;
 }
 
 .footer__content__top .news__letter__form button i {
@@ -43,12 +44,14 @@ color: black;
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    width: 200%;
+    /* TODO A FAIRE EN MOBILE */
+    /* width: 200%; */
     padding: 5% 0%;
     padding-right: 15%;
     padding-left: 15%;
     border-radius: 4px;
-    margin-left: 280%;
+    /* margin-left: 280%; */
+    /* display: none; */
 }
 .footer__content__top .news__letter__form button{
 
@@ -75,8 +78,15 @@ color: black;
     display: flex;
     justify-content: space-between;
     width: 15%;
+        display: none;
 }
 .footer__content__bottom ul li a{
     text-decoration: none;
     color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__content__top {
+        flex-direction: row;
+    }
 }

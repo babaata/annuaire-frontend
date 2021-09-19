@@ -9,7 +9,7 @@ function CardProfile(props) {
         <img src={props.image} alt="abdoul" />
       </div>
       <div className="card__info">
-        <span style={{ backgroundColor: `${props.color}` }}>Comptable</span>
+        <span className="card__info-job" style={{ backgroundColor: `${props.color}` }}>Comptable</span>
         <div className="card__info__bottom">
           <Link to="detail-section">
             <h5>Abdoul Goudoussy Diallo</h5>

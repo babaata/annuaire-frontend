@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__content__top">
-        <div className="social__media">
+        <div className="social__media my-3">
           <a href="/">
             <i className="fab fa-facebook-f"></i>
           </a>
