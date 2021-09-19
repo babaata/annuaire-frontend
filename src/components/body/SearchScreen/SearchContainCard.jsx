@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SearchContainCard.css";
 function SearchContainCard() {
   return (
@@ -15,7 +16,7 @@ function SearchContainCard() {
         </span>
       </div>
       <div className="info_plus">
-        <a href="#">Consulter <i className="fas fa-angle-double-right"></i></a>
+        <Link to="/detail-section">Consulter <i className="fas fa-angle-double-right"></i></Link>
       </div>
     </div>
   );

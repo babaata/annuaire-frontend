@@ -13,7 +13,7 @@ function Home() {
       <Menubar  page="home"/>
       <Banner />
       <PopularProfil />
-      <Inscription status="false"  text="Vous êtes Guinéen, vous avez des compétences à faire valoir ?"/>
+      <Inscription status="true"  text="Vous êtes Guinéen, vous avez des compétences à faire valoir ?"/>
       <Competences />
       <StatistiqueSection />
       <Footer />
