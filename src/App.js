@@ -4,9 +4,7 @@ import Home from "./Pages/Home";
 import SearchPage from "./Pages/SearchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfilList from "./Pages/ProfilList";
-
 import ProfiDetails from "./Pages/ProfilDetails";
-
 function App() {
   return (
     <Router>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./register.style.css";
 import { Formik, Form, Field } from "formik";
-import ModalComponent from "../modal.component";
+import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { postData } from "../../../Api/fetchData";
 import {useDispatch, useSelector} from 'react-redux'
@@ -47,10 +47,10 @@ const Register = () => {
     //   console.log(values);
     // });
     dispatch(register(values))
-    
+
   };
 
-  
+
 
   return (
     <>

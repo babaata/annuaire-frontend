@@ -1,6 +1,5 @@
 import "./login.style.css";
-import ModalComponent from "../modal.component";
-
+import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { postData } from "../../../Api/fetchData";
 import { Field,Form, Formik } from "formik";
@@ -148,8 +147,8 @@ export default Login;
 
 
 //   const submit = async(e) =>{
-//     e.preventDefault()    
-//     // dispatch(login(userLogin))  
+//     e.preventDefault()
+//     // dispatch(login(userLogin))
 
 //     console.log("iiiiiiiiii");
 
@@ -162,7 +161,7 @@ export default Login;
 //     })
 
 //     console.log(res);
-    
+
 //   }
 
 //   return (
