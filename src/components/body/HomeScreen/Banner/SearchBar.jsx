@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./searchbar.css";
 
 function SearchBar() {
@@ -16,7 +17,7 @@ function SearchBar() {
         <i className="fas fa-map-marker-alt "></i>
         <input placeholder="Pays de résidence" />
       </div>
-      <a href="/"><i class="fas fa-search"></i></a>
+      <Link to="/search-page"><i class="fas fa-search"></i></Link>
     </div>
   );
 }

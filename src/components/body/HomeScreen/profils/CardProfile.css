@@ -8,7 +8,9 @@
     -webkit-box-shadow: 1px -1px 29px 0px rgba(109, 109, 109, 0.45);
     box-shadow: 1px -1px 29px 0px rgba(109, 109, 109, 0.45);
 }
-
+.card__profile:hover{
+    cursor: pointer;
+}
 .card__profil__img {
     position: relative;
     width: 300px;
@@ -42,7 +44,15 @@
     height: 300px;
     width: 300px;
 }
-
+.card__info a{
+    text-decoration: none;
+    color: #ffff;
+    transition: all 0.25s ease-in;
+}
+.card__profile a:hover{
+    color: #ffff;
+    transform: scale(1.05);
+}
 .card__info > span {
     margin-left: 200px;
     margin-top: 5px;

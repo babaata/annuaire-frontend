@@ -1,4 +1,6 @@
 import React from 'react'
+import Footer from '../../footer/Footer'
+import Menubar from '../HomeScreen/Navbar/Menubar'
 import ProfessionComponent from './ProfessionComponent'
 import CompetenceComponent from './CompetenceComponent';
 import './Profession.css';
