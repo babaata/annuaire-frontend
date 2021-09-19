@@ -1,6 +1,7 @@
 import React from "react";
 import SearchContainLeft from "./SearchContainLeft";
 import SearchContainrRight from "./SearchContainrRight";
+import "./SearchContain.css";
 
 function SearchContain() {
   return (

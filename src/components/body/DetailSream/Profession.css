@@ -1,0 +1,87 @@
+.professionComponent_head{
+    background: #F3F3F3;
+    border-radius: 5px;
+    padding: 20px;
+    width: 20%;
+    height: 40%;
+}
+.profession_title{
+    background: #5F439A;
+    color: #ffff;
+    border-radius: 2px;
+    width: 45%;
+    margin-left: 20px;
+    font-size: 33px;
+
+}
+.email_user{
+    display: flex;
+    align-items: center;
+    margin:8px;
+    font-size: 19px;
+    color: #5F439A;
+}
+.email_user i{
+    margin-right: 13px;
+}
+.avis_title i{
+    margin-right: 13px;
+}
+.avis_title{
+    display: flex;
+    align-items: center;
+    background: #95989A;
+    color: #fff;
+    width: 70%;
+}
+.competenceComponent_global{
+    background:#F3F3F3;
+    padding: 72px;
+    width: 100%;
+}
+.competencetitle_head{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.competencetitle{
+    background: #FBB017;
+    width: 20%;
+}
+.competencetitle > p{
+    color: #5F439A;
+    font-size: 26px;
+}
+.detailSection{
+    display: flex;
+    justify-content: space-between;
+}
+.detailleft{
+    width: 75%;
+}
+.experienceComponent{
+
+}
+
+.experiencecard{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+.title_years{
+
+}
+.see_more{
+    font-size: 22px;
+    color: #009B95;
+    
+}
+.first_page_title
+{
+    color: #5F439A;
+    font-size: 28px;
+}
+.title_years > p{
+    font-size: 18px;
+    color: #5F439A;
+}
