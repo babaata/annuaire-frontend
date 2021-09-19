@@ -1,12 +1,10 @@
 import React from "react";
 import "./register.style.css";
 import { Formik, Form, Field } from "formik";
-import ModalComponent from "../modal.component";
+import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
-import { postData } from "../../../Api/fetchData";
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { register } from "../../../redux/actions/authAction";
-
 
 const Register = () => {
   const SchemaValidation = Yup.object().shape({
@@ -40,22 +38,17 @@ const Register = () => {
       .required("Ce champ est requis !"),
   });
 
-  const token = localStorage.getItem('firstLogin')
-
-  const dispatch = useDispatch()
-  const submitForm = async (values) => {
-
-  await dispatch(register(values))
-    
+  const dispatch = useDispatch();
+  const submitForm = (values) => {
+    dispatch(register(values));
   };
-
-  
 
   return (
     <>
       <ModalComponent
-        type="register"
-        title={token ? `Deconnection` : `Inscription`}
+        type="fill"
+        btnName="Inscription"
+        title={"Inscription"}
         content={
           <>
             <Formik

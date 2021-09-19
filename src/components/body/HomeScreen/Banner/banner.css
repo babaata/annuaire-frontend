@@ -1,12 +1,13 @@
 .Banner {
-    background: url("./banner.png");
+    background: url("./Acceuil.png");
     min-width: 90vw;
     height: 496px;
     background-size: cover;
-    margin: 25px;
+    margin: 25px 25px 0 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
     
 }
 .banner_content{

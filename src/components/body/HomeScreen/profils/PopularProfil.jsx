@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CardProfile from "./CardProfile";
 import "./PopularProfil.css";
 
@@ -16,9 +17,11 @@ function PopularProfil() {
         <CardProfile image="./images/kabaci.jpeg" color="#FBB017" />
         <CardProfile image="./images/woman.jpeg" color="#1CA5A0" />
       </div>
-      <button>
-        Voir tous les profiles <i className="fas fa-plus"></i>
-      </button>
+      <Link to="/prof-list">
+        <button>
+          Voir tous les profiles <i className="fas fa-plus"></i>
+        </button>
+      </Link>
     </div>
   );
 }

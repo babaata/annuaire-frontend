@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { postDataAPI } from '../../utils/fetchData'
+import { postDataAPI } from "../../utils/fetchData";
 
 export const AUTH = "AUTH"
 export const NOTIFY = "NOTIFY"
@@ -55,52 +54,38 @@ export const refreshToken = (auth) => async(dispatch)=>{
   
 }
 
-export const register = (data) => async(dispatch) =>{
-
-  
-  try {  
-    const res = await postDataAPI("https://babaata.eviltech.org/api/user/create", data)
-
-    if(res.data.status){
-
-      dispatch({
-        type: AUTH, 
-        payload: res.data
-      })
-
-      localStorage.setItem('firstLogin', res.data.api_token)
 
 
-      dispatch({
-        type: NOTIFY,
-        payload: {
-          success: "register sucess"
-        }
-      })
-    }else{
-      dispatch({
-        type: AUTH, 
-        payload: res.data
-      })
-    }
-  
-  } catch (err) {
- 
-    }
-}
-
-export const logout = () => async(dispatch) =>{
+export const register = (data) => async (dispatch) => {
   try {
+    const res = await postDataAPI(
+      "https://babaata.eviltech.org/api/user/create",
+      data
+    );
 
     localStorage.removeItem('firstLogin')
 
     dispatch({
-      type: AUTH, 
-      payload: {}
-    })
-  } catch (err) {
+      type: AUTH,
+      payload: res.data,
+    });
 
-  }
-}
+    localStorage.setItem("firstLogin", true);
 
+    dispatch({
+      type: NOTIFY,
+      payload: {
+        success: "register sucess",
+      },
+    });
+  } catch (err) {}
+};
 
+export const logout = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: AUTH,
+      payload: {},
+    });
+  } catch (err) {}
+};
