@@ -21,9 +21,6 @@ export default function Menubar() {
           <li>
             <Register />
           </li>
-          <li>
-            <ExperienceAdd />
-          </li>
         </ul>
       </div>
     </div>
