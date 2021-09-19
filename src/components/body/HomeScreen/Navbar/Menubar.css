@@ -1,5 +1,6 @@
 .menubar {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 31px 80px;
     width: 100%;
@@ -23,14 +24,15 @@
     display: flex;
 }
 
-.link_button ul > li {
+.link_button ul>li {
     list-style: none;
 
 }
 
-.link_button ul > li > a {
+.link_button ul>li>a {
     text-decoration: none;
-    border: 1px solid #5F439A;;
+    border: 1px solid #5F439A;
+    ;
     padding: 5px 28px;
     margin: 70px 8px;
 }
@@ -38,4 +40,11 @@
 .active {
     background-color: #5F439A;
     color: #ffff;
+}
+
+@media screen and (min-width: 768px) {
+/* TODO : Les 2 boutons connexion/Inscription à  checker en mobile */
+    .menubar {
+        flex-direction: row;
+    }
 }
