@@ -1,9 +1,8 @@
 import "./login.style.css";
-import ModalComponent from "../modal.component";
-import { Form } from "react-bootstrap";
+import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { postData } from "../../../Api/fetchData";
-import { Field, Formik } from "formik";
+import { Formik, Form, Field } from "formik";
 import React from "react";
 
 const Login = () => {

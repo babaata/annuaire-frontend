@@ -1,7 +1,7 @@
 import React from "react";
 import "./register.style.css";
 import { Formik, Form, Field } from "formik";
-import ModalComponent from "../modal.component";
+import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { postData } from "../../../Api/fetchData";
 
@@ -38,6 +38,7 @@ const Register = () => {
   });
 
   const submitForm = (values) => {
+    console.log(values);
     postData("user/create", values).then((res) => {
       console.log(res);
     });
