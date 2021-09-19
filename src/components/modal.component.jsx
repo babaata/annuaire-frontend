@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import "./modal.style.css";
 
-const ModalComponent = ({ title, content, type }) => {
+const ModalComponent = ({ title, btnName, content, type }) => {
   const [show, setShow] = useState(false);
 
   function handleShow() {
@@ -14,10 +14,10 @@ const ModalComponent = ({ title, content, type }) => {
   return (
     <>
       <Button
-        className={type === "login" ? "btn-login" : "btn-register"}
+        className={type === "fill" ? "btn-filled" : "btn-outlined"}
         onClick={() => handleShow()}
       >
-        {title}
+        {btnName}
       </Button>
 
       <Modal
@@ -43,7 +43,7 @@ const ModalComponent = ({ title, content, type }) => {
         <Modal.Body>
           <div className="content">
             <div className="formContainer">
-              <div className="form-title">{title}</div>
+              {title ? <div className="form-title">{title}</div> : <></>}
               {content}
             </div>
           </div>

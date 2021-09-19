@@ -3,6 +3,7 @@ import "./Menubar.css";
 import Login from "../../../auth/Login/login.component";
 import Register from "../../../auth/Register/register.component";
 import { Link } from "react-router-dom";
+import ExperienceAdd from "../../../Experience/experienceAdd.component";
 
 export default function Menubar() {
   return (
@@ -19,6 +20,9 @@ export default function Menubar() {
           </li>
           <li>
             <Register />
+          </li>
+          <li>
+            <ExperienceAdd />
           </li>
         </ul>
       </div>
