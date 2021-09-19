@@ -3,10 +3,8 @@ import "./register.style.css";
 import { Formik, Form, Field } from "formik";
 import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
-import { postData } from "../../../Api/fetchData";
-import {useDispatch, useSelector} from 'react-redux'
-import { login, register } from "../../../redux/actions/authAction";
-
+import { useDispatch } from "react-redux";
+import { register } from "../../../redux/actions/authAction";
 
 const Register = () => {
   const SchemaValidation = Yup.object().shape({
@@ -40,22 +38,16 @@ const Register = () => {
       .required("Ce champ est requis !"),
   });
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const submitForm = (values) => {
-    // postData("user/create", values).then((res) => {
-    //   console.log(res);
-    //   console.log(values);
-    // });
-    dispatch(register(values))
-
+    dispatch(register(values));
   };
-
-
 
   return (
     <>
       <ModalComponent
-        type="register"
+        type="fill"
+        btnName="Inscription"
         title={"Inscription"}
         content={
           <>
