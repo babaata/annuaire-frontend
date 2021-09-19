@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CardProfile.css";
 
 function CardProfile(props) {
@@ -10,7 +11,9 @@ function CardProfile(props) {
       <div className="card__info">
         <span style={{ backgroundColor: `${props.color}` }}>Comptable</span>
         <div className="card__info__bottom">
-          <h5>Abdoul Goudoussy Diallo</h5>
+          <Link to="detail-section">
+            <h5>Abdoul Goudoussy Diallo</h5>
+          </Link>
           <span>
             <i className="fas fa-map-marker-alt"></i> Conakry
           </span>
