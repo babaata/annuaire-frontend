@@ -16,7 +16,7 @@ const Register = () => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    user_name: Yup.string()
+    username: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
@@ -58,7 +58,7 @@ const Register = () => {
                 nom: "",
                 prenom: "",
                 email: "",
-                user_name: "",
+                username: "",
                 telephone: "",
                 password: "",
               }}
@@ -113,12 +113,12 @@ const Register = () => {
                       required
                       onBlur={handleBlur}
                       className="form-control form-input"
-                      name="user_name"
+                      name="username"
                       type="text"
                       placeholder="Saisissez votre pseudo"
                     />
-                    {errors.user_name && touched.user_name ? (
-                      <div className="text-danger">{errors.user_name}</div>
+                    {errors.username && touched.username ? (
+                      <div className="text-danger">{errors.username}</div>
                     ) : null}
                   </div>
                   <div className="inputGroup">

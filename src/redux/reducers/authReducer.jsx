@@ -1,17 +1,15 @@
-import { AUTH } from "../actions/authAction"
+import { AUTH } from "../actions/authAction";
 
-
-const initState = {
-
-}
+const initState = {};
 
 const authReducer = (state = initState, action) => {
-    switch (action.type) {
-      case AUTH: return action.payload
-    
-      default: return state
-       
-    }
-}
+  switch (action.type) {
+    case AUTH:
+      return action.payload;
 
-export default authReducer
+    default:
+      return state;
+  }
+};
+
+export default authReducer;

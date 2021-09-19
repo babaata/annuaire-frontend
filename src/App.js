@@ -4,19 +4,22 @@ import Home from "./Pages/Home";
 import SearchPage from "./Pages/SearchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfilList from "./Pages/ProfilList";
-import ProfiDetails from "./Pages/ProfilDetails";
+import Alert from "./components/alert/Alert";
+
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/search-page" exact component={SearchPage} />
-          <Route path="/prof-list" exact component={ProfilList} />
-          <Route path="/detail-section" exact component={ProfiDetails} />
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <Alert />
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/" exact component={() => <Home />} />
+            <Route path="/SearchPage" exact component={SearchPage} />
+            <Route path="/ProfilList" exact component={ProfilList} />
+          </Switch>
+        </div>
+      </Router>
+    </div>
   );
 }
 

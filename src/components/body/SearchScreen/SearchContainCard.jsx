@@ -16,7 +16,9 @@ function SearchContainCard() {
         </span>
       </div>
       <div className="info_plus">
-        <Link to="/detail-section">Consulter <i className="fas fa-angle-double-right"></i></Link>
+        <Link to="/detail-section">
+          Consulter <i className="fas fa-angle-double-right"></i>
+        </Link>
       </div>
     </div>
   );

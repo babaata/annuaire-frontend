@@ -57,7 +57,6 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  max-height: 100%;
   padding: 8px;
 }
 
@@ -68,6 +67,7 @@
 }
 
 .formContainer .form-label {
+  margin: 0;
   font: normal normal 600 18px/32px Open Sans;
   letter-spacing: -0.54px;
   color: #5F439A;
@@ -124,4 +124,16 @@
 .close {
   cursor: pointer;
   margin: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-modal .content .formContainer {
+    background-color: white;
+    width: 681px;
+    padding: 15px;
+  }
+
+  .formContainer .form-label {
+    font: normal normal 600 16px/32px Open Sans;
+  }
 }

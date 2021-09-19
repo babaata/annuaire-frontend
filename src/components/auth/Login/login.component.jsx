@@ -1,7 +1,6 @@
 import "./login.style.css";
 import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
-import { postData } from "../../../Api/fetchData";
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";

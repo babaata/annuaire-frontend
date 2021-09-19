@@ -34,7 +34,7 @@ const ExperienceAdd = () => {
       <ModalComponent
         type="outlined"
         btnName="Experience +"
-        title={""}
+        title={"Experience"}
         content={
           <>
             <Formik

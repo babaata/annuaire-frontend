@@ -2,15 +2,19 @@ import { postDataAPI } from "../../utils/fetchData";
 
 export const AUTH = "AUTH";
 export const NOTIFY = "NOTIFY";
+export const ERROR = "ERROR";
 
 export const login = (data) => async (dispatch) => {
-  try {
-    // dispatch({type: NOTIFY, payload: {loading: true}})
-    const res = await postDataAPI(
-      "https://babaata.eviltech.org/api/user/login",
-      data
-    );
+  dispatch({ type: NOTIFY, payload: { loading: true } });
 
+  const res = await postDataAPI(
+    "https://babaata.eviltech.org/api/user/login",
+    data
+  );
+
+  console.log(res.data.status);
+
+  if (res.data.status) {
     dispatch({
       type: AUTH,
       payload: {
@@ -18,15 +22,22 @@ export const login = (data) => async (dispatch) => {
       },
     });
 
-    localStorage.setItem("firstLogin", true);
+    localStorage.setItem("firstLogin", res.data.access_token);
 
     dispatch({
       type: NOTIFY,
       payload: {
-        success: "login sucess",
+        success: "login success",
       },
     });
-  } catch (err) {}
+  } else {
+    dispatch({
+      type: ERROR,
+      payload: {
+        error: res.data.message,
+      },
+    });
+  }
 };
 
 export const refreshToken = (auth) => async (dispatch) => {
@@ -43,6 +54,8 @@ export const register = (data) => async (dispatch) => {
       "https://babaata.eviltech.org/api/user/create",
       data
     );
+
+    localStorage.removeItem("firstLogin");
 
     dispatch({
       type: AUTH,
@@ -62,6 +75,7 @@ export const register = (data) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
+    localStorage.setItem("firstLogin", "");
     dispatch({
       type: AUTH,
       payload: {},
