@@ -5,7 +5,7 @@ import ModalComponent from "../modal.component";
 import * as Yup from "yup";
 import { postData } from "../../../Api/fetchData";
 import {useDispatch, useSelector} from 'react-redux'
-import { login, register } from "../../../redux/actions/authAction";
+import { register } from "../../../redux/actions/authAction";
 
 
 const Register = () => {
@@ -18,7 +18,7 @@ const Register = () => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    user_name: Yup.string()
+    username: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
@@ -40,13 +40,12 @@ const Register = () => {
       .required("Ce champ est requis !"),
   });
 
+  const token = localStorage.getItem('firstLogin')
+
   const dispatch = useDispatch()
-  const submitForm = (values) => {
-    // postData("user/create", values).then((res) => {
-    //   console.log(res);
-    //   console.log(values);
-    // });
-    dispatch(register(values))
+  const submitForm = async (values) => {
+
+  await dispatch(register(values))
     
   };
 
@@ -56,7 +55,7 @@ const Register = () => {
     <>
       <ModalComponent
         type="register"
-        title={"Inscription"}
+        title={token ? `Deconnection` : `Inscription`}
         content={
           <>
             <Formik
@@ -66,7 +65,7 @@ const Register = () => {
                 nom: "",
                 prenom: "",
                 email: "",
-                user_name: "",
+                username: "",
                 telephone: "",
                 password: "",
               }}
@@ -121,12 +120,12 @@ const Register = () => {
                       required
                       onBlur={handleBlur}
                       className="form-control form-input"
-                      name="user_name"
+                      name="username"
                       type="text"
                       placeholder="Saisissez votre pseudo"
                     />
-                    {errors.user_name && touched.user_name ? (
-                      <div className="text-danger">{errors.user_name}</div>
+                    {errors.username && touched.username ? (
+                      <div className="text-danger">{errors.username}</div>
                     ) : null}
                   </div>
                   <div className="inputGroup">

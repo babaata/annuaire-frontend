@@ -1,12 +1,12 @@
 import "./login.style.css";
 import ModalComponent from "../modal.component";
-
 import * as Yup from "yup";
 import { postData } from "../../../Api/fetchData";
 import { Field,Form, Formik } from "formik";
 import React from "react";
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import { login } from "../../../redux/actions/authAction";
+import { useHistory } from "react-router";
 
 const Login = () => {
   const SchemaValidation = Yup.object().shape({
@@ -20,25 +20,24 @@ const Login = () => {
       .required("Ce champ est requis !"),
   });
 
+  const {auth} = useSelector(state => state)
 
+  const history = useHistory()
+  const token = localStorage.getItem('firstLogin')
+  console.log("token", token);
   const dispatch = useDispatch()
-  const submitForm = (values) => {
-    postData("user/login", values).then((res) => {
-      console.log(values);
-    });
 
-    // console.log(values);
-
-    dispatch(login(values))
-
-
+  const submitForm = async (values) => {
+  await  dispatch(login(values))
+    history.push('/')
   };
+  
 
   return (
     <>
       <ModalComponent
         type="login"
-        title={"Connexion"}
+        title={token ? <i class="fas fa-user-circle"></i> : `Connexion`}
         content={
           <>
             <Formik
@@ -103,17 +102,6 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
 
 
 

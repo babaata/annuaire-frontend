@@ -26,6 +26,8 @@ const ModalComponent = ({ title, content, type }) => {
         fullscreen={true}
         onHide={() => setShow(false)}
       >
+
+        <span>Error mots de pass incorerect</span>
         <div>
           <span className="float-end close" onClick={() => setShow(false)}>
             <svg
