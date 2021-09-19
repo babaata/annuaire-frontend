@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Menubar.css";
 import Login from "../../../auth/Login/login.component";
 import Register from "../../../auth/Register/register.component";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { Button } from "react-bootstrap";
 
-export default function Menubar({auth}) {
+export default function Menubar() {
 
+  const {error} = useSelector(state => state)
+  const {auth} = useSelector(state => state)
+
+  const [show, setShow] = useState(false);
+
+  function handleShow() {
+    setShow(true);
+  }
+
+  console.log({
+  "auth":  auth
+  });
+
+  console.log({
+    "error":  error
+    });
   
   const token = localStorage.getItem('firstLogin')
-  useEffect(()=>{
-    const log = useSelector(state => state)
-
-    console.log(log);
-    console.log(token);
-  },[token])
+  
   return (
     <div className="menubar">
       <div className="logo">
@@ -29,7 +41,7 @@ export default function Menubar({auth}) {
           </li>
 
           <li>
-          <Button
+    <Button
         className={"btn-register"}
         onClick={() => handleShow()}
       >

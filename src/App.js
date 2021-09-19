@@ -8,17 +8,17 @@ import Alert from "./components/alert/Alert";
 import { useSelector } from "react-redux";
 function App() {
 
+
   const {error} = useSelector(state => state)
   const {auth} = useSelector(state => state)
 
   console.log({
-  "auth":  auth
+  "appauth":  auth
   });
 
   console.log({
-    "error":  error
+    "apperror":  error
     });
-  
 
   return (
     <div>
@@ -26,7 +26,7 @@ function App() {
       <Router>
       <div className="App">
         <Switch>
-          <Route path="/" exact component={()=> <Home auth={auth}/>} />
+          <Route path="/" exact component={()=> <Home/>} />
           <Route path="/SearchPage" exact component={SearchPage} />
           <Route path="/ProfilList" exact component={ProfilList} />
         </Switch>
