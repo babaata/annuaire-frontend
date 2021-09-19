@@ -1,16 +1,15 @@
-import { ERROR } from '../actions/authAction'
+import { ERROR } from "../actions/authAction";
 
-const initState = {
-
-}
+const initState = {};
 
 const errorReducer = (state = initState, action) => {
-    switch (action.type) {
-      case ERROR: return action.payload
-    
-      default: return state
-       
-    }
-}
+  switch (action.type) {
+    case ERROR:
+      return action.payload;
 
-export default errorReducer
+    default:
+      return state;
+  }
+};
+
+export default errorReducer;

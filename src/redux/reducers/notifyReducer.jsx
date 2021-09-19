@@ -1,16 +1,15 @@
-import { NOTIFY } from '../actions/authAction'
+import { NOTIFY } from "../actions/authAction";
 
-const initState = {
-
-}
+const initState = {};
 
 const notifyReducer = (state = initState, action) => {
-    switch (action.type) {
-      case NOTIFY: return action.payload
-    
-      default: return state
-       
-    }
-}
+  switch (action.type) {
+    case NOTIFY:
+      return action.payload;
 
-export default notifyReducer
+    default:
+      return state;
+  }
+};
+
+export default notifyReducer;

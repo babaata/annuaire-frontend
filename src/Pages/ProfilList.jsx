@@ -4,7 +4,7 @@ import Menubar from "../components/body/HomeScreen/Navbar/Menubar";
 import CardProfile from "../components/body/HomeScreen/profils/CardProfile";
 import Footer from "../components/footer/Footer";
 import "../components/body/HomeScreen/profils/PopularProfil.css";
-import "./ProfilList.css"
+import "./ProfilList.css";
 
 function ProfilList() {
   return (
