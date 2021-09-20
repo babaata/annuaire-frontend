@@ -1,6 +1,6 @@
 import React from "react";
 import SearchContainCard from "./SearchContainCard";
-import "./SearchContainRight.css";
+import './SearchContainRight.css'
 
 function SearchContainrRight() {
   return (

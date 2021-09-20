@@ -11,11 +11,11 @@ export default function ExperienceComponent() {
             </p>
             <p>2018 - à nos jours</p>
           </div>
-          <div className="see_more">
+          {/* <div className="see_more">
             <a href="/">
               <i class="fas fa-chevron-right"></i>En savoir plus
             </a>
-          </div>
+          </div> */}
         </div>
         <hr />
       </div>

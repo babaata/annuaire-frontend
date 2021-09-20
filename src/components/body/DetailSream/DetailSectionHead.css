@@ -47,3 +47,41 @@ box-shadow: 0px 1px 17px -3px rgba(0,0,0,0.27);
 .head__info span{
     font-size: 17px;
 }
+
+/*Mobile Responsive*/
+@media screen and (max-width:768px) and (min-width:360px) {
+    .detail__section__head{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin:4%;
+        
+    }
+    .head__info{
+        align-items: center;
+        padding: 4%;
+    }
+    .head__info h5 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .head__info .fonction{
+        width: 100%;
+        font-size: 24px;
+    }
+    .head__info span{
+        font-size: 25px;
+    }
+    .head__info p{
+        text-align: center;
+    }
+    .head_img{
+        margin:4% 0;
+        width: 200px;
+        height: 200px;
+    }
+    .head_img img{
+        width: 200px;
+    }
+}

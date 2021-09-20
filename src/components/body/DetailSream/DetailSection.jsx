@@ -5,13 +5,17 @@ import ProfessionComponent from './ProfessionComponent'
 import CompetenceComponent from './CompetenceComponent';
 import './Profession.css';
 import ExperienceComponent from './ExperienceComponent';
+import LangueSection from './LangueSection';
 export default function DetailSection() {
     return (
         <div className="detailSection">
-            <ProfessionComponent />
+             <div className="detailRight">
+             <ProfessionComponent />
+             <LangueSection/>
+             </div>
             <div className="detailleft">
             <CompetenceComponent />
-            <ExperienceComponent />
+            <ExperienceComponent workTitle="Experiences /Professionels" />
             </div>
         </div>
     )

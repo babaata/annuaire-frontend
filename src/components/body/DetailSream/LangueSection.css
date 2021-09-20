@@ -1,0 +1,14 @@
+.langue__section{
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    padding:20px;
+    color: #5F439A;
+    font-family: "Open sans semiBold";
+    margin-bottom: 20px;
+}
+.langue__section span{
+    color: #ffffff;
+    background-color: #ffa500;
+    padding:2%;
+    border-radius: 3px;
+}
