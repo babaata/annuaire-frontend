@@ -2,30 +2,24 @@ import React, { useState } from "react";
 import "./Menubar.css";
 import Login from "../../../auth/Login/login.component";
 import Register from "../../../auth/Register/register.component";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { logout } from "../../../../redux/actions/authAction";
+import { useHistory } from "react-router";
 
 export default function Menubar() {
-
-  const {error} = useSelector(state => state)
-  const {auth} = useSelector(state => state)
-
-  const [show, setShow] = useState(false);
-
-  function handleShow() {
-    setShow(true);
-  }
-
-  console.log({
-  "auth":  auth
-  });
-
-  console.log({
-    "error":  error
-    });
   
   const token = localStorage.getItem('firstLogin')
+  
+
+  const history = useHistory('/')
+  const dispatch = useDispatch()
+  function handleShow() {
+      dispatch(logout(token))   
+      history.push('/') 
+  }
+  
   
   return (
     <div className="menubar">
@@ -37,7 +31,7 @@ export default function Menubar() {
           {
             token ? <> 
           <li>
-          <i class="fas fa-user-circle"></i> 
+          <i class="pr-4 fa-3x fas fa-user-circle"></i> 
           </li>
 
           <li>

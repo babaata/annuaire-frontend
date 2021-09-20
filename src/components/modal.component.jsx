@@ -3,15 +3,28 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import "./modal.style.css";
+import { useDispatch, useSelector } from "react-redux";
+import Alert from "./alert/Alert";
 
 const ModalComponent = ({ title, btnName, content, type }) => {
   const [show, setShow] = useState(false);
+
+const dispatch = useDispatch()
+const {error} = useSelector(state => state)
+const {auth} = useSelector(state => state)
+const {notify} = useSelector(state => state)
+
+console.log("error", error);
+console.log("ath", notify);
 
   function handleShow() {
     setShow(true);
   }
 
   return (
+    
+  <>
+      <Alert/>
     <>
       <Button
         className={type === "fill" ? "btn-filled" : "btn-outlined"}
@@ -27,9 +40,14 @@ const ModalComponent = ({ title, btnName, content, type }) => {
         onHide={() => setShow(false)}
       >
 
-        <span>Error mots de pass incorerect</span>
+   
+      <span className="text-danger text-center mt-2 h4">{title === "Inscription" ?  <span>{notify.message ? notify.message : ''}</span> : <span>{notify.error ? notify.error : ''}</span> }</span>
+   
         <div>
-          <span className="float-end close" onClick={() => setShow(false)}>
+          <span className="float-end close" onClick={() => {
+            setShow(false)
+            // dispatch({type: "NOTIFY", payload:{}})
+          }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="35"
@@ -52,6 +70,7 @@ const ModalComponent = ({ title, btnName, content, type }) => {
         </Modal.Body>
       </Modal>
     </>
+  </>
   );
 };
 

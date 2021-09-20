@@ -20,11 +20,11 @@ const Login = () => {
       .required("Ce champ est requis !"),
   });
 
-  const {auth} = useSelector(state => state)
 
   const history = useHistory()
   const token = localStorage.getItem('firstLogin')
   console.log("token", token);
+
   const dispatch = useDispatch()
 
   const submitForm = async (values) => {

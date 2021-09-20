@@ -56,3 +56,8 @@
 .btn-register:hover, .btn-register:focus {
     box-shadow: none!important;
 }
+
+.fas{
+    margin-right: 4px;
+    color: #5F439A;
+}
