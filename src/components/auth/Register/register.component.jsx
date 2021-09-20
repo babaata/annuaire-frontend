@@ -43,10 +43,10 @@ const Register = () => {
   const {notify} = useSelector(state => state)
 
 
-
   const history = useHistory()
   const dispatch = useDispatch();
   const submitForm = async (values) => {
+
    await dispatch(register(values));
     history.push('/')
   };
@@ -111,7 +111,7 @@ const Register = () => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-                    {notify.email ? <span className="text-danger">{notify.email }</span> : ''}
+                    {notify.error ? <span className="text-danger">{notify.error.errors.email }</span> : ''}
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
@@ -126,7 +126,7 @@ const Register = () => {
                       type="text"
                       placeholder="Saisissez votre pseudo"
                     />
-                    {notify.username ? <span className="text-danger">{notify.username}</span> : ''}
+                    {notify.error ? <span className="text-danger">{notify.error.errors.username}</span> : ''}
                     {errors.username && touched.username ? (
                       <div className="text-danger">{errors.username}</div>
                     ) : null}
@@ -155,7 +155,7 @@ const Register = () => {
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {notify.password ? <span className="text-danger">{notify.password }</span> : ''}
+                    {notify.error? <span className="text-danger">{notify.error.errors.password }</span> : ''}
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}

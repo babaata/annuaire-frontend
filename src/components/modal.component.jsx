@@ -9,13 +9,9 @@ import Alert from "./alert/Alert";
 const ModalComponent = ({ title, btnName, content, type }) => {
   const [show, setShow] = useState(false);
 
-const dispatch = useDispatch()
 const {error} = useSelector(state => state)
 const {auth} = useSelector(state => state)
 const {notify} = useSelector(state => state)
-
-console.log("error", error);
-console.log("ath", notify);
 
   function handleShow() {
     setShow(true);
@@ -41,7 +37,7 @@ console.log("ath", notify);
       >
 
 
-      <span className="text-danger text-center mt-2 h4">{title === "Inscription" ?  <span>{notify.message ? notify.message : ''}</span> : <span>{notify.error ? notify.error : ''}</span> }</span>
+      <span className="text-danger text-center mt-2 h4">{title === "Inscription" ?  <span>{notify.error ? notify.error.message : ''}</span> : <span>{notify.error ? notify.error.message : ''}</span> }</span>
 
         <div>
           <span className="float-end close" onClick={() => {

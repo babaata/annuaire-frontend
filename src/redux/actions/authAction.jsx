@@ -7,11 +7,8 @@ export const LOADING = "LOADING"
 
 
 export const login = (data) => async (dispatch) => {
-  dispatch({ type: NOTIFY, payload: { loading: true } });
 
     dispatch({type: NOTIFY, payload: {loading: true}})
-
-    dispatch({type: LOADING})
 
     const res = await postDataAPI("https://babaata.eviltech.org/api/user/login", data)
 
@@ -35,7 +32,7 @@ export const login = (data) => async (dispatch) => {
       dispatch({
         type: NOTIFY,
         payload: {
-          error: res.data.message
+          error: res.data
       }
     })
     }
@@ -66,12 +63,11 @@ export const register = (data) => async (dispatch) => {
       dispatch({
         type: NOTIFY,
         payload: {
-          message: res.data.message,
-          email: res.data.errors.email[0],
-          password: res.data.errors.password[0],
-          username: res.data.errors.username[0],
+          error: res.data,
         }
       })
+
+   
     }
 
 };
