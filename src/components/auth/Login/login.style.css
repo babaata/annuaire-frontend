@@ -2,3 +2,14 @@
     margin: .5rem 0;
 }
 
+.login{
+    position: relative;
+}
+
+.login small{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
