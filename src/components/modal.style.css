@@ -136,4 +136,8 @@
   .formContainer .form-label {
     font: normal normal 600 16px/32px Open Sans;
   }
+  .form-title{
+    font-size: 1.8rem;
+    margin: 0;
+  }
 }
