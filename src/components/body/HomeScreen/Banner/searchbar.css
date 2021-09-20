@@ -70,7 +70,7 @@
     align-items: center;
     color: #000;
     padding: 10px;
-    background-color: #fff;
+    background:none;
     border-radius: 5px;
     margin: 0;
     width: 100%;
@@ -78,11 +78,22 @@
   .search__bar .inputBar {
     margin: 10px;
     width: 96%;
-    border: 1px solid #666666;
-    padding: 3%;
-    border-radius: 20px;
+    border: 1px solid #5f439a;
+    padding: 2%;
+    border-radius: 10px;
+  }
+  .search__bar .inputBar input{
+    color: #fff;
+  }
+  .search__bar .inputBar i{
+    color: #5f439a;
+    line-height: 45px;
   }
   .search__bar a {
     margin-top: 20px;
+  }
+  .search__bar a i{
+    color: #fff;
+
   }
 }
