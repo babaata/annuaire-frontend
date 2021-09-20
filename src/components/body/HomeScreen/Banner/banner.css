@@ -25,15 +25,12 @@
 
 @media screen and (max-width: 768px) {
   .Banner {
-    background: #fff;
-    margin: 0;
     height: 300px;
   }
   .firstText {
     font-size: 1.3rem;
     text-align: left;
-    margin: 0 50px;
-    margin-top: 30px;
+    margin: 30px 0 0;
     padding: 10px;
     color: #5f439a;
   }
