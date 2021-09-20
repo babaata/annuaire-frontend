@@ -25,3 +25,8 @@
     background-image: linear-gradient(to right top, #5f439a, #533a86, #473272, #3b2a5f, #30224d);
     color: #fff;
 }
+@media screen and (min-width:360px) and (max-width:768px) {
+    .searchContainleft{
+        display: none;
+    }
+}

@@ -2,13 +2,13 @@
     background: #F3F3F3;
     border-radius: 5px;
     padding: 20px;
-    width: 22%;
-    height: 40%;
     text-align:left;
+    margin-bottom: 15px;
 }
 .professionComponent_head > h2{
     padding: 0;
-    font-size: 35px;
+    font-size: 30px;
+    margin-bottom: 0;
 }
 .profession_title{
     background: #5F439A;
@@ -54,11 +54,10 @@
 .competenceComponent_global{
     background:#F3F3F3;
     width: 100%;
-    height: 49%;
 }
 .competenceComponent_global > h2{
     padding: 0;
-    font-size: 35px;
+    font-size: 30px;
      padding:2%;
      margin-bottom: 0;
 }
@@ -95,15 +94,21 @@
     background: #F3F3F3;
     border-radius: 5px;
     margin-top: 1%;
+    margin-bottom: 20%;
+}
+.experienceComponent h2{
+    font-size: 30px;
+    padding:1%;
+    margin-bottom: 0;
 }
 
 .experiencecard{
     display: flex;
-    padding: 20px;
+    padding: 15px;
     justify-content: space-between;
 }
 .title_years{
-
+    width: 100%;
 }
 .see_more{   
    
@@ -124,4 +129,40 @@
 .title_years > p{
     font-size: 18px;
     color: #5F439A;
+}
+
+/*Mobile Responsive*/
+@media screen and (max-width:768px) and (min-width:360px) {
+    .detailSection{
+        flex-direction: column;
+    }
+    .professionComponent_head{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .competenceComponent_global{
+        display: flex;
+        flex-direction: column;
+        width: 340px;   
+        justify-content: center;
+        align-items: center;    
+        border-radius: 5px; 
+        margin-bottom: 20px;
+    }
+    .competencetitle_head{
+        justify-content: center;
+    }
+    .experienceComponent{
+        width: 340px;
+        margin-bottom: 10px;
+    }
+    .experiencecard{
+        flex-direction: column;
+    }
+    .competencetitle{
+        width: 100%;
+    }
+    .competencetitle_head{
+        margin:4%;
+    }
 }

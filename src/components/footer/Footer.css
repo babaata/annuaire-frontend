@@ -10,25 +10,24 @@
 .footer__content__top {
     display: flex;
     justify-content: flex-start;
-    flex-direction:column;
     align-items: center;
     margin-bottom: 2%;
 }
 
 .footer__content__top .social__media {
-    width: 100%;
+    width: 15%;
 }
 
 .footer__content__top .social__media a i {
     width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    margin-right: 5%;
-    position: relative;
-    border-radius: 50px;
-    line-height: 40px;
-    text-align: center;
-    color: black;
+height: 40px;
+background-color: #ffffff;
+margin-right: 5%;
+position: relative;
+border-radius: 50px;
+line-height: 40px;
+text-align: center;
+color: #5F439A;
 }
 
 .footer__content__top .news__letter__form button i {
@@ -44,14 +43,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    /* TODO A FAIRE EN MOBILE */
-    /* width: 200%; */
+    width: 200%;
     padding: 5% 0%;
     padding-right: 15%;
     padding-left: 15%;
     border-radius: 4px;
-    /* margin-left: 280%; */
-    /* display: none; */
+    margin-left: 210%;
 }
 .footer__content__top .news__letter__form button{
 
@@ -78,15 +75,53 @@
     display: flex;
     justify-content: space-between;
     width: 15%;
-        display: none;
 }
 .footer__content__bottom ul li a{
     text-decoration: none;
     color: white;
 }
 
-@media screen and (min-width: 768px) {
-  .footer__content__top {
-        flex-direction: row;
+/*Mobile Responsive*/
+@media screen and  (min-width:360px) and (max-width:768px)  {
+    .footer__content__top{
+        flex-direction: column;
+    }
+    .footer__content__top .social__media{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        width: 50%;
+    }
+    .footer__content__top .news__letter__form{
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        
+    }
+    .footer__content__bottom{
+        flex-direction: column-reverse;
+    }
+    .footer__content__bottom ul{
+        width: 100%;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__content__bottom ul li {
+        text-align: center;
+       width: 40%;
+    }
+    .footer__content__bottom ul li a {
+       font-size: 20px;
+    }
+    .footer__content__bottom span{
+        text-align: center;
+        padding-top: 10px;
+        border-top: 1px solid #c0a0ffd6;
+    }
+    .footer hr{
+        display: none;
     }
 }
