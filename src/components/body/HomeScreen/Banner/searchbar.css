@@ -72,13 +72,17 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
-    width: 50%;
     margin: 0;
+    width: 100%;
   }
   .search__bar .inputBar {
     margin: 10px;
+    width: 96%;
+    border: 1px solid #666666;
+    padding: 3%;
+    border-radius: 20px;
   }
-  .search__bar a{
+  .search__bar a {
     margin-top: 20px;
   }
 }
