@@ -3,8 +3,10 @@ import "./register.style.css";
 import { Formik, Form, Field } from "formik";
 import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../../redux/actions/authAction";
+import { useHistory } from "react-router";
+import { useState } from "react";
 
 const Register = () => {
   const SchemaValidation = Yup.object().shape({
@@ -38,9 +40,15 @@ const Register = () => {
       .required("Ce champ est requis !"),
   });
 
+  const {notify} = useSelector(state => state)
+
+
+
+  const history = useHistory()
   const dispatch = useDispatch();
-  const submitForm = (values) => {
-    dispatch(register(values));
+  const submitForm = async (values) => {
+   await dispatch(register(values));
+    history.push('/')
   };
 
   return (
@@ -103,6 +111,7 @@ const Register = () => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
+                    {notify.email ? <span className="text-danger">{notify.email }</span> : ''}
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
@@ -117,6 +126,7 @@ const Register = () => {
                       type="text"
                       placeholder="Saisissez votre pseudo"
                     />
+                    {notify.username ? <span className="text-danger">{notify.username}</span> : ''}
                     {errors.username && touched.username ? (
                       <div className="text-danger">{errors.username}</div>
                     ) : null}
@@ -145,6 +155,7 @@ const Register = () => {
                       type="password"
                       placeholder="Mot de passe"
                     />
+                    {notify.password ? <span className="text-danger">{notify.password }</span> : ''}
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}

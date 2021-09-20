@@ -2,12 +2,25 @@ import React, { useState } from "react";
 import "./Menubar.css";
 import Login from "../../../auth/Login/login.component";
 import Register from "../../../auth/Register/register.component";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { logout } from "../../../../redux/actions/authAction";
+import { useHistory } from "react-router";
 
 export default function Menubar() {
-  const token = localStorage.getItem("firstLogin");
 
+  const token = localStorage.getItem('firstLogin')
+
+
+  const history = useHistory('/')
+  const dispatch = useDispatch()
+  function handleShow() {
+      dispatch(logout(token))
+      history.push('/')
+  }
+
+  
   return (
     <div className="menubar">
       <div className="logo">
@@ -19,7 +32,7 @@ export default function Menubar() {
             <>
               <li>
                 <i
-                  className="fas fa-user-circle"
+                  className="pr-4 fa-3x fas fa-user-circle"
                   style={{
                     color: "#5F439A",
                     transform: "translateY(-6px)",
@@ -31,7 +44,7 @@ export default function Menubar() {
               </li>
 
               <li>
-                <Button className={"btn-outlined"} onClick={logout()}>
+                <Button className={"btn-outlined"} onClick={() => handleShow()}>
                   Deconnection
                 </Button>
               </li>

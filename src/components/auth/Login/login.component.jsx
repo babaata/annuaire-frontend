@@ -5,6 +5,7 @@ import { Field, Form, Formik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/authAction";
+import { useHistory } from "react-router";
 
 const Login = () => {
   const SchemaValidation = Yup.object().shape({
@@ -18,9 +19,15 @@ const Login = () => {
       .required("Ce champ est requis !"),
   });
 
+  const history = useHistory();
+  const token = localStorage.getItem("firstLogin");
+  console.log("token", token);
+
   const dispatch = useDispatch();
-  const submitForm = (values) => {
-    dispatch(login(values));
+
+  const submitForm = async (values) => {
+    await dispatch(login(values));
+    history.push("/");
   };
 
   return (
