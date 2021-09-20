@@ -18,9 +18,16 @@ const Login = () => {
       .required("Ce champ est requis !"),
   });
 
-  const dispatch = useDispatch();
-  const submitForm = (values) => {
-    dispatch(login(values));
+
+  const history = useHistory()
+  const token = localStorage.getItem('firstLogin')
+  console.log("token", token);
+
+  const dispatch = useDispatch()
+
+  const submitForm = async (values) => {
+  await  dispatch(login(values))
+    history.push('/')
   };
 
   return (

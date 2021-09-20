@@ -67,6 +67,11 @@
     box-shadow: none!important;
 }
 
+.fas{
+    margin-right: 4px;
+    color: #5F439A;
+}
+
 @media screen and (min-width: 768px) {
 /* TODO : Les 2 boutons connexion/Inscription à  checker en mobile */
     .menubar {
