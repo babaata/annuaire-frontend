@@ -1,24 +1,40 @@
 .Banner {
-    background: url("./Acceuil.png");
-    min-width: 90vw;
-    height: 496px;
-    background-size: cover;
-    margin: 25px 25px 0 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
+  background: url("./Acceuil.png");
+  min-width: 90vw;
+  height: 496px;
+  background-size: cover;
+  margin: 25px 25px 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
 }
-.banner_content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
+.banner_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
 }
 
 .firstText {
-    color: #fff;
-    /* letter-spacing: -1.77px; */
-    margin-bottom: 50px;
+  color: #fff;
+  /* letter-spacing: -1.77px; */
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .Banner {
+    background: #fff;
+    margin: 0;
+    height: 300px;
+  }
+  .firstText {
+    font-size: 1.3rem;
+    text-align: left;
+    margin: 0 50px;
+    margin-top: 30px;
+    padding: 10px;
+    color: #5f439a;
+  }
 }
