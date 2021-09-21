@@ -101,10 +101,11 @@
 .form-title {
   text-align: center;
   font: normal normal 600 59px/80px Open Sans;
-  letter-spacing: -1.77px;
   color: #5F439A;
   opacity: 1;
   margin-bottom: 36px;
+  font-size: 40px;
+  letter-spacing: 1px;
 }
 
 .form-footer {
