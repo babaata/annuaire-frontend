@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProfiScreen.css";
+import "./ProfileScreen.css"
 function ProfileRightSide() {
   return <div></div>;
 }
