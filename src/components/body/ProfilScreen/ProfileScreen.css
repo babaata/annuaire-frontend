@@ -1,67 +1,83 @@
-.profile__info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5% 10%;
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 10%;
 }
-.profile__info .profile__btn{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+.profile__info .profile__btn {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
- .btns{
-    background-color: #5F439A;
-    padding: 0.5% 2%;
+.btns {
+  background-color: #5f439a;
+  padding: 0.5% 2%;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+}
+.bt.left {
+  margin-left: 19px;
+}
+.profil__center__content {
+  width: 100%;
+  margin-top: 2%;
+}
+.profil__left__side {
+  display: flex;
+  justify-content: space-evenly;
+}
+.profil__left__side .upload__photo .photo {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profil__left__side .upload__photo .photo img {
+  width: 350px;
+}
+.profil__left__side .upload__photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile__personal__info {
+  width: 50%;
+  padding: 3%;
+}
+.input_info label {
+  margin-left: 19px;
+  margin-bottom: 5px;
+  color: #5f439a;
+}
+.inputbar {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.input_info {
+  margin-bottom: 4%;
+}
+.inputbar i {
+  color: #cfc9e2;
+}
+
+.added_compo {
+  border: 1px solid #bdb4d7;
+  padding: 5%;
+  width: 96%;
+}
+.add_experience {
+  background: #af3862;
+  padding: 2px;
+  color: #fff;
+  text-decoration: none;
+}
+.add_experience:hover{
     color: #fff;
-    border-radius: 5px;
-    border:none;
-    font-size: 20px;
-
 }
-.bt.left{
-    margin-left:19px;
-}
-.profil__center__content{
-    width: 100%;
-    margin-top: 2%;
-}
-.profil__left__side{
-    display: flex;
-    justify-content: space-evenly;
-}
-.profil__left__side .upload__photo .photo{
-    width: 350px;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 50%;
-}
-.profil__left__side .upload__photo .photo img{
-    width: 350px;
-
-}
-.profil__left__side .upload__photo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.profile__personal__info{
-    width: 50%;
-    padding: 3%;
-}
-.input_info label{
-    margin-left: 19px;
-    margin-bottom: 5px;
-color: #5F439A;
-}
-.inputbar{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-.input_info{
-    margin-bottom: 4%;
-}
-.inputbar i{
-    color: #CFC9E2;
+.text_resize{
+    resize: none;
 }
