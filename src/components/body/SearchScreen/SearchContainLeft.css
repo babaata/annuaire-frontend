@@ -1,0 +1,32 @@
+.searchContainleft{
+    width: 30%;
+}
+.header_title{
+    color:#5F439A;
+    font-size: 45px;
+    padding: 20px;
+    font-family: "Open sans semiBold";
+}
+.fonction_name{
+    color: #5F439A;
+    width: 60%;
+    font-size: 20px;
+    margin-left: 26px;
+    background: #F3F3F3;
+    margin-bottom: 1%;
+    border-radius: 5px;
+}
+.fonction_name p{
+    margin-left: 5px;
+    font-size: 16px;
+    padding: 4%;
+}
+.activepoint {
+    background-image: linear-gradient(to right top, #5f439a, #533a86, #473272, #3b2a5f, #30224d);
+    color: #fff;
+}
+@media screen and (min-width:360px) and (max-width:768px) {
+    .searchContainleft{
+        display: none;
+    }
+}

@@ -1,5 +1,6 @@
 .menubar {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 31px 80px;
     width: 100%;
@@ -9,18 +10,25 @@
     -moz-box-shadow: -3px 6px 8px 3px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+    text-align: center;
+}
+
 .logo img {
     width: 180px;
     transform: translate(0, -8px);
 }
 
 .link_button {
-    width: 23%;
+    width: auto;
     margin: auto 6px;
 }
 
 .link_button ul {
     display: flex;
+    padding: 0;
+    justify-content: center;
+    align-content: center;
 }
 
 .link_button ul > li {
@@ -38,4 +46,45 @@
 .active {
     background-color: #5F439A;
     color: #ffff;
+}
+
+.btn-outlined {
+    margin-right: 5px;
+    background-color: transparent !important;
+    text-decoration: none;
+    padding: 5px 28px;
+    min-height: 34px;
+    cursor: pointer;
+    color: #5F439A !important;
+    border: 3px solid #5F439A !important;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+
+
+.btn-register:hover, .btn-register:focus {
+    box-shadow: none!important;
+}
+
+.fas{
+    margin-right: 4px;
+    color: #5F439A;
+}
+
+@media screen and (min-width: 768px) {
+/* TODO : Les 2 boutons connexion/Inscription à  checker en mobile */
+    .menubar {
+        flex-direction: row;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .menubar {
+        height: 150px;
+        padding: 31px;
+        justify-content: center;
+        align-content: center;
+    }
 }

@@ -3,21 +3,30 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import "./modal.style.css";
+import { useDispatch, useSelector } from "react-redux";
+import Alert from "./alert/Alert";
 
-const ModalComponent = ({ title, content, type }) => {
+const ModalComponent = ({ title, btnName, content, type }) => {
   const [show, setShow] = useState(false);
+
+const {error} = useSelector(state => state)
+const {auth} = useSelector(state => state)
+const {notify} = useSelector(state => state)
 
   function handleShow() {
     setShow(true);
   }
 
   return (
+
+  <>
+      <Alert/>
     <>
       <Button
-        className={type === "login" ? "btn-login" : "btn-register"}
+        className={type === "fill" ? "btn-filled" : "btn-outlined"}
         onClick={() => handleShow()}
       >
-        {title}
+        {btnName}
       </Button>
 
       <Modal
@@ -26,12 +35,19 @@ const ModalComponent = ({ title, content, type }) => {
         fullscreen={true}
         onHide={() => setShow(false)}
       >
+
+
+      <span className="text-danger text-center mt-2 h4">{title === "Inscription" ?  <span>{notify.error ? notify.error.message : ''}</span> : <span>{notify.error ? notify.error.message : ''}</span> }</span>
+
         <div>
-          <span className="float-end close" onClick={() => setShow(false)}>
+          <span className="float-end close" onClick={() => {
+            setShow(false)
+            // dispatch({type: "NOTIFY", payload:{}})
+          }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="35"
-              height="35"
+              width="25"
+              height="25"
               fill="currentColor"
               className="bi bi-x-lg"
               viewBox="0 0 16 16"
@@ -43,13 +59,14 @@ const ModalComponent = ({ title, content, type }) => {
         <Modal.Body>
           <div className="content">
             <div className="formContainer">
-              <div className="form-title">{title}</div>
+              {title ? <div className="form-title">{title}</div> : <></>}
               {content}
             </div>
           </div>
         </Modal.Body>
       </Modal>
     </>
+  </>
   );
 };
 

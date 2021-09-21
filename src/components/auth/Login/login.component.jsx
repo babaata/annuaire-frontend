@@ -1,41 +1,101 @@
 import "./login.style.css";
-import ModalComponent from "../modal.component";
-import { Button, Form } from "react-bootstrap";
+import ModalComponent from "../../modal.component";
+import * as Yup from "yup";
+import { Field, Form, Formik } from "formik";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../../redux/actions/authAction";
+import { useHistory } from "react-router";
 
 const Login = () => {
+  const SchemaValidation = Yup.object().shape({
+    username: Yup.string()
+      .min(2, "trop court!")
+      .max(50, "trop long!")
+      .required("Ce champ est requis !"),
+    password: Yup.string()
+      .min(2, "trop court!")
+      .max(50, "trop long!")
+      .required("Ce champ est requis !"),
+  });
+
+  const [typePass, setTypePass] = useState(true)
+
+  const history = useHistory();
+  const token = localStorage.getItem("firstLogin");
+
+  const dispatch = useDispatch();
+
+  const submitForm = async (values) => {
+    await dispatch(login(values));
+    history.push("/");
+  };
+
   return (
     <>
       <ModalComponent
         type="login"
+        btnName="Connexion"
         title={"Connexion"}
         content={
           <>
-            <Form>
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label>E-mail</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Saisissez votre email"
-                />
-              </Form.Group>
+            <Formik
+              validationSchema={SchemaValidation}
+              onSubmit={(e) => submitForm(e)}
+              initialValues={{
+                username: "",
+                password: "",
+              }}
+            >
+              {({handleBlur, touched, errors }) => (
+                <Form>
+                  <div className="inputGroup">
+                    <label className="form-label">Login</label>
+                    <Field
+                      required
+                      onBlur={handleBlur}
+                      className="form-control form-input"
+                      name="username"
+                      type="text"
+                      placeholder="Saisissez votre pseudo"
+                    />
+                    {errors.username && touched.username ? (
+                      <div className="text-danger">{errors.username}</div>
+                    ) : null}
+                  </div>
 
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Mot de passe</Form.Label>
-                <Form.Control type="password" placeholder="Mot de passe" />
-              </Form.Group>
-              <div className="btn-submit-container">
-                <Button
-                  className="btn-submit form-control"
-                  variant="primary"
-                  type="submit"
-                >
-                  Se connecter
-                </Button>
-              </div>
-            </Form>
-            <div className="form-footer">
-              Mot de pass oublié ? <a href="#">Cliquez ici</a>
-            </div>
+                  <div className="login inputGroup">
+                    <label className="form-label">Mot de passe</label>
+                    <Field
+                      required
+                      onBlur={handleBlur}
+                      className="form-control form-input"
+                      name="password"
+                      type={typePass ? "password" : "text"}
+                      placeholder="Mot de passe"
+                    />
+            <small onClick={()=> setTypePass(!typePass)}>
+              {typePass ? <i class=" fas fa-eye"></i> :  <i class="fas fa-eye-slash"></i> }
+            </small>  
+                    {errors.password && touched.password ? (
+                      <div className="text-danger">{errors.password}</div>
+                    ) : null}
+                  </div>
+
+                  <div className="btn-submit-container">
+                    <button
+                      className="btn-submit form-control form-input"
+                      type="submit"
+                    >
+                      Se connecter
+                    </button>
+                  </div>
+                  <div className="form-footer">
+                    Mot de pass oublié ? <a href="#">Cliquez ici</a>
+                  </div>
+                </Form>
+              )}
+            </Formik>
           </>
         }
       />

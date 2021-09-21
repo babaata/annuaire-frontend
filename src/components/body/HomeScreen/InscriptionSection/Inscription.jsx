@@ -1,14 +1,17 @@
 import React from "react";
 import "./Inscription.css";
 
-function Inscription() {
+function Inscription(props) {
   return (
     <div
       className="inscription"
-      style={{ backgroundImage: `url("./images/motif.png")` }}
+      style={{
+        backgroundImage: `url("./images/motif.png")`,
+        margin: `${props.margin}`,
+      }}
     >
-      <h2>Vous êtes Guinéen, vous avez des compétences à faire valoir ?</h2>
-      <button>Inscrivez-vous</button>
+      <h2>{props.text}</h2>
+      {props.status == "true" ? <button>Inscrivez-vous</button> : ""}
     </div>
   );
 }

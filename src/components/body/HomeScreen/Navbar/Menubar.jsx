@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Menubar.css";
+import Login from "../../../auth/Login/login.component";
+import Register from "../../../auth/Register/register.component";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { Button } from "react-bootstrap";
+import { logout } from "../../../../redux/actions/authAction";
+import { useHistory } from "react-router";
+
 export default function Menubar() {
+
+  const token = localStorage.getItem('firstLogin')
+
+
+  const history = useHistory('/')
+  const dispatch = useDispatch()
+  function handleShow() {
+      dispatch(logout(token))
+      history.push('/')
+  }
+
+  
   return (
     <div className="menubar">
       <div className="logo">
@@ -8,14 +28,37 @@ export default function Menubar() {
       </div>
       <div className="link_button">
         <ul>
-          <li>
-            <a href="/">Connexion</a>
-          </li>
-          <li>
-            <a href="/" className="active">
-              Inscription
-            </a>
-          </li>
+          {token ? (
+            <>
+              <li>
+                <i
+                  className="pr-4 fa-3x fas fa-user-circle"
+                  style={{
+                    color: "#5F439A",
+                    transform: "translateY(-6px)",
+                    fontSize: "53px",
+                    marginRight: "39px",
+                    cursor: "pointer",
+                  }}
+                />
+              </li>
+
+              <li>
+                <Button className={"btn-outlined"} onClick={() => handleShow()}>
+                  Deconnection
+                </Button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Login />
+              </li>
+              <li>
+                <Register />
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

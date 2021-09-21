@@ -1,24 +1,32 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-// Importing the Bootstrap CSS
+import Home from "./Pages/Home";
+import SearchPage from "./Pages/SearchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Banner from "./components/body/HomeScreen/Banner/Banner";
-import Menubar from "./components/body/HomeScreen/NavBar/Menubar";
-import Competences from "./components/body/HomeScreen/CompetenceSection/Competences";
-import Inscription from "./components/body/HomeScreen/InscriptionSection/Inscription";
-import PopularProfil from "./components/body/HomeScreen/profils/PopularProfil";
-import StatistiqueSection from "./components/body/HomeScreen/StatistiqueSection/StatistiqueSection";
-import Footer from "./components/footer/Footer";
+import ProfilList from "./Pages/ProfilList";
+import ProfiDetails from "./Pages/ProfilDetails";
+import Alert from "./components/alert/Alert";
+
+import { useSelector } from "react-redux";
+import NotFound from './components/NotFound';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <Menubar/>
-      <Banner />
-      <PopularProfil />
-      <Inscription />
-      <Competences />
-      <StatistiqueSection />
-      <Footer />
+    <div>
+      {/* <Alert /> */}
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/" exact component={Home } />
+            <Route path="/search-page" exact component={SearchPage} />
+            <Route path="/prof-list" exact component={ProfilList} />
+            <Route path="/detail-section" exact component={ProfiDetails} />
+          <Route path="*" exact component={NotFound} />
+        </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
