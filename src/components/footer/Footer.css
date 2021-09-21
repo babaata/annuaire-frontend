@@ -60,6 +60,7 @@ color: #5F439A;
     border:none;
     width: 100%;
     margin-right: 3%;
+    outline: none;
 }
 
 .footer__content__bottom {
@@ -121,6 +122,9 @@ color: #5F439A;
     }
     .footer hr{
         display: none;
+    }
+    .news__letter{
+        width: 100%;
     }
 }
 
