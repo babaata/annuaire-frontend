@@ -1,3 +1,8 @@
+.card__profile__container {
+    display: flex;
+    justify-content: center;
+}
+
 .card__profile {
     max-width: 300px;
     width: 100%;
@@ -60,7 +65,7 @@
     transform: scale(1.05);
 }
 
-.card__info>.card__info-job {
+.card__info > .card__info-job {
     position: absolute;
     right: 8px;
     top: 8px;
@@ -80,10 +85,10 @@
     margin-top: auto;
 }
 
-.card__info__bottom>h5 {
+.card__info__bottom h5 {
     margin-top: 0;
     margin-bottom: 2.5px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .card__info__bottom i {
@@ -92,7 +97,7 @@
     font-size: 19px;
 }
 
-.card__info__bottom>span {
+.card__info__bottom > span {
     font-size: 16px;
 }
 
@@ -115,6 +120,11 @@
     .card__profil__img {
         height: 300px;
     }
+
+    .card__info__bottom h5 {
+        font-size: 20px;
+    }
+
     .card__info {
         top: -300px;
         height: 300px;
