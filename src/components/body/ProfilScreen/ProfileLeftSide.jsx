@@ -61,6 +61,7 @@ function ProfileLeftSide() {
             </div>
           </div>
           <button className="btns left">Enregistrer les modifications</button>
+         
         </form>
       </div>
 

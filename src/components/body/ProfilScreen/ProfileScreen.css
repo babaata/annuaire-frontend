@@ -29,15 +29,18 @@
 .profil__left__side{
     display: flex;
     justify-content: space-evenly;
+    
 }
 .profil__left__side .upload__photo .photo{
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     border-radius: 50%;
+    box-shadow: 0px 10px 10px #00000029;
 }
 .profil__left__side .upload__photo .photo img{
-    width: 350px;
+    width: 300px;
+    line-height: 300px;
 
 }
 .profil__left__side .upload__photo{
@@ -62,6 +65,81 @@ color: #5F439A;
 .input_info{
     margin-bottom: 4%;
 }
+
 .inputbar i{
     color: #CFC9E2;
+}
+.nextBtn{display: none;}
+.btns.noBg{
+    background:none;
+    color:#5F439A;
+    border:2px solid #5F439A;
+}
+
+@media screen and (min-width: 360px) and (max-width:768px) {
+    .profil__left__side{
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+    .profil__center__content{
+        justify-content: center;
+    }
+    .profile__personal__info{
+        width: 100%;
+        padding: 0;
+    }
+    .profil__left__side .upload__photo .photo {
+        width: 250px;
+        height: 250px;
+    }
+    .profil__left__side .upload__photo .photo img{
+        width: 250px;
+    }
+    .profil__left__side .upload__photo{
+        align-items: center;
+    }
+    .profil__left__side .upload__photo i{
+        display: none;
+    }
+    .profil__left__side .upload__photo p{
+        color:#5F439A;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .profile__info .profile__btn .btns{
+        display: none;
+    }
+    .profile__personal__info::before{
+        content:"Informations personnelles";
+        display: flex;
+        justify-content: center;
+        color: #5F439A;
+        font-size: 22.5px;
+        font-family: "Open sans semiBold";
+        font-weight: bold;
+    }
+    .profile__personal__info{
+        margin-top: 10%;
+    }
+    .input_info label{
+        font-size: 15px;
+    }
+    .btns.left{
+        margin-left: 20px;
+        text-align: center;
+        font-size: 19px;
+    }
+    .nextBtn{
+        display: block;
+        margin: 4% 4px;
+        width: 100%;
+        background: none;
+        border: none;
+        color:#5F439A;
+    }
+    .nextBtn > i{
+        margin-left: 5px;
+    }
+
 }
