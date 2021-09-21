@@ -8,7 +8,7 @@ function PopularProfil() {
     <div className="profiles my-5">
       <h1>Profils Populaires</h1>
       <div className="card__section container my-5">
-        <div className="row justify-content-center">
+        <div className="row">
           <div className="col-6 col-lg-3">
             <CardProfile image="./images/abdoul.jpeg" color="orange" />
           </div>
