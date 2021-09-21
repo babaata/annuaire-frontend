@@ -18,7 +18,7 @@ function SearchBar() {
         <input placeholder="Pays de résidence" />
       </div>
       <Link to="/search-page">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search" style={{color:"#fff"}}></i>
       </Link>
     </div>
   );
