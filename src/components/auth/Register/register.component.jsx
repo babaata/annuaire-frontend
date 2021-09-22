@@ -121,7 +121,7 @@ const Register = ({ button }) => {
                     />
                     {notify.error ? (
                       <span className="text-danger">
-                        {notify.error.errors.email}
+                        {notify?.error?.errors?.email}
                       </span>
                     ) : (
                       ""
@@ -171,7 +171,7 @@ const Register = ({ button }) => {
                     />
                     {notify.error ? (
                       <span className="text-danger">
-                        {notify.error.errors.password}
+                        {notify?.error?.errors?.password}
                       </span>
                     ) : (
                       ""
