@@ -95,7 +95,7 @@ const Login = () => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <div className="loader"></div> : 'Se connecter' } 
+                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Se connecter' } 
                     </button>
                   </div>
                   <div className="form-footer">

@@ -206,7 +206,7 @@ const Register = ({ button }) => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <div class="loader"></div> : 'Créer mon compte' } 
+                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Créer mon compte' } 
                     </button>
                   </div>
                 </Form>
