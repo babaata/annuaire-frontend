@@ -6,19 +6,19 @@ function SearchBar() {
   return (
     <div className="search__bar px-0">
       <div className="inputBar ">
-        <i class="fas fa-user"></i>
+        <i className="fas fa-user"></i>
         <input placeholder="Profession" />
       </div>
       <div className="inputBar ">
-        <i class="fas fa-folder"></i>
+        <i className="fas fa-folder"></i>
         <input placeholder="Compétences" />
       </div>
       <div className="inputBar">
         <i className="fas fa-map-marker-alt "></i>
         <input placeholder="Pays de résidence" />
       </div>
-      <Link to="/search-page">
-        <i class="fas fa-search"></i>
+      <Link to="/recherche">
+        <i class="fas fa-search loupe"></i>
       </Link>
     </div>
   );

@@ -7,24 +7,24 @@ import { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { logout } from "../../../../redux/actions/authAction";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Menubar() {
+  const token = localStorage.getItem("firstLogin");
 
-  const token = localStorage.getItem('firstLogin')
-
-
-  const history = useHistory('/')
-  const dispatch = useDispatch()
+  const history = useHistory("/");
+  const dispatch = useDispatch();
   function handleShow() {
-      dispatch(logout(token))
-      history.push('/')
+    dispatch(logout(token));
+    history.push("/");
   }
 
-  
   return (
     <div className="menubar">
       <div className="logo">
-        <img src="./images/logo.png" alt="logo" />
+        <Link to="/">
+          <img src="../images/logo.png" alt="logo" />
+        </Link>
       </div>
       <div className="link_button">
         <ul>

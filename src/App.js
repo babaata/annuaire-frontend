@@ -9,6 +9,7 @@ import Alert from "./components/alert/Alert";
 
 import { useSelector } from "react-redux";
 import NotFound from './components/NotFound';
+import CreateProfilePage from "./Pages/CreateProfilePage";
 
 function App() {
 
@@ -19,12 +20,13 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/" exact component={Home } />
-            <Route path="/search-page" exact component={SearchPage} />
-            <Route path="/prof-list" exact component={ProfilList} />
-            <Route path="/detail-section" exact component={ProfiDetails} />
-          <Route path="*" exact component={NotFound} />
-        </Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/recherche" exact component={SearchPage} />
+            <Route path="/profils" exact component={ProfilList} />
+            <Route path="/profils/:profilsId" exact component={ProfiDetails} />
+            <Route path="/profile" exact component={CreateProfilePage} />
+            <Route path="*" exact component={NotFound} />
+          </Switch>
         </div>
       </Router>
     </div>

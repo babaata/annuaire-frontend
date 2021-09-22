@@ -61,8 +61,6 @@
     opacity: 1;
 }
 
-
-
 .btn-register:hover, .btn-register:focus {
     box-shadow: none!important;
 }
@@ -73,7 +71,6 @@
 }
 
 @media screen and (min-width: 768px) {
-/* TODO : Les 2 boutons connexion/Inscription à  checker en mobile */
     .menubar {
         flex-direction: row;
     }
