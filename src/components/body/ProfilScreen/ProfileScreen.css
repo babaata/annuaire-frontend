@@ -127,6 +127,16 @@
   border-radius: 5px;
   margin-bottom: 4%;
 }
+/*Tablette*/
+@media screen and (min-width: 768px) and (max-width:968px) {
+  .info__title{
+    font-size: 25px !important;
+  }
+  .profile__personal__info{
+    margin-top: 5% !important;
+  }
+}
+/*Mobile Responsive*/
 @media screen and (min-width: 360px) and (max-width: 768px) {
   .mg-left {
     margin-left: 0;
