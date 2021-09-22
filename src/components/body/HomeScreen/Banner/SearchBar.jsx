@@ -6,11 +6,11 @@ function SearchBar() {
   return (
     <div className="search__bar px-0">
       <div className="inputBar ">
-        <i class="fas fa-user"></i>
+        <i className="fas fa-user"></i>
         <input placeholder="Profession" />
       </div>
       <div className="inputBar ">
-        <i class="fas fa-folder"></i>
+        <i className="fas fa-folder"></i>
         <input placeholder="Compétences" />
       </div>
       <div className="inputBar">
@@ -18,7 +18,7 @@ function SearchBar() {
         <input placeholder="Pays de résidence" />
       </div>
       <Link to="/search-page">
-        <i class="fas fa-search" style={{color:"#fff"}}></i>
+        <i className="fas fa-search" style={{color:"#fff"}}></i>
       </Link>
     </div>
   );
