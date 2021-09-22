@@ -10,6 +10,8 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 
 const Register = ({ button }) => {
+  const [loader, setLoader] = useState(false)
+
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
       .min(2, "trop court!")
@@ -46,7 +48,9 @@ const Register = ({ button }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const submitForm = async (values) => {
+    setLoader(true)
     await dispatch(register(values));
+    setLoader(false);
     history.push("/");
   };
 
@@ -202,7 +206,7 @@ const Register = ({ button }) => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      Créer mon compte
+                      { loader ? <div class="loader"></div> : 'Créer mon compte' } 
                     </button>
                   </div>
                 </Form>
