@@ -4,13 +4,13 @@ import "./StatistiqueSection.css";
 
 function StatistiqueSection() {
   return (
-    <div className="statistique container my-5">
-      <div className="row">
-        <div className="col-12 col-lg-6 statistique-column-container">
+    <div className="statistique container my-3">
+      <div className="row mb-5">
+        <div className="col-12 col-lg-6 statistique-column-container py-1">
           <StatistiqueCard number="100 000" name="Utilisateurs" color="red" />
           <StatistiqueCard number="200" name="Profession" color="brown" />
         </div>
-        <div className="col-12 col-lg-6 statistique-column-container">
+        <div className="col-12 col-lg-6 statistique-column-container py-1">
           <StatistiqueCard number="2000" name="Compétences" color="green" />
           <StatistiqueCard
             number="100"
