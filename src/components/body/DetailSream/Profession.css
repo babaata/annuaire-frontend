@@ -54,6 +54,7 @@
 .competenceComponent_global{
     background:#F3F3F3;
     width: 100%;
+    border-radius: 5px;
 }
 .competenceComponent_global > h2{
     padding: 0;
@@ -88,7 +89,7 @@
     margin:5%;
 }
 .detailleft{
-    width: 75%;
+    width: 75% !important;
 }
 .experienceComponent{
     background: #F3F3F3;
@@ -132,17 +133,21 @@
 }
 
 /*Tablette*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width:968px) {
     .competenceComponent_global{
         width: 100% !important;
-        
+
+    }
+    .experienceComponent{
+        width: 100% !important;
     }
     .detailleft{
-        width: 75% !important;
+        width: 100% !important;
     }
     .langue__section span{
         padding: 1%;
     }
+
 }
 
 /*Mobile Responsive*/
@@ -167,7 +172,7 @@
         justify-content: center;
     }
     .experienceComponent{
-        width: 340px;
+        width: 320px;
         margin-bottom: 10px;
     }
     .experiencecard{
@@ -175,6 +180,9 @@
     }
     .competencetitle{
         width: 100%;
+    }
+    .competencetitle > p{
+        font-size: 15px;
     }
     .competencetitle_head{
         margin:4%;
