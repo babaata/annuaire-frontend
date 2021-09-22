@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProfileLeftSide from "./ProfileLeftSide";
 import ProfileRightSide from "./ProfileRightSide";
 import "./ProfileScreen.css";
@@ -13,6 +13,8 @@ function ProfileInfo() {
     setbtnVal(1);
     console.log(btnVal);
   };
+  useEffect(() => {}, []);
+
   return (
     <div className="profile__info">
       <div className="profile__btn ">
@@ -31,12 +33,12 @@ function ProfileInfo() {
       </div>
       <div className="profil__center__content">
         {btnVal == 0 ? <ProfileLeftSide /> : <ProfileRightSide />}
-        <button className="nextBtn" onClick={handleClickleft}>
-          Suivant<i className="fas fa-caret-right"></i>
-        </button>
-
-        <button className="nextBtn" onClick={handleClickright}>
-          Précedent<i className="fas fa-caret-left"></i>
+        <button
+          className="nextBtn"
+          onClick={btnVal == 0 ? handleClickright : handleClickleft}
+        >
+          {btnVal == 0 ? "Suivant" : "Précedent"}
+          <i className={`fas fa-caret-${btnVal == 0 ? "right" : "left"}`}></i>
         </button>
       </div>
     </div>

@@ -116,7 +116,7 @@ const Register = () => {
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
-                  <div className="inputGroup">
+                  <div className="inputGrou
                     <label className="form-label">Pseudo</label>
                     <Field
                       required

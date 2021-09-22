@@ -17,7 +17,9 @@
   font-size: 20px;
   margin-right: 1.5%;
 }
-
+.search__bar .fa-search{
+  color:#fff;
+}
 .search__bar .inputBar input {
   border: none;
   background: none;
