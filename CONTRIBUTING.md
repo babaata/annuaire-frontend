@@ -7,6 +7,10 @@
 ```sh
 git remote add upstream `https://github.com/babaata/annuaire-frontend.git`
 ```
+ou
+```sh
+git remote add upstream git://github.com/babaata/annuaire-frontend.git
+```
 
 4. Verifier les remotes URL
 
