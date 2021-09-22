@@ -160,13 +160,13 @@ const Register = ({ button }) => {
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {notify.error ? <span>(
+                    {/* {notify.error ? <span>(
                       <span className="text-danger">
                         {notify.error.errors.password}
                       </span>
                     )</span> : (
                       ""
-                    )}
+                    )} */}
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}

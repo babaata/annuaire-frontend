@@ -9,7 +9,7 @@ const Alert = () => {
 
   return (
     <div>                                                     
-      {notify.loading &&  <Loading/> }
+      {notify.loading &&  '..' }
     </div> 
   );
 }
