@@ -9,7 +9,7 @@ function SearchPage() {
     <div>
       <Menubar page="profdetails" />
       <Inscription
-        status="false"
+        status={false}
         margin="3%"
         text="Resultat de Recherche:UX design"
       />
