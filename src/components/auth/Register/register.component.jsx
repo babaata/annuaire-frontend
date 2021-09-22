@@ -18,10 +18,10 @@ const Register = () => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    username: Yup.string()
-      .min(2, "trop court!")
-      .max(50, "trop long!")
-      .required("Ce champ est requis !"),
+    // username: Yup.string()
+    //   .min(2, "trop court!")
+    //   .max(50, "trop long!")
+    //   .required("Ce champ est requis !"),
     telephone: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
@@ -40,15 +40,13 @@ const Register = () => {
       .required("Ce champ est requis !"),
   });
 
-  const {notify} = useSelector(state => state)
+  const { notify } = useSelector((state) => state);
 
-
-  const history = useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const submitForm = async (values) => {
-
-   await dispatch(register(values));
-    history.push('/')
+    await dispatch(register(values));
+    history.push("/");
   };
 
   return (
@@ -66,7 +64,7 @@ const Register = () => {
                 nom: "",
                 prenom: "",
                 email: "",
-                username: "",
+                // username: "",
                 telephone: "",
                 password: "",
               }}
@@ -111,12 +109,18 @@ const Register = () => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-                    {notify.error ? <span className="text-danger">{notify.error.errors.email }</span> : ''}
+                    {notify.error ? (
+                      <span className="text-danger">
+                        {notify.error.errors.email}
+                      </span>
+                    ) : (
+                      ""
+                    )}
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
-                  <div className="inputGrou
+                  {/* <div className="inputGroup">
                     <label className="form-label">Pseudo</label>
                     <Field
                       required
@@ -130,7 +134,7 @@ const Register = () => {
                     {errors.username && touched.username ? (
                       <div className="text-danger">{errors.username}</div>
                     ) : null}
-                  </div>
+                  </div> */}
                   <div className="inputGroup">
                     <label className="form-label">Téléphone</label>
                     <Field
@@ -155,7 +159,13 @@ const Register = () => {
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {notify.error? <span className="text-danger">{notify.error.errors.password }</span> : ''}
+                    {notify.error ? (
+                      <span className="text-danger">
+                        {notify.error.errors.password}
+                      </span>
+                    ) : (
+                      ""
+                    )}
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}
