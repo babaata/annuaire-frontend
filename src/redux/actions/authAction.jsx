@@ -67,15 +67,7 @@ export const register = (data) => async (dispatch) => {
         payload: {
           error: res.data,
         }
-      })
-
-      // dispatch({
-      //   type: ERROR,
-      //   payload: {
-      //     error: res.data,
-      //   }
-      // })
-
+      }) 
    
     }
 

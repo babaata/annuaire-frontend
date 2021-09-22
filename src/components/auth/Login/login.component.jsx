@@ -51,7 +51,7 @@ const Login = () => {
                 password: "",
               }}
             >
-              {({ handleBlur, touched, errors }) => (
+              {({handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
                     <label className="form-label">Login</label>
@@ -61,7 +61,7 @@ const Login = () => {
                       className="form-control form-input"
                       name="email"
                       type="email"
-                      placeholder="Saisissez votre pseudo"
+                      placeholder="Saisissez votre email"
                     />
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
@@ -80,9 +80,9 @@ const Login = () => {
                     />
                     <small onClick={() => setTypePass(!typePass)}>
                       {typePass ? (
-                        <i class=" fas fa-eye"></i>
+                        <i className=" fas fa-eye"></i>
                       ) : (
-                        <i class="fas fa-eye-slash"></i>
+                        <i className="fas fa-eye-slash"></i>
                       )}
                     </small>
                     {errors.password && touched.password ? (
@@ -95,7 +95,7 @@ const Login = () => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <div class="loader"></div> : 'Se connecter' } 
+                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Se connecter' } 
                     </button>
                   </div>
                   <div className="form-footer">

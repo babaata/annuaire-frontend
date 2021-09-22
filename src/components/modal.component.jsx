@@ -10,9 +10,7 @@ const ModalComponent = ({ title, button, content, type}) => {
   const [show, setShow] = useState(false);
 
   const { notify } = useSelector((state) => state);
-
-  // console.log(notify.error.errors.email);
-
+  
   function handleShow() {
     setShow(true);
   }
@@ -61,9 +59,9 @@ const ModalComponent = ({ title, button, content, type}) => {
                   <div className="form-title">
                     {title}
                     <div className="text-danger text-center mt-2 h4">
-                      {/* <span>{notify.error ? notify.error.message : ""}</span> <br/> */}
+                      <span>{notify.error ? notify.error.message : ""}</span> <br/>
 
-                      <span>{notify.error ? notify.error.errors.email : ""}</span> <br/>
+                     
 
                     </div>
                   </div>

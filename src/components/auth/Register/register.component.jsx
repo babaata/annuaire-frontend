@@ -14,10 +14,6 @@ const Register = ({ button }) => {
   const [loader, setLoader] = useState(false)
   const [mail, setMail] = useState(false)
 
-  const token =  localStorage.getItem('firstLogin')
-
-console.log(token);
-
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
       .min(2, "trop court!")
@@ -52,25 +48,15 @@ console.log(token);
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const notify = useSelector(state => state)
-
-  console.log(notify);
-
-  const fetchData = async() =>{
-    const res = await notify
-
-    setMail(res.data)
-
-    console.log("esss", mail?.message);
-  }
+  const {notify} = useSelector(state => state)
 
   
   const submitForm = async (values, formik) => {
     setLoader(true)
     await dispatch(register(values))
     setLoader(false);
-    fetchData()
-    formik.setErrors({ email: "text" })
+
+    formik.setErrors({ email: notify.error?.errors?.email })
     history.push("/");
   };
 
@@ -79,6 +65,7 @@ console.log(token);
      <> 
      <ModalComponent
 
+type="register"
         button={
           button ? (
             button
@@ -142,26 +129,13 @@ console.log(token);
                       placeholder="Saisissez votre email"
                     />
               
-                    
+                      
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
-                  {/* <div className="inputGroup">
-                    <label className="form-label">Pseudo</label>
-                    <Field
-                      required
-                      onBlur={handleBlur}
-                      className="form-control form-input"
-                      name="username"
-                      type="text"
-                      placeholder="Saisissez votre pseudo"
-                    />
-                    {notify.error ? <span className="text-danger">{notify.error.errors.username}</span> : ''}
-                    {errors.username && touched.username ? (
-                      <div className="text-danger">{errors.username}</div>
-                    ) : null}
-                  </div> */}
+
+                  
                   <div className="inputGroup">
                     <label className="form-label">Téléphone</label>
                     <Field
@@ -171,9 +145,9 @@ console.log(token);
                       type="phone"
                       placeholder="Votre numero"
                     />
-                    {errors.telephone && touched.telephone ? (
+                    {errors.telephone && touched.telephone ? 
                       <div className="text-danger">{errors.telephone}</div>
-                    ) : null}
+                     : null}
                   </div>
 
                   <div className="inputGroup">
@@ -186,13 +160,13 @@ console.log(token);
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {/* {notify.error ? <span>(
+                    {notify.error ? <span>
                       <span className="text-danger">
                         {notify.error.errors.password}
                       </span>
-                    )</span> : (
+                    </span> : 
                       ""
-                    )} */}
+                    }
 
 
                     {errors.password && touched.password ? (
