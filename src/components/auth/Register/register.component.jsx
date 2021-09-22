@@ -111,7 +111,7 @@ const Register = () => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-                    {notify.error ? <span className="text-danger">{notify.error.errors.email }</span> : ''}
+                    {notify.error ? notify.error.errors.email === "" ? "" : <span className="text-danger">{notify.error.errors.email}</span> : ''}
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
