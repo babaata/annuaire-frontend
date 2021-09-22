@@ -41,12 +41,13 @@ const Register = ({ button }) => {
       .required("Ce champ est requis !"),
   });
 
-  const { notify } = useSelector((state) => state);
-
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const notify = useSelector(state => state)
+
   const submitForm = async (values) => {
-    await dispatch(register(values));
+    await dispatch(register(values))
     history.push("/");
   };
 
@@ -115,14 +116,7 @@ const Register = ({ button }) => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-                    {notify.error ? notify.error.errors.email === "" ? "" : <span className="text-danger">{notify.error.errors.email}</span> : ''}
-                    {notify.error ? (
-                      <span className="text-danger">
-                        {notify.error.errors.email}
-                      </span>
-                    ) : (
-                      ""
-                    )}
+                    
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
@@ -166,11 +160,11 @@ const Register = ({ button }) => {
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {notify.error ? (
+                    {notify.error ? <span>(
                       <span className="text-danger">
                         {notify.error.errors.password}
                       </span>
-                    ) : (
+                    )</span> : (
                       ""
                     )}
                     {errors.password && touched.password ? (

@@ -10,7 +10,7 @@ import { Button } from "react-bootstrap";
 
 const Login = () => {
   const SchemaValidation = Yup.object().shape({
-    username: Yup.string()
+    email: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
@@ -43,7 +43,7 @@ const Login = () => {
               validationSchema={SchemaValidation}
               onSubmit={(e) => submitForm(e)}
               initialValues={{
-                username: "",
+                email: "",
                 password: "",
               }}
             >
@@ -55,12 +55,12 @@ const Login = () => {
                       required
                       onBlur={handleBlur}
                       className="form-control form-input"
-                      name="username"
-                      type="text"
+                      name="email"
+                      type="email"
                       placeholder="Saisissez votre pseudo"
                     />
-                    {errors.username && touched.username ? (
-                      <div className="text-danger">{errors.username}</div>
+                    {errors.email && touched.email ? (
+                      <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
 
