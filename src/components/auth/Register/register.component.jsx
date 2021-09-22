@@ -18,10 +18,10 @@ const Register = () => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    username: Yup.string()
-      .min(2, "trop court!")
-      .max(50, "trop long!")
-      .required("Ce champ est requis !"),
+    // username: Yup.string()
+    //   .min(2, "trop court!")
+    //   .max(50, "trop long!")
+    //   .required("Ce champ est requis !"),
     telephone: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
@@ -66,7 +66,7 @@ const Register = () => {
                 nom: "",
                 prenom: "",
                 email: "",
-                username: "",
+                // username: "",
                 telephone: "",
                 password: "",
               }}
@@ -116,7 +116,7 @@ const Register = () => {
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
-                  <div className="inputGroup">
+                  {/* <div className="inputGroup">
                     <label className="form-label">Pseudo</label>
                     <Field
                       required
@@ -130,7 +130,7 @@ const Register = () => {
                     {errors.username && touched.username ? (
                       <div className="text-danger">{errors.username}</div>
                     ) : null}
-                  </div>
+                  </div> */}
                   <div className="inputGroup">
                     <label className="form-label">Téléphone</label>
                     <Field
