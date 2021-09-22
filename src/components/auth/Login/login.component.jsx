@@ -9,6 +9,8 @@ import { useHistory } from "react-router";
 import { Button } from "react-bootstrap";
 
 const Login = () => {
+  const [loader, setLoader] = useState(false)
+
   const SchemaValidation = Yup.object().shape({
     email: Yup.string()
       .min(2, "trop court!")
@@ -27,7 +29,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submitForm = async (values) => {
+    setLoader(true)
     await dispatch(login(values));
+    setLoader(false);
     history.push("/");
   };
 
@@ -91,7 +95,7 @@ const Login = () => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      Se connecter
+                      { loader ? <div class="loader"></div> : 'Se connecter' } 
                     </button>
                   </div>
                   <div className="form-footer">

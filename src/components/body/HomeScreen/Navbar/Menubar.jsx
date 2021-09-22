@@ -30,18 +30,20 @@ export default function Menubar() {
         <ul>
           {token ? (
             <>
+            <Link to="/profile" style={{listStyle:"none"}}>
               <li>
-                <i
-                  className="pr-4 fa-3x fas fa-user-circle"
-                  style={{
-                    color: "#5F439A",
-                    transform: "translateY(-6px)",
-                    fontSize: "53px",
-                    marginRight: "39px",
-                    cursor: "pointer",
-                  }}
-                />
+                  <i
+                    className="pr-4 fa-3x fas fa-user-circle"
+                    style={{
+                      color: "#5F439A",
+                      transform: "translateY(-6px)",
+                      fontSize: "53px",
+                      marginRight: "39px",
+                      cursor: "pointer",
+                    }}
+                  />
               </li>
+              </Link>
 
               <li>
                 <Button className={"btn-outlined"} onClick={() => handleShow()}>

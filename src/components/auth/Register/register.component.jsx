@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./register.style.css";
 import { Formik, Form, Field } from "formik";
 import ModalComponent from "../../modal.component";
@@ -8,8 +8,16 @@ import { register } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import Alert from "../../alert/Alert";
 
 const Register = ({ button }) => {
+  const [loader, setLoader] = useState(false)
+  const [mail, setMail] = useState(false)
+
+  const token =  localStorage.getItem('firstLogin')
+
+console.log(token);
+
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
       .min(2, "trop court!")
@@ -46,14 +54,31 @@ const Register = ({ button }) => {
 
   const notify = useSelector(state => state)
 
-  const submitForm = async (values) => {
+  console.log(notify);
+
+  const fetchData = async() =>{
+    const res = await notify
+
+    setMail(res.data)
+
+    console.log("esss", mail?.message);
+  }
+
+  
+  const submitForm = async (values, formik) => {
+    setLoader(true)
     await dispatch(register(values))
+    setLoader(false);
+    fetchData()
+    formik.setErrors({ email: "text" })
     history.push("/");
   };
 
   return (
-    <>
-      <ModalComponent
+    
+     <> 
+     <ModalComponent
+
         button={
           button ? (
             button
@@ -66,7 +91,7 @@ const Register = ({ button }) => {
           <>
             <Formik
               validationSchema={SchemaValidation}
-              onSubmit={(e) => submitForm(e)}
+              onSubmit={(e,{setErrors}) => submitForm(e,{setErrors})}
               initialValues={{
                 nom: "",
                 prenom: "",
@@ -116,6 +141,7 @@ const Register = ({ button }) => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
+              
                     
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
@@ -167,6 +193,8 @@ const Register = ({ button }) => {
                     )</span> : (
                       ""
                     )} */}
+
+
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}
@@ -197,7 +225,7 @@ const Register = ({ button }) => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      Créer mon compte
+                      { loader ? <div class="loader"></div> : 'Créer mon compte' } 
                     </button>
                   </div>
                 </Form>
@@ -206,7 +234,7 @@ const Register = ({ button }) => {
           </>
         }
       />
-    </>
+     </>
   );
 };
 

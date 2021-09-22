@@ -5,7 +5,7 @@ function ProfileLeftSide() {
     <div className="profil__left__side">
       <div className="upload__photo">
         <div className="photo">
-          <img src="./Images/abdoul.jpeg" alt="" />
+          <img src="../Images/abdoul.jpeg" alt="" />
         </div>
         <i className="fas fa-pen"></i>
         <p className="text-center mt-2 mb-0">Changer la photo de profil</p>
@@ -55,13 +55,13 @@ function ProfileLeftSide() {
           </div>
 
           <div className="input_info_combobox">
-          <i className="fas fa-pen"></i>
+            <i className="fas fa-pen"></i>
             <select>
               <option selected>Veuillez choisir une langue</option>
-              <option>français</option>
-              <option>anglais</option>
-              <option>espagnol</option>
-            </select>            
+              <option value="français">français</option>
+              <option value="anglais">anglais</option>
+              <option value="espagnol">espagnol</option>
+            </select>
           </div>
           <button className="btns left">Enregistrer les modifications</button>
         </form>

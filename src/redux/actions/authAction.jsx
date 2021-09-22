@@ -61,12 +61,20 @@ export const register = (data) => async (dispatch) => {
         }
       })
     }else{
+
       dispatch({
         type: NOTIFY,
         payload: {
           error: res.data,
         }
       })
+
+      // dispatch({
+      //   type: ERROR,
+      //   payload: {
+      //     error: res.data,
+      //   }
+      // })
 
    
     }

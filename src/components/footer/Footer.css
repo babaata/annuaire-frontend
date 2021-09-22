@@ -169,7 +169,8 @@
     }
 
     .footer__content__bottom{
-        flex-direction: row;
+        flex-direction: column-reverse;
+        margin-top: 0;
     }
 
     .footer__content__bottom ul{
