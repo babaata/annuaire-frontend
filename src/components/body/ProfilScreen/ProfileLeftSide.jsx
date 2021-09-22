@@ -55,13 +55,13 @@ function ProfileLeftSide() {
           </div>
 
           <div className="input_info_combobox">
-          <i className="fas fa-pen"></i>
+            <i className="fas fa-pen"></i>
             <select>
               <option selected>Veuillez choisir une langue</option>
-              <option>français</option>
-              <option>anglais</option>
-              <option>espagnol</option>
-            </select>            
+              <option value="français">français</option>
+              <option value="anglais">anglais</option>
+              <option value="espagnol">espagnol</option>
+            </select>
           </div>
           <button className="btns left">Enregistrer les modifications</button>
         </form>

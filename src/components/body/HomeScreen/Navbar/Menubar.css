@@ -73,6 +73,8 @@
 @media screen and (min-width: 768px) {
     .menubar {
         flex-direction: row;
+        align-items: center;
+        justify-content: space-around !important;
     }
 }
 

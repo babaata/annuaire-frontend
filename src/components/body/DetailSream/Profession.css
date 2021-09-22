@@ -131,6 +131,20 @@
     color: #5F439A;
 }
 
+/*Tablette*/
+@media screen and (min-width: 768px) {
+    .competenceComponent_global{
+        width: 100% !important;
+        
+    }
+    .detailleft{
+        width: 75% !important;
+    }
+    .langue__section span{
+        padding: 1%;
+    }
+}
+
 /*Mobile Responsive*/
 @media screen and (max-width:768px) and (min-width:360px) {
     .detailSection{
@@ -143,7 +157,7 @@
     .competenceComponent_global{
         display: flex;
         flex-direction: column;
-        width: 340px;   
+        width: 320px;   
         justify-content: center;
         align-items: center;    
         border-radius: 5px; 
