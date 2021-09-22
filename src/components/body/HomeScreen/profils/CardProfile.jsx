@@ -4,22 +4,24 @@ import "./CardProfile.css";
 
 function CardProfile(props) {
   return (
-    <div className="card__profile__container">
-      <div className="card__profile">
-        <div className="card__profil__img">
-          <img src={props.image} alt="abdoul" />
-        </div>
-        <div className="card__info">
-          <span className="card__info-job" style={{ backgroundColor: `${props.color}` }}>Comptable</span>
-          <div className="card__info__bottom">
-            <Link to="detail-section">
-              <h5>Abdoul Goudoussy Diallo</h5>
-            </Link>
-            <span>
-              <i className="fas fa-map-marker-alt"></i> Conakry
-            </span>
-          </div>
-          <div className="card__gradient"></div>
+    <div className="card__profile">
+      <div className="card__profil__img">
+        <img src={props.image} alt="abdoul" />
+      </div>
+      <div className="card__info">
+        <span
+          className="card__info-job"
+          style={{ backgroundColor: `${props.color}` }}
+        >
+          Comptable
+        </span>
+        <div className="card__info__bottom">
+          <Link to="/profils/:profilsId">
+            <h5>Abdoul Goudoussy Diallo</h5>
+          </Link>
+          <span>
+            <i className="fas fa-map-marker-alt"></i> Conakry
+          </span>
         </div>
       </div>
     </div>

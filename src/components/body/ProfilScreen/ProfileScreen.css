@@ -8,7 +8,7 @@
 .profile__info .profile__btn {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 70%;
 }
 .btns {
   background-color: #5f439a;
@@ -28,24 +28,35 @@
 .profil__left__side {
   display: flex;
   justify-content: space-evenly;
+  padding: 0 15%;
 }
 .profil__left__side .upload__photo .photo {
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   border-radius: 50%;
+  box-shadow: 0px 10px 10px #00000029;
 }
 .profil__left__side .upload__photo .photo img {
-  width: 350px;
+  width: 300px;
+  line-height: 300px;
 }
 .profil__left__side .upload__photo {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.profil__left__side .upload__photo p {
+  color: #5f439a;
+  text-decoration: underline;
+  cursor: pointer;
+}
 .profile__personal__info {
   width: 50%;
   padding: 3%;
+}
+.mg-left {
+  margin-left: 41%;
 }
 .input_info label {
   margin-left: 19px;
@@ -60,24 +71,130 @@
 .input_info {
   margin-bottom: 4%;
 }
+.input_info_combobox .fa-pen {
+  color: #cfc9e2;
+}
 .inputbar i {
   color: #cfc9e2;
+}
+.nextBtn {
+  display: none;
+}
+.btns.noBg {
+  background: none;
+  color: #5f439a;
+  border: 2px solid #5f439a;
 }
 
 .added_compo {
   border: 1px solid #bdb4d7;
-  padding: 5%;
+  padding: 3%;
   width: 96%;
+  border-radius: 5px;
 }
 .add_experience {
   background: #af3862;
   padding: 2px;
   color: #fff;
   text-decoration: none;
+  border: none;
 }
-.add_experience:hover{
-    color: #fff;
+.add_experience:hover {
+  color: #fff;
 }
-.text_resize{
-    resize: none;
+.text_resize {
+  resize: none;
+}
+.btns.left {
+  margin-left: 20px;
+}
+.info__title {
+  display: flex;
+  justify-content: center;
+  color: #5f439a;
+  font-size: 22.5px;
+  font-family: "Open sans semiBold";
+  font-weight: bold;
+}
+.input_info_combobox {
+  display: flex;
+  align-items: center;
+}
+.input_info_combobox select {
+  width: 100%;
+  padding: 0.35rem 0.35rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-bottom: 4%;
+}
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .mg-left {
+    margin-left: 0;
+  }
+  .profil__left__side {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+  .profil__center__content {
+    justify-content: center;
+  }
+  .profile__personal__info {
+    width: 100%;
+    padding: 0;
+  }
+  .profile__personal__info p {
+    font-size: 19.8px;
+  }
+  .profil__left__side .upload__photo .photo {
+    width: 250px;
+    height: 250px;
+  }
+  .profil__left__side .upload__photo .photo img {
+    width: 250px;
+  }
+  .profil__left__side .upload__photo {
+    align-items: center;
+  }
+  .profil__left__side .upload__photo i {
+    display: none;
+  }
+
+  .profile__info .profile__btn .btns {
+    display: none;
+  }
+
+  .profile__personal__info {
+    margin-top: 10%;
+  }
+  .input_info label {
+    font-size: 15px;
+  }
+  .btns.left {
+    text-align: center;
+    font-size: 19px;
+  }
+  .nextBtn {
+    display: block;
+    margin: 4% 4px;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #5f439a;
+  }
+  .nextBtn > i {
+    margin-left: 5px;
+  }
+  .add_experience {
+    font-size: 11px;
+    border-radius: 2.5px;
+    width: 100%;
+  }
+  .added_compo span {
+    color: #5f439a;
+    background: #cfc9e2;
+    padding: 0 5px;
+    font-size: 15px;
+    border-radius: 4px;
+  }
 }

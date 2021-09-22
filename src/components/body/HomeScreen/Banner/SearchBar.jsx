@@ -17,8 +17,8 @@ function SearchBar() {
         <i className="fas fa-map-marker-alt "></i>
         <input placeholder="Pays de résidence" />
       </div>
-      <Link to="/search-page">
-        <i className="fas fa-search" style={{color:"#fff"}}></i>
+      <Link to="/recherche">
+        <i class="fas fa-search loupe"></i>
       </Link>
     </div>
   );

@@ -2,7 +2,8 @@ import React from "react";
 import "./ProfileScreen.css"
 function ProfileRightSide() {
   return (
-    <div className="profile__personal__info">
+    <div className="profile__personal__info mg-left">
+        <p className="info__title">Informations professionnelles</p>
         <div className="profile__pro__info">
         <form>
           <div className="input_info">
@@ -43,9 +44,9 @@ function ProfileRightSide() {
             <label name="nom et prenom">Experience / Realisation</label>
             <div className="inputbar">
               <div className="added_compo">
+                  <span>Designer</span>
               <hr/>
-              <i className="fas fa-plus-square"></i>
-              <button className="add_experience">Ajouter une nouvelle experience ou realiser</button>
+              <button className="add_experience"><i className="fas fa-plus-square"></i>Ajouter une nouvelle experience ou realiser</button>
               </div>
               <i className="fas fa-pen"></i>
             </div>
