@@ -121,7 +121,7 @@ const Register = ({ button }) => {
                     />
                     {notify.error ? (
                       <span className="text-danger">
-                        {notify.error.errors.email}
+                        {notify?.error?.errors?.email}
                       </span>
                     ) : (
                       ""
@@ -171,7 +171,7 @@ const Register = ({ button }) => {
                     />
                     {notify.error ? (
                       <span className="text-danger">
-                        {notify.error.errors.password}
+                        {notify?.error?.errors?.password}
                       </span>
                     ) : (
                       ""
@@ -206,7 +206,7 @@ const Register = ({ button }) => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <div class="loader"></div> : 'Créer mon compte' } 
+                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Créer mon compte' } 
                     </button>
                   </div>
                 </Form>

@@ -11,8 +11,8 @@ export const login = (data) => async (dispatch) => {
     dispatch({type: NOTIFY, payload: {loading: true}})
 
     const res = await postDataAPI("https://babaata.eviltech.org/api/user/login", data)
-
-    if(res.data.status){
+    
+    if(res.data.status !== false){
       dispatch({
         type: AUTH,
         payload: {
@@ -20,7 +20,7 @@ export const login = (data) => async (dispatch) => {
         }
       })
 
-      localStorage.setItem('firstLogin', res.data.access_token)
+      localStorage.setItem('firstLogin', res.data?.access_token)
 
       dispatch({
         type: NOTIFY,
@@ -43,7 +43,7 @@ export const register = (data) => async (dispatch) => {
   dispatch({type: NOTIFY, payload: {loading: true}})
     const res = await postDataAPI("https://babaata.eviltech.org/api/user/create",data);
 
-    if(res.data.status){
+    if(res.data.status !== false){
       dispatch({
         type: AUTH,
         payload: {
@@ -51,7 +51,7 @@ export const register = (data) => async (dispatch) => {
         }
       })
 
-      localStorage.setItem('firstLogin', res.data.access_token)
+      localStorage.setItem('firstLogin', res.data?.access_token)
 
       dispatch({
         type: NOTIFY,
