@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 const ExperienceAdd = () => {
   const SchemaValidation = Yup.object().shape({
@@ -32,8 +32,12 @@ const ExperienceAdd = () => {
   return (
     <>
       <ModalComponent
-        type="outlined"
-        btnName="Experience +"
+        button={
+          <button type={"button"} className="add_experience">
+            <i className="fas fa-plus-square"></i>Ajouter une nouvelle
+            experience ou realiser
+          </button>
+        }
         title={"Experience"}
         content={
           <>

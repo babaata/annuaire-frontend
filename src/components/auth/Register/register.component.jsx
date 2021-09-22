@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 
-const Register = () => {
+const Register = ({ button }) => {
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
       .min(2, "trop court!")
@@ -52,8 +53,13 @@ const Register = () => {
   return (
     <>
       <ModalComponent
-        type="fill"
-        btnName="Inscription"
+        button={
+          button ? (
+            button
+          ) : (
+            <Button className={"btn-filled"}>Inscription</Button>
+          )
+        }
         title={"Inscription"}
         content={
           <>
