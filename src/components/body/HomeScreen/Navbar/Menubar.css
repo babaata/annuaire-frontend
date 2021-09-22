@@ -1,7 +1,6 @@
 .menubar {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between ;
     padding: 31px 80px;
     width: 100%;
     height: 100px;
@@ -70,20 +69,21 @@
     color: #5F439A;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width:968px) {
     .menubar {
-        flex-direction: row;
+        flex-direction: row !important;
+        justify-content: space-between;
         align-items: center;
-        justify-content: space-around !important;
     }
 }
 
 /* Mobile */
 @media screen and (max-width: 768px) {
     .menubar {
+        flex-direction: column;
         height: 150px;
         padding: 31px;
-        justify-content: center;
+        justify-content: space-between;
         align-content: center;
     }
 }
