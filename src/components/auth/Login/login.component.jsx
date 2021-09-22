@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
+import { Button } from "react-bootstrap";
 
 const Login = () => {
   const SchemaValidation = Yup.object().shape({
@@ -19,10 +20,9 @@ const Login = () => {
       .required("Ce champ est requis !"),
   });
 
-  const [typePass, setTypePass] = useState(true)
+  const [typePass, setTypePass] = useState(true);
 
   const history = useHistory();
-  const token = localStorage.getItem("firstLogin");
 
   const dispatch = useDispatch();
 
@@ -34,8 +34,8 @@ const Login = () => {
   return (
     <>
       <ModalComponent
+        button={<Button className={"btn-outlined"}>Connexion</Button>}
         type="login"
-        btnName="Connexion"
         title={"Connexion"}
         content={
           <>
@@ -47,7 +47,7 @@ const Login = () => {
                 password: "",
               }}
             >
-              {({handleBlur, touched, errors }) => (
+              {({ handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
                     <label className="form-label">Login</label>
@@ -74,9 +74,13 @@ const Login = () => {
                       type={typePass ? "password" : "text"}
                       placeholder="Mot de passe"
                     />
-            <small onClick={()=> setTypePass(!typePass)}>
-              {typePass ? <i class=" fas fa-eye"></i> :  <i class="fas fa-eye-slash"></i> }
-            </small>  
+                    <small onClick={() => setTypePass(!typePass)}>
+                      {typePass ? (
+                        <i class=" fas fa-eye"></i>
+                      ) : (
+                        <i class="fas fa-eye-slash"></i>
+                      )}
+                    </small>
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}

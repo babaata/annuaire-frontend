@@ -10,11 +10,11 @@ import Footer from "../components/footer/Footer";
 function Home() {
   return (
     <div>
-      <Menubar  page="home" />
+      <Menubar page="home" />
       <Banner />
       <PopularProfil />
       <Inscription
-        status="true"
+        status={true}
         text="Vous êtes Guinéen, vous avez des compétences à faire valoir ?"
       />
       <Competences />

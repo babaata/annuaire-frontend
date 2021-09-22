@@ -1,5 +1,6 @@
 import React from "react";
 import "./Inscription.css";
+import Register from "../../../auth/Register/register.component";
 
 function Inscription(props) {
   return (
@@ -11,7 +12,11 @@ function Inscription(props) {
       }}
     >
       <h2>{props.text}</h2>
-      {props.status == "true" ? <button>Inscrivez-vous</button> : ""}
+      {props.status ? (
+        <Register button={<button>Inscrivez-vous</button>} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
