@@ -23,7 +23,7 @@ export default function Menubar() {
     <div className="menubar">
       <div className="logo">
         <Link to="/">
-          <img src="./images/logo.png" alt="logo" />
+          <img src="../images/logo.png" alt="logo" />
         </Link>
       </div>
       <div className="link_button">
