@@ -92,6 +92,12 @@
   width: 96%;
   border-radius: 5px;
 }
+
+.show_compo {
+  display: flex;
+}
+
+
 .add_experience {
   background: #af3862;
   padding: 2px;
@@ -127,6 +133,42 @@
   border-radius: 5px;
   margin-bottom: 4%;
 }
+
+
+.react-tag-input {
+  color: #5F439A !important;
+  border: 1px solid #BDB4D7 !important;
+}
+.react-tag-input__input {
+  background: transparent;
+  color: #333;
+}
+.react-tag-input__input::placeholder, .react-tag-input__input:-moz-placeholder, .react-tag-input__input:-ms-input-placeholder, .react-tag-input__input::-moz-placeholder, .react-tag-input__input::-webkit-input-placeholder {
+  color: #333; /* Input placeholder */
+}
+
+.react-tag-input__tag__content {
+  color: #5F439A !important;
+}
+
+.react-tag-input__tag {
+  padding: 5px !important;
+  margin-right: 15px !important;
+  margin-bottom: 15px !important;
+  border-radius: 5px !important;
+  background: #BDB4D7 !important;
+  max-width: max-content !important;
+}
+.react-tag-input__tag__remove {
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 100% !important;
+  background: #FFFFFF !important;
+}
+.react-tag-input__tag__remove:before, .react-tag-input__tag__remove:after {
+  background: #5F439A !important; /* X icon in remove button */
+}
+
 /*Tablette*/
 @media screen and (min-width: 768px) and (max-width:968px) {
   .info__title{

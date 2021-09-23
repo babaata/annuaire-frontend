@@ -12,8 +12,8 @@ import Alert from "../../alert/Alert";
 import Login from "../Login/login.component";
 
 const Register = ({ button }) => {
-  const [loader, setLoader] = useState(false)
-  const [mail, setMail] = useState(false)
+  const [loader, setLoader] = useState(false);
+  const [mail, setMail] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
@@ -24,10 +24,6 @@ const Register = ({ button }) => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    // username: Yup.string()
-    //   .min(2, "trop court!")
-    //   .max(50, "trop long!")
-    //   .required("Ce champ est requis !"),
     telephone: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
@@ -49,22 +45,21 @@ const Register = ({ button }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const {notify} = useSelector(state => state)
+  const { notify } = useSelector((state) => state);
 
-  
   const submitForm = async (values, formik) => {
-    setLoader(true)
-    await dispatch(register(values))
+    setLoader(true);
+    await dispatch(register(values));
     setLoader(false);
-    // formik.setErrors({ email: notify.error?.errors?.email })
+    formik.setErrors({ email: notify.error?.errors?.email });
+    formik.setErrors({ telephone: notify.error?.errors?.telephone });
+    formik.setErrors({ password: notify.error?.errors?.password });
     history.push("/");
   };
 
   return (
-    
-     <> 
-     <ModalComponent
-
+    <>
+      <ModalComponent
         type="register"
         button={
           button ? (
@@ -78,12 +73,11 @@ const Register = ({ button }) => {
           <>
             <Formik
               validationSchema={SchemaValidation}
-              onSubmit={(e,{setErrors}) => submitForm(e,{setErrors})}
+              onSubmit={(e, { setErrors }) => submitForm(e, { setErrors })}
               initialValues={{
                 nom: "",
                 prenom: "",
                 email: "",
-                // username: "",
                 telephone: "",
                 password: "",
               }}
@@ -128,21 +122,11 @@ const Register = ({ button }) => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-
-                        {notify.error ? <span>
-                      <span className="text-danger">
-                        {notify.error.errors.email}
-                      </span>
-                    </span> : 
-                      ""
-                    }
-                      
-                    {/* {errors.email && touched.email ? (
+                    {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
-                    ) : null} */}
+                    ) : null}
                   </div>
 
-                  
                   <div className="inputGroup">
                     <label className="form-label">Téléphone</label>
                     <Field
@@ -152,9 +136,9 @@ const Register = ({ button }) => {
                       type="phone"
                       placeholder="Votre numero"
                     />
-                    {errors.telephone && touched.telephone ? 
+                    {errors.telephone && touched.telephone ? (
                       <div className="text-danger">{errors.telephone}</div>
-                     : null}
+                    ) : null}
                   </div>
 
                   <div className="inputGroup">
@@ -167,14 +151,6 @@ const Register = ({ button }) => {
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {notify.error ? <span>
-                      <span className="text-danger">
-                        {notify.error.errors.password}
-                      </span>
-                    </span> : 
-                      ""
-                    }
-
 
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
@@ -206,7 +182,11 @@ const Register = ({ button }) => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Créer mon compte' } 
+                      {loader ? (
+                        <i className="fa fa-spinner fa-spin" />
+                      ) : (
+                        "Créer mon compte"
+                      )}
                     </button>
                   </div>
                   <div className="form-footer">
@@ -218,7 +198,7 @@ const Register = ({ button }) => {
           </>
         }
       />
-     </>
+    </>
   );
 };
 

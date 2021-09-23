@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import "./modal.style.css";
@@ -6,14 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 import Alert from "./alert/Alert";
 import { NOTIFY } from "../redux/actions/authAction";
 
-const ModalComponent = ({ title, button, content, type}) => {
+const ModalComponent = ({ title, button, content }) => {
   const [show, setShow] = useState(false);
 
   const { notify } = useSelector((state) => state);
-  
+
   function handleShow() {
     setShow(true);
   }
+
   const dispatch = useDispatch();
 
   return (
