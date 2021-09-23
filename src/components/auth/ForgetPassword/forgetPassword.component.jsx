@@ -1,15 +1,13 @@
-import "./login.style.css";
+import "./forgetPassword.style.css";
 import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
-import { Button } from "react-bootstrap";
-import ForgetPassword from "../ForgetPassword/forgetPassword.component";
+import { postDataAPI } from "../../../utils/fetchData";
 
-const Login = () => {
+const ForgetPassword = () => {
   const [loader, setLoader] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
@@ -18,44 +16,44 @@ const Login = () => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    password: Yup.string()
-      .min(2, "trop court!")
-      .max(50, "trop long!")
-      .required("Ce champ est requis !"),
   });
-
-  const [typePass, setTypePass] = useState(true);
 
   const history = useHistory();
 
   const dispatch = useDispatch();
 
-  const submitForm = async (values) => {
+  const submitForm = async (values, formIk) => {
+    console.log(values);
     setLoader(true);
-    await dispatch(login(values));
+    const res = await postDataAPI("user/forgot-password", values);
     setLoader(false);
+    console.log(res.data?.errors);
+    if (res.data?.errors) {
+      formIk.setErrors({ email: res?.data?.message });
+    }
+    console.log(res.data);
+
     history.push("/");
   };
 
   return (
     <>
       <ModalComponent
-        button={<Button className={"btn-outlined"}>Connexion</Button>}
-        title={"Connexion"}
+        button={<span className="clique-text"> Cliquez ici</span>}
+        title={"Mot de passe oublié ?"}
         content={
           <>
             <Formik
               validationSchema={SchemaValidation}
-              onSubmit={(e) => submitForm(e)}
+              onSubmit={(e, { setErrors }) => submitForm(e, { setErrors })}
               initialValues={{
                 email: "",
-                password: "",
               }}
             >
               {({ handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
-                    <label className="form-label">Login</label>
+                    <label className="form-label">Email</label>
                     <Field
                       required
                       onBlur={handleBlur}
@@ -69,28 +67,6 @@ const Login = () => {
                     ) : null}
                   </div>
 
-                  <div className="login inputGroup">
-                    <label className="form-label">Mot de passe</label>
-                    <Field
-                      required
-                      onBlur={handleBlur}
-                      className="form-control form-input"
-                      name="password"
-                      type={typePass ? "password" : "text"}
-                      placeholder="Mot de passe"
-                    />
-                    <small onClick={() => setTypePass(!typePass)}>
-                      {typePass ? (
-                        <i className=" fas fa-eye"></i>
-                      ) : (
-                        <i className="fas fa-eye-slash"></i>
-                      )}
-                    </small>
-                    {errors.password && touched.password ? (
-                      <div className="text-danger">{errors.password}</div>
-                    ) : null}
-                  </div>
-
                   <div className="btn-submit-container">
                     <button
                       className="btn-submit form-control form-input"
@@ -99,12 +75,9 @@ const Login = () => {
                       {loader ? (
                         <i class="fa fa-spinner fa-spin"></i>
                       ) : (
-                        "Se connecter"
+                        "Envoyer"
                       )}
                     </button>
-                  </div>
-                  <div className="form-footer">
-                    Mot de pass oublié ? <ForgetPassword />
                   </div>
                 </Form>
               )}
@@ -116,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgetPassword;
