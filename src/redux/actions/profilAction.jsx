@@ -14,16 +14,16 @@ export const createProfil = (data) =>{
     try {
       
     dispatch({type: "NOTIFY", payload: {loading: true}})
-    const res = await postDataAPI('product', {...data})
-    console.log(res);    
+    // const res = await postDataAPI('product', {...data})
+    // console.log(res);    
     
     
-      dispatch({
-        type: "NOTIFY",
-        payload: {
-          success: res.data
-        }
-      })
+    //   dispatch({
+    //     type: "NOTIFY",
+    //     payload: {
+    //       success: res.data
+    //     }
+    //   })
   
       dispatch({
         type: CREATE_PROFIL,

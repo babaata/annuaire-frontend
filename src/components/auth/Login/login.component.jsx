@@ -9,8 +9,10 @@ import { useHistory } from "react-router";
 import { Button } from "react-bootstrap";
 
 const Login = () => {
+  const [loader, setLoader] = useState(false)
+
   const SchemaValidation = Yup.object().shape({
-    username: Yup.string()
+    email: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
@@ -27,7 +29,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submitForm = async (values) => {
+    setLoader(true)
     await dispatch(login(values));
+    setLoader(false);
     history.push("/");
   };
 
@@ -43,11 +47,11 @@ const Login = () => {
               validationSchema={SchemaValidation}
               onSubmit={(e) => submitForm(e)}
               initialValues={{
-                username: "",
+                email: "",
                 password: "",
               }}
             >
-              {({ handleBlur, touched, errors }) => (
+              {({handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
                     <label className="form-label">Login</label>
@@ -55,12 +59,12 @@ const Login = () => {
                       required
                       onBlur={handleBlur}
                       className="form-control form-input"
-                      name="username"
-                      type="text"
-                      placeholder="Saisissez votre pseudo"
+                      name="email"
+                      type="email"
+                      placeholder="Saisissez votre email"
                     />
-                    {errors.username && touched.username ? (
-                      <div className="text-danger">{errors.username}</div>
+                    {errors.email && touched.email ? (
+                      <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
 
@@ -76,9 +80,9 @@ const Login = () => {
                     />
                     <small onClick={() => setTypePass(!typePass)}>
                       {typePass ? (
-                        <i class=" fas fa-eye"></i>
+                        <i className=" fas fa-eye"></i>
                       ) : (
-                        <i class="fas fa-eye-slash"></i>
+                        <i className="fas fa-eye-slash"></i>
                       )}
                     </small>
                     {errors.password && touched.password ? (
@@ -91,7 +95,7 @@ const Login = () => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      Se connecter
+                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Se connecter' } 
                     </button>
                   </div>
                   <div className="form-footer">
