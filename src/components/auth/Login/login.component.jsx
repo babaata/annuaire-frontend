@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { Button } from "react-bootstrap";
+import Register from '../Register/register.component';
 
 const Login = () => {
   const [loader, setLoader] = useState(false)
@@ -98,6 +99,10 @@ const Login = () => {
                       { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Se connecter' } 
                     </button>
                   </div>
+                  <div className="form-footer">
+                  Vous n'avez pas de compte ? <Register />
+                  </div>
+                  <br/>
                   <div className="form-footer">
                     Mot de pass oublié ? <a href="#">Cliquez ici</a>
                   </div>

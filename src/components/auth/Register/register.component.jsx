@@ -9,6 +9,7 @@ import { useHistory } from "react-router";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Alert from "../../alert/Alert";
+import Login from "../Login/login.component";
 
 const Register = ({ button }) => {
   const [loader, setLoader] = useState(false)
@@ -64,7 +65,7 @@ const Register = ({ button }) => {
      <> 
      <ModalComponent
 
-type="register"
+        type="register"
         button={
           button ? (
             button
@@ -207,6 +208,9 @@ type="register"
                     >
                       { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Créer mon compte' } 
                     </button>
+                  </div>
+                  <div className="form-footer">
+                  Vous avez déjà un compte ? <Login />
                   </div>
                 </Form>
               )}
