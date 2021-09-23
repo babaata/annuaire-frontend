@@ -5,7 +5,7 @@ import Register from "../../../auth/Register/register.component";
 function Inscription(props) {
   return (
     <div
-      className="inscription"
+      className="inscription my-5"
       style={{
         backgroundImage: `url("./images/motif.png")`,
         margin: `${props.margin}`,
@@ -13,7 +13,7 @@ function Inscription(props) {
     >
       <h2>{props.text}</h2>
       {props.status ? (
-        <Register button={<button>Inscrivez-vous</button>} />
+        <Register button={<button className="btn btn-filled">Inscrivez-vous</button>} />
       ) : (
         ""
       )}
