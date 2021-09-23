@@ -6,11 +6,11 @@ import CompetenceComponent from './CompetenceComponent';
 import './Profession.css';
 import ExperienceComponent from './ExperienceComponent';
 import LangueSection from './LangueSection';
-export default function DetailSection() {
+export default function DetailSection(props) {
     return (
         <div className="detailSection">
              <div className="detailRight">
-             <ProfessionComponent />
+             <ProfessionComponent profile={props.profile}/>
              <LangueSection/>
              </div>
             <div className="detailleft">

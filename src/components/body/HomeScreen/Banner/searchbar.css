@@ -82,16 +82,18 @@
     border: 1px solid #5f439a;
     padding: 2%;
     border-radius: 10px;
+    background-color: #fff;
   }
   .search__bar .inputBar input{
-    color: #fff;
+    color: #000;
   }
   .search__bar .inputBar i{
     color: #5f439a;
     line-height: 45px;
   }
   .search__bar a {
-    margin-top: 20px;
+    margin-top: 10px;
+    padding: 4%;
   }
   .search__bar a i{
     color: #fff;

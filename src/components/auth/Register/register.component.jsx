@@ -9,6 +9,7 @@ import { useHistory } from "react-router";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Alert from "../../alert/Alert";
+import Login from '../Login/login.component';
 
 const Register = ({ button }) => {
   const [loader, setLoader] = useState(false);
@@ -187,6 +188,12 @@ const Register = ({ button }) => {
                         "Créer mon compte"
                       )}
                     </button>
+                  </div>
+                  <div className="form-footer">
+                  Vous avez déjà un compte ?
+                  </div>
+                  <div className="form-footer">
+                    <Login />
                   </div>
                 </Form>
               )}

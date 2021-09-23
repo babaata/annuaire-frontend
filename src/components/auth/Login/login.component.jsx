@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { Button } from "react-bootstrap";
+import Register from '../Register/register.component';
 import ForgetPassword from "../ForgetPassword/forgetPassword.component";
 
 const Login = () => {
@@ -103,6 +104,13 @@ const Login = () => {
                       )}
                     </button>
                   </div>
+                  <div className="form-footer">
+                  Vous n'avez pas de compte ?
+                  </div>
+                  <div className="form-footer">
+                    <Register />
+                  </div>
+                  <br/>
                   <div className="form-footer">
                     Mot de pass oublié ? <ForgetPassword />
                   </div>
