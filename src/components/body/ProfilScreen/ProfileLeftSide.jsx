@@ -81,10 +81,10 @@ function ProfileLeftSide() {
           <div className="input_info_combobox">
             <i className="fas fa-pen"></i>
             <select value={profile.langue} onChange={(e)=> setProfile({...profile, langue: e.target.value})}>
-              <option selected>Veuillez choisir une langue</option>
-              <option value="français">français</option>
-              <option value="anglais">anglais</option>
-              <option value="espagnol">espagnol</option>
+              <optgroup selected>Veuillez choisir une langue</optgroup>
+              <optgroup value="français">français</optgroup>
+              <optgroup value="anglais">anglais</optgroup>
+              <optgroup value="espagnol">espagnol</optgroup>
             </select>
           </div>
           <button className="btns left">Enregistrer les modifications</button>

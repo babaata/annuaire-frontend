@@ -1,7 +1,7 @@
 .Banner {
   background: url("./Acceuil.png");
   min-width: 90vw;
-  height: 496px;
+  height: 380px;
   background-size: cover;
   margin: 25px 25px 0 25px;
   display: flex;
