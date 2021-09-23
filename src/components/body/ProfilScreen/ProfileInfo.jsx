@@ -7,11 +7,9 @@ function ProfileInfo() {
   const [btnVal, setbtnVal] = useState(0);
   const handleClickleft = () => {
     setbtnVal(0);
-    console.log(btnVal);
   };
   const handleClickright = () => {
     setbtnVal(1);
-    console.log(btnVal);
   };
   useEffect(() => {}, []);
 
@@ -20,25 +18,25 @@ function ProfileInfo() {
       <div className="profile__btn ">
         <button
           onClick={handleClickleft}
-          className={`btns ${btnVal == 0 ? "noBg" : " "}`}
+          className={`btns ${btnVal === 0 ? "noBg" : " "}`}
         >
           Informations Personelles
         </button>
         <button
           onClick={handleClickright}
-          className={`btns ${btnVal == 1 ? "noBg" : " "}`}
+          className={`btns ${btnVal === 1 ? "noBg" : " "}`}
         >
           Informations professionnelles
         </button>
       </div>
       <div className="profil__center__content">
-        {btnVal == 0 ? <ProfileLeftSide /> : <ProfileRightSide />}
+        {btnVal === 0 ? <ProfileLeftSide /> : <ProfileRightSide />}
         <button
           className="nextBtn"
-          onClick={btnVal == 0 ? handleClickright : handleClickleft}
+          onClick={btnVal === 0 ? handleClickright : handleClickleft}
         >
-          {btnVal == 0 ? "Suivant" : "Précedent"}
-          <i className={`fas fa-caret-${btnVal == 0 ? "right" : "left"}`}></i>
+          {btnVal === 0 ? "Suivant" : "Précedent"}
+          <i className={`fas fa-caret-${btnVal === 0 ? "right" : "left"}`} />
         </button>
       </div>
     </div>

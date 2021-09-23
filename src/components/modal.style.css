@@ -107,6 +107,8 @@
 }
 
 .form-footer {
+  display: flex;
+  justify-content: center;
   text-align: center;
   letter-spacing: -0.64px;
   color: #5F439A61;
