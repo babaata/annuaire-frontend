@@ -4,7 +4,7 @@ import "./searchbar.css";
 
 function SearchBar() {
   return (
-    <div className="search__bar px-0">
+    <div className="search__bar ">
       <div className="inputBar ">
         <i className="fas fa-user"></i>
         <input placeholder="Profession" />

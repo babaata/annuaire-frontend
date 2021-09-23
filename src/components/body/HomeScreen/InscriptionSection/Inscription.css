@@ -22,19 +22,14 @@
 
 .inscription h2 {
     color: white;
-    font-size: 33px;
+    font-size: 40px;
+    font-weight: 600 !important;
 }
 
 .inscription button {
-    padding: 10px;
-    background-color: #fbb017;
-    border: none;
-    font-family: "Open sans semiBold";
-    font-size: 20px;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    margin-top: 30px;
+    background-color: #fbb017 !important;
+    border:none !important;
+    margin-top: 25px;
 }
 @media screen and (max-width: 768px) {
     .inscription h2{

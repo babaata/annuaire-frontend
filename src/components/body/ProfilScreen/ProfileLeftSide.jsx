@@ -59,7 +59,7 @@ function ProfileLeftSide() {
     <div className="profil__left__side">
       <div className="upload__photo">
         <div className="photo">
-          <img src="../Images/abdoul.jpeg" alt="" />
+          <img src="./Images/abdoul.jpeg" alt="" />
         </div>
         <i className="fas fa-pen" />
         <p className="text-center mt-2 mb-0">Changer la photo de profil</p>
