@@ -15,7 +15,7 @@ function PopularProfil() {
   }
 
   useEffect(() => {
-    if(profils.length === 0) {
+    if(profils?.length === 0) {
       getProfils()
     }
   })

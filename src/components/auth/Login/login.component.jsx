@@ -105,7 +105,10 @@ const Login = () => {
                     </button>
                   </div>
                   <div className="form-footer">
-                  Vous n'avez pas de compte ? <Register />
+                  Vous n'avez pas de compte ?
+                  </div>
+                  <div className="form-footer">
+                    <Register />
                   </div>
                   <br/>
                   <div className="form-footer">
