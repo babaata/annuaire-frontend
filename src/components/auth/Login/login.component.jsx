@@ -51,7 +51,7 @@ const Login = () => {
                 password: "",
               }}
             >
-              {({ handleBlur, touched, errors }) => (
+              {({handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
                     <label className="form-label">Login</label>

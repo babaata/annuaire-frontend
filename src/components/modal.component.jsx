@@ -1,17 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
 import "./modal.style.css";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "./alert/Alert";
 import { NOTIFY } from "../redux/actions/authAction";
 
-const ModalComponent = ({ title, button, content, type }) => {
+const ModalComponent = ({ title, button, content, type}) => {
   const [show, setShow] = useState(false);
 
   const { notify } = useSelector((state) => state);
-
+  
   function handleShow() {
     setShow(true);
   }
@@ -60,7 +59,10 @@ const ModalComponent = ({ title, button, content, type }) => {
                   <div className="form-title">
                     {title}
                     <div className="text-danger text-center mt-2 h4">
-                      <span>{notify.error ? notify.error.message : ""}</span>
+                      <span>{notify.error ? notify.error.message : ""}</span> <br/>
+
+                     
+
                     </div>
                   </div>
                 ) : (
