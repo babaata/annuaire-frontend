@@ -109,6 +109,7 @@
         margin-left: 0;
         width: 100%;
         justify-content: center;
+        
     }
 
     .footer__content__bottom{
@@ -165,7 +166,9 @@
         margin-left: 0;
         width: 498px;
         height: 45px;
-
+        display: flex;
+        justify-content: flex-end
+        ;
     }
 
     .footer__content__bottom{
