@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./register.style.css";
 import { Formik, Form, Field } from "formik";
 import ModalComponent from "../../modal.component";
@@ -8,9 +8,11 @@ import { register } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import Alert from "../../alert/Alert";
 
 const Register = ({ button }) => {
   const [loader, setLoader] = useState(false)
+  const [mail, setMail] = useState(false)
 
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
@@ -43,20 +45,26 @@ const Register = ({ button }) => {
       .required("Ce champ est requis !"),
   });
 
-  const { notify } = useSelector((state) => state);
-
   const history = useHistory();
   const dispatch = useDispatch();
-  const submitForm = async (values) => {
+
+  const {notify} = useSelector(state => state)
+
+  
+  const submitForm = async (values, formik) => {
     setLoader(true)
-    await dispatch(register(values));
+    await dispatch(register(values))
     setLoader(false);
+    // formik.setErrors({ email: notify.error?.errors?.email })
     history.push("/");
   };
 
   return (
-    <>
-      <ModalComponent
+    
+     <> 
+     <ModalComponent
+
+type="register"
         button={
           button ? (
             button
@@ -69,7 +77,7 @@ const Register = ({ button }) => {
           <>
             <Formik
               validationSchema={SchemaValidation}
-              onSubmit={(e) => submitForm(e)}
+              onSubmit={(e,{setErrors}) => submitForm(e,{setErrors})}
               initialValues={{
                 nom: "",
                 prenom: "",
@@ -119,32 +127,21 @@ const Register = ({ button }) => {
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-                    {notify.error ? (
+
+                        {notify.error ? <span>
                       <span className="text-danger">
-                        {notify?.error?.errors?.email}
+                        {notify.error.errors.email}
                       </span>
-                    ) : (
+                    </span> : 
                       ""
-                    )}
-                    {errors.email && touched.email ? (
+                    }
+                      
+                    {/* {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
-                    ) : null}
+                    ) : null} */}
                   </div>
-                  {/* <div className="inputGroup">
-                    <label className="form-label">Pseudo</label>
-                    <Field
-                      required
-                      onBlur={handleBlur}
-                      className="form-control form-input"
-                      name="username"
-                      type="text"
-                      placeholder="Saisissez votre pseudo"
-                    />
-                    {notify.error ? <span className="text-danger">{notify.error.errors.username}</span> : ''}
-                    {errors.username && touched.username ? (
-                      <div className="text-danger">{errors.username}</div>
-                    ) : null}
-                  </div> */}
+
+                  
                   <div className="inputGroup">
                     <label className="form-label">Téléphone</label>
                     <Field
@@ -154,9 +151,9 @@ const Register = ({ button }) => {
                       type="phone"
                       placeholder="Votre numero"
                     />
-                    {errors.telephone && touched.telephone ? (
+                    {errors.telephone && touched.telephone ? 
                       <div className="text-danger">{errors.telephone}</div>
-                    ) : null}
+                     : null}
                   </div>
 
                   <div className="inputGroup">
@@ -169,13 +166,15 @@ const Register = ({ button }) => {
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {notify.error ? (
+                    {notify.error ? <span>
                       <span className="text-danger">
-                        {notify?.error?.errors?.password}
+                        {notify.error.errors.password}
                       </span>
-                    ) : (
+                    </span> : 
                       ""
-                    )}
+                    }
+
+
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
                     ) : null}
@@ -215,7 +214,7 @@ const Register = ({ button }) => {
           </>
         }
       />
-    </>
+     </>
   );
 };
 

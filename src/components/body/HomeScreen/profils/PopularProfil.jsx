@@ -10,7 +10,7 @@ function PopularProfil() {
 
   // console.log(profils)
   const getProfils = async () => {
-    const res = await getDataAPI('https://babaata.eviltech.org/api/users/10')
+    const res = await getDataAPI('users/10')
     setProfils(res.data?.users)
   }
 
