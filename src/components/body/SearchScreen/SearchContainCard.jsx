@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./SearchContainCard.css";
-function SearchContainCard() {
+function SearchContainCard(props) {
   return (
     <div className="search__contain__card">
       <div className="card_img">
@@ -16,7 +16,10 @@ function SearchContainCard() {
         </span>
       </div>
       <div className="info_plus">
-        <Link to="/profils/:profilsId">
+        <Link to={{
+          pathname:'/profils/:id', 
+          id: props.id_utilisateur}}
+          >
           Consulter <i className="fas fa-angle-double-right"></i>
         </Link>
       </div>

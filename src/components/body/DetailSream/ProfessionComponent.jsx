@@ -9,7 +9,7 @@ export default function ProfessionComponent(props) {
       </div>
       <div className="email_user">
         <i className="fas fa-envelope"></i>
-        <a href="/">{props.profile.email}</a>
+        <a href="/">{props.email}</a>
       </div>
       <div className="avis_title">
         <i className="fas fa-thumbs-up"></i>
