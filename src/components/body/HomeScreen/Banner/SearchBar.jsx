@@ -18,7 +18,7 @@ function SearchBar() {
         <input placeholder="Pays de résidence" />
       </div>
       <Link to="/recherche">
-        <i className="fas fa-search loupe"></i>
+        <i className="fas fa-search loupe fa-2x"></i>
       </Link>
     </div>
   );

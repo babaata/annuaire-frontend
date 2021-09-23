@@ -19,7 +19,7 @@ const ModalComponent = ({ title, button, content, type }) => {
 
   return (
     <>
-      <Alert />
+      {/* <Alert /> */}
       <>
         <div onClick={() => handleShow()}>{button}</div>
         <Modal
@@ -30,7 +30,7 @@ const ModalComponent = ({ title, button, content, type }) => {
         >
           <div>
             <span
-              className="float-end close"
+              className="float-end close text-white"
               onClick={() => {
                 setShow(false);
                 dispatch({
@@ -59,7 +59,7 @@ const ModalComponent = ({ title, button, content, type }) => {
                 {title ? (
                   <div className="form-title">
                     {title}
-                    <div className="text-danger text-center mt-2 h4">
+                    <div className={`text-danger text-center mt-2 h6 ${notify?.error ? 'alert-danger alert' : ''}`}>
                       <span>{notify.error ? notify.error.message : ""}</span>
                     </div>
                   </div>

@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
 import { Link } from "react-router-dom";
 import CardProfile from "./CardProfile";
 import "./PopularProfil.css";
+import { getDataAPI } from '../../../../utils/fetchData';
 
 function PopularProfil() {
+  const [profils, setProfils] = useState([])
+  // 
+
+  // console.log(profils)
+  const getProfils = async () => {
+    const res = await getDataAPI('https://babaata.eviltech.org/api/users/10')
+    setProfils(res.data?.users)
+  }
+
+  useEffect(() => {
+    if(profils.length === 0) {
+      getProfils()
+    }
+  })
+  console.log(profils)
   return (
     <div className="profiles my-5">
       <h1>Profils Populaires</h1>
       <div className="card__section container my-5">
         <div className="row">
-          <div className="col-6 col-lg-3">
-            <CardProfile image="./images/abdoul.jpeg" color="orange" />
-          </div>
-          <div className="col-6 col-lg-3">
+        {
+          profils?.map((p) => (
+            <div className="col-6 col-lg-3" key={p.id_utilisateur}>
+              <CardProfile image="./images/abdoul.jpeg" color="orange" profile={p}/>
+            </div>
+          ))
+        }
+          
+          {/* <div className="col-6 col-lg-3">
             <CardProfile image="./images/model.jpeg" color="#009B95" />
           </div>
           <div className="col-6 col-lg-3">
@@ -32,7 +53,7 @@ function PopularProfil() {
           </div>
           <div className="col-6 col-lg-3">
             <CardProfile image="./images/woman.jpeg" color="#1CA5A0" />
-          </div>
+          </div> */}
         </div>
       </div>
       <Link to="/profils">

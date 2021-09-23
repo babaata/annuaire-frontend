@@ -16,8 +16,8 @@ function CardProfile(props) {
           Comptable
         </span>
         <div className="card__info__bottom">
-          <Link to="/profils/:profilsId">
-            <h5>Abdoul Goudoussy Diallo</h5>
+          <Link to={`/profils/${props.profile.id_utilisateur}`}>
+            <h5>{props.profile.nom_utilisateur}</h5>
           </Link>
           <span>
             <i className="fas fa-map-marker-alt"></i> Conakry
