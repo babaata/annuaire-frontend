@@ -55,8 +55,7 @@ const Register = ({ button }) => {
     setLoader(true)
     await dispatch(register(values))
     setLoader(false);
-
-    formik.setErrors({ email: notify.error?.errors?.email })
+    // formik.setErrors({ email: notify.error?.errors?.email })
     history.push("/");
   };
 
@@ -128,11 +127,18 @@ type="register"
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-              
+
+                        {notify.error ? <span>
+                      <span className="text-danger">
+                        {notify.error.errors.email}
+                      </span>
+                    </span> : 
+                      ""
+                    }
                       
-                    {errors.email && touched.email ? (
+                    {/* {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
-                    ) : null}
+                    ) : null} */}
                   </div>
 
                   
@@ -199,7 +205,7 @@ type="register"
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <div class="loader"></div> : 'Créer mon compte' } 
+                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Créer mon compte' } 
                     </button>
                   </div>
                 </Form>
