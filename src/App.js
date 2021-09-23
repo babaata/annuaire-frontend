@@ -8,11 +8,12 @@ import ProfiDetails from "./Pages/ProfilDetails";
 import NotFound from './components/NotFound';
 import CreateProfilePage from "./Pages/CreateProfilePage";
 import NotAuth from "./components/NotAuth";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 
 function App() {
 
-  const token = localStorage.getItem('firstLogin')
 
   return (
     <div>
@@ -20,10 +21,10 @@ function App() {
         <div className="App">
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/recherche" exact component={!token ? NotAuth : SearchPage} />
-            <Route path="/profils" exact component={!token ? NotAuth : ProfilList} />
-            <Route path="/profils/:profilsId" exact component={!token ? NotAuth : ProfiDetails} />
-            <Route path="/profile" exact component={!token ? NotAuth : CreateProfilePage} />
+            <Route path="/recherche" exact component={SearchPage} />
+            <Route path="/profils" exact component={ProfilList} />
+            <Route path="/profils/:profilsId" exact component={ProfiDetails} />
+            <Route path="/profile" exact component={CreateProfilePage}/>
             <Route path="*" exact component={NotFound} />
           </Switch>
         </div>

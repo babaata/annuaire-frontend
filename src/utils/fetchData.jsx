@@ -3,8 +3,8 @@ import axios from "axios";
 export const getDataAPI = async (url, token) => {
   return await axios.get(`https://babaata.eviltech.org/api/${url}`, {
     headers: {
-      Accept: "application/json",
       Authorisation: `Bearer ${token}`,
+      Accept: "application/json",
     },
   });
 };

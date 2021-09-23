@@ -39,6 +39,8 @@ export const login = (data) => async (dispatch) => {
     }
 }
 
+
+
 export const register = (data) => async (dispatch) => {
 
   dispatch({type: NOTIFY, payload: {loading: true}})
@@ -79,7 +81,7 @@ export const logout = (token) => async (dispatch) => {
 
     localStorage.removeItem('firstLogin')
 
-    const res = await getDataAPI('user/logout', token)
+     await getDataAPI('user/logout', token)
 
     dispatch({
       type: AUTH,
