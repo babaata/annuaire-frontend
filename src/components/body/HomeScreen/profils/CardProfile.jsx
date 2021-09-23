@@ -6,7 +6,7 @@ function CardProfile(props) {
   return (
     <div className="card__profile">
       <div className="card__profil__img">
-        <img src={props.image} alt="abdoul" />
+        <img src={props.image} alt={props.profile.nom_utilisateur} />
       </div>
       <div className="card__info">
         <span
@@ -16,7 +16,10 @@ function CardProfile(props) {
           Comptable
         </span>
         <div className="card__info__bottom">
-          <Link to={`/profils/${props.profile.id_utilisateur}`}>
+          <Link to={{
+            pathname: '/profils/'+ props.profile.id_utilisateur,
+            profile: props.profile,
+          }}>
             <h5>{props.profile.nom_utilisateur}</h5>
           </Link>
           <span>

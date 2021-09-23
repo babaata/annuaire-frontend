@@ -10,7 +10,7 @@ export const login = (data) => async (dispatch) => {
 
     dispatch({type: NOTIFY, payload: {loading: true}})
 
-    const res = await postDataAPI("https://babaata.eviltech.org/api/user/login", data)
+    const res = await postDataAPI("user/login", data)
     
     if(res.data.access_token){
       dispatch({
@@ -41,7 +41,7 @@ export const login = (data) => async (dispatch) => {
 export const register = (data) => async (dispatch) => {
 
   dispatch({type: NOTIFY, payload: {loading: true}})
-    const res = await postDataAPI("https://babaata.eviltech.org/api/user/create",data);
+    const res = await postDataAPI("user/create",data);
 
     if(res.data.access_token){
       dispatch({

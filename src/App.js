@@ -16,15 +16,6 @@ function App() {
 
   const token = localStorage.getItem('firstLogin')
 
-  // console.log(token)
-  // if (token === null) {
-  //   return (
-  //     <div>
-  //       <ModalComponent />
-  //     </div>
-  //   ) 
-  // }
-
   return (
     <div>
       <Router>

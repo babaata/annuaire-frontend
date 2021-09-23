@@ -112,7 +112,7 @@ const Login = () => {
                   </div>
                   <br/>
                   <div className="form-footer">
-                    Mot de pass oublié ? <a href="#">Cliquez ici</a>
+                    Mot de pass oublié ? <ForgetPassword />
                   </div>
                 </Form>
               )}

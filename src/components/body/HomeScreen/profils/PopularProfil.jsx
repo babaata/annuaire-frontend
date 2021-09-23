@@ -6,11 +6,9 @@ import { getDataAPI } from '../../../../utils/fetchData';
 
 function PopularProfil() {
   const [profils, setProfils] = useState([])
-  // 
 
-  // console.log(profils)
   const getProfils = async () => {
-    const res = await getDataAPI('users/10')
+    const res = await getDataAPI('users')
     setProfils(res.data?.users)
   }
 
@@ -19,7 +17,7 @@ function PopularProfil() {
       getProfils()
     }
   })
-  console.log(profils)
+
   return (
     <div className="profiles my-5">
       <h1>Profils Populaires</h1>
