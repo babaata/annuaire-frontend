@@ -13,7 +13,7 @@ const experienceReducer = (state = initState, action) => {
   switch (action.type) {
     case INIT_EXPERIENCES:
       return {
-        experiences: [action.payload.experiences],
+        experiences: action.payload.experiences,
       };
 
     case ADD_EXPERIENCE:
@@ -37,9 +37,7 @@ const experienceReducer = (state = initState, action) => {
       };
 
     case LIST_EXPERIENCES:
-      return {
-        experiences: state.experiences,
-      };
+      return state.experiences;
 
     default:
       return state;

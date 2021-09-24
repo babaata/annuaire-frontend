@@ -3,7 +3,6 @@ import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { postDataAPI } from "../../../utils/fetchData";
 
@@ -25,15 +24,13 @@ const ForgetPassword = () => {
     password: Yup.string()
       .min(8, "trop court!")
       .required("Ce champ est requis !"),
-    passwordConfirmation: Yup.string()
+    password_confirmation: Yup.string()
       .min(8, "trop court!")
       .required("Ce champ est requis !")
       .oneOf([Yup.ref("password"), null], "Pas identique !"),
   });
 
   const history = useHistory();
-
-  const dispatch = useDispatch();
 
   const submitEmailForm = async (values, formIk) => {
     setLoader(true);
@@ -50,13 +47,11 @@ const ForgetPassword = () => {
     setLoader(true);
     const res = await postDataAPI("user/reset-password", values);
     setLoader(false);
-    console.log(res.data);
     if (!res.data?.status) {
-      console.log(res?.data?.errors?.password);
       formIk.setErrors({
         code: res?.data?.message,
         password: res?.data?.errors?.password,
-        passwordConfirmation: res?.data?.errors?.passwordConfirmation,
+        password_confirmation: res?.data?.errors?.password_confirmation,
       });
     } else {
       setClose(true);
@@ -87,7 +82,7 @@ const ForgetPassword = () => {
                   ? {
                       code: "",
                       password: "",
-                      passwordConfirmation: "",
+                      password_confirmation: "",
                     }
                   : {
                       email: "",
@@ -139,14 +134,14 @@ const ForgetPassword = () => {
                           required
                           onBlur={handleBlur}
                           className="form-control form-input"
-                          name="passwordConfirmation"
+                          name="password_confirmation"
                           type="password"
                           placeholder="Confirmez votre mot de passe"
                         />
-                        {errors.passwordConfirmation &&
-                        touched.passwordConfirmation ? (
+                        {errors.password_confirmation &&
+                        touched.password_confirmation ? (
                           <div className="text-danger">
-                            {errors.passwordConfirmation}
+                            {errors.password_confirmation}
                           </div>
                         ) : null}
                       </div>

@@ -8,14 +8,12 @@ import "@pathofdev/react-tag-input/build/index.css";
 import "./ProfileScreen.css";
 import {
   removeExperience,
-  getExperience,
+  initExperiences,
 } from "../../../redux/actions/experienceAction";
 
 function ProfileRightSide() {
   const dispatch = useDispatch();
   const { notify } = useSelector((state) => state);
-  // get experiences stored in the state
-  const { experiences } = useSelector((state) => state);
   const [loader, setLoader] = useState(false);
 
   // TODO remplacer cette valeur initiale par les donnée du profile du user connecté venant de la base de donnée
@@ -34,19 +32,15 @@ function ProfileRightSide() {
         occupation: "manager",
         name: "Google",
         description: "manager à google",
-        date: {
-          dateDebut: "30/12/2019",
-          dateFin: "30/12/2020",
-        },
+        dateDebut: "30/12/2016",
+        dateFin: "30/12/2020",
       },
       {
         occupation: "chef",
         name: "MIT",
         description: "chef à MIT",
-        date: {
-          dateDebut: "30/12/2016",
-          dateFin: "30/12/2020",
-        },
+        dateDebut: "30/12/2016",
+        dateFin: "30/12/2020",
       },
     ],
   });
@@ -54,6 +48,14 @@ function ProfileRightSide() {
   const [experiencesLocal, setExperiencesLocal] = React.useState(
     profile.experiences
   );
+
+  // Init Experiences from state by incoming database's experiences
+  useEffect(() => {
+    dispatch(initExperiences(profile.experiences));
+  }, [profile.experiences]);
+
+  // get experiences stored in the state
+  const { experiences } = useSelector((state) => state);
 
   // Everytime experiences from state change, change it in local too
   useEffect(() => {
@@ -65,6 +67,7 @@ function ProfileRightSide() {
     dispatch(removeExperience(occupation));
   };
 
+  // Form Validation
   const SchemaValidation = Yup.object().shape({
     profession: Yup.string()
       .min(2, "trop court!")
@@ -83,11 +86,11 @@ function ProfileRightSide() {
   });
 
   const submitForm = async (values, formik) => {
+    values["experiences"] = experiencesLocal;
     setLoader(true);
     // dispatch(createProfil(profile));
     setLoader(false);
     formik.setErrors({ email: notify.error?.errors?.email });
-    values["experiences"] = experiencesLocal;
     console.log(values);
     // history.push("/");
   };

@@ -23,8 +23,8 @@ const ExperienceAdd = ({ button, experience }) => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    startDate: Yup.string().required("Ce champ est requis !"),
-    endDate: Yup.string().required("Ce champ est requis !"),
+    dateDebut: Yup.string().required("Ce champ est requis !"),
+    dateFin: Yup.string().required("Ce champ est requis !"),
   });
 
   const dispatch = useDispatch();
@@ -53,8 +53,8 @@ const ExperienceAdd = ({ button, experience }) => {
                       occupation: "",
                       name: "",
                       description: "",
-                      startDate: "",
-                      endDate: "",
+                      dateDebut: "",
+                      dateFin: "",
                     }
               }
             >
@@ -116,13 +116,13 @@ const ExperienceAdd = ({ button, experience }) => {
                             required
                             onBlur={handleBlur}
                             className="form-control form-input"
-                            name="startDate"
+                            name="dateDebut"
                             type="text"
                             placeholder="01/01/2021"
                           />
-                          {errors.startDate && touched.startDate ? (
+                          {errors.dateDebut && touched.dateDebut ? (
                             <div className="text-danger">
-                              {errors.startDate}
+                              {errors.dateDebut}
                             </div>
                           ) : null}
                         </Col>
@@ -131,12 +131,12 @@ const ExperienceAdd = ({ button, experience }) => {
                             required
                             onBlur={handleBlur}
                             className="form-control form-input"
-                            name="endDate"
+                            name="dateFin"
                             type="text"
                             placeholder="01/01/2021"
                           />
-                          {errors.endDate && touched.endDate ? (
-                            <div className="text-danger">{errors.endDate}</div>
+                          {errors.dateFin && touched.dateFin ? (
+                            <div className="text-danger">{errors.dateFin}</div>
                           ) : null}
                         </Col>
                       </Row>
