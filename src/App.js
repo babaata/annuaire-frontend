@@ -16,6 +16,9 @@ function App() {
 
   const token = localStorage.getItem('firstLogin')
 
+  console.log(token)
+
+
   return (
     <div>
       <Router>
