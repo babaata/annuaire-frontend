@@ -6,7 +6,10 @@ import { Field, Form, Formik } from "formik";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import "./ProfileScreen.css";
-import { removeExperience } from "../../../redux/actions/experienceAction";
+import {
+  removeExperience,
+  getExperience,
+} from "../../../redux/actions/experienceAction";
 
 function ProfileRightSide() {
   const dispatch = useDispatch();
@@ -58,7 +61,7 @@ function ProfileRightSide() {
   }, [experiences]);
 
   // Remove an experience in the state
-  const removeExpe = (occupation) => {
+  const removeExperienceLocal = (occupation) => {
     dispatch(removeExperience(occupation));
   };
 
@@ -189,11 +192,20 @@ function ProfileRightSide() {
                             key={experience.occupation + "_" + index}
                             className="react-tag-input__tag"
                           >
+                            <ExperienceAdd
+                              button={
+                                <i className="fas fa-pen react-tag-input__tag__edit" />
+                              }
+                              experience={experience}
+                            />
+
                             <span className="react-tag-input__tag__content">
                               {experience.occupation}
                             </span>
                             <span
-                              onClick={() => removeExpe(experience.occupation)}
+                              onClick={() =>
+                                removeExperienceLocal(experience.occupation)
+                              }
                               className="react-tag-input__tag__remove"
                             />
                           </span>
@@ -201,7 +213,14 @@ function ProfileRightSide() {
                       })}
                     </div>
                     <hr />
-                    <ExperienceAdd />
+                    <ExperienceAdd
+                      button={
+                        <button type={"button"} className="add_experience">
+                          <i className="fas fa-plus-square" />
+                          Ajouter une nouvelle experience ou realiser
+                        </button>
+                      }
+                    />
                   </div>
                   <i className="fas fa-pen" />
                 </div>

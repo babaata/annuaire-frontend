@@ -17,8 +17,16 @@ const experienceReducer = (state = initState, action) => {
       };
 
     case ADD_EXPERIENCE:
+      let experiences = [...state.experiences, action.payload.experience];
+
+      // pour eviter les dupplications
+      const key = "occupation";
+      experiences = [
+        ...new Map(experiences.map((item) => [item[key], item])).values(),
+      ];
+
       return {
-        experiences: [...state.experiences, action.payload.experience],
+        experiences: experiences,
       };
 
     case REMOVE_EXPERIENCE:

@@ -2,12 +2,14 @@ import "./experience.style.css";
 import ModalComponent from "../modal.component";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import { addExperience } from "../../redux/actions/experienceAction";
 
-const ExperienceAdd = () => {
+const ExperienceAdd = ({ button, experience }) => {
+  const [close, setClose] = useState(false);
+
   const SchemaValidation = Yup.object().shape({
     occupation: Yup.string()
       .min(2, "trop court!")
@@ -29,30 +31,31 @@ const ExperienceAdd = () => {
 
   const submitForm = async (values) => {
     await dispatch(addExperience(values));
+    setClose(true);
   };
 
   return (
     <>
       <ModalComponent
-        button={
-          <button type={"button"} className="add_experience">
-            <i className="fas fa-plus-square" />
-            Ajouter une nouvelle experience ou realiser
-          </button>
-        }
+        close={close}
+        button={button}
         title={"Experience"}
         content={
           <>
             <Formik
               validationSchema={SchemaValidation}
               onSubmit={(e) => submitForm(e)}
-              initialValues={{
-                occupation: "",
-                name: "",
-                description: "",
-                startDate: "",
-                endDate: "",
-              }}
+              initialValues={
+                experience
+                  ? experience
+                  : {
+                      occupation: "",
+                      name: "",
+                      description: "",
+                      startDate: "",
+                      endDate: "",
+                    }
+              }
             >
               {({ handleBlur, touched, errors, setFieldValue }) => (
                 <Form>

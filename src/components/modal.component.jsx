@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Alert from "./alert/Alert";
 import { NOTIFY } from "../redux/actions/authAction";
 
-const ModalComponent = ({ title, button, content }) => {
+const ModalComponent = ({ title, button, content, close }) => {
   const [show, setShow] = useState(false);
 
   const { notify } = useSelector((state) => state);
@@ -59,14 +59,17 @@ const ModalComponent = ({ title, button, content }) => {
                 {title ? (
                   <div className="form-title">
                     {title}
-                    <div className={`text-danger text-center mt-2 h6 ${notify?.error ? 'alert-danger alert' : ''}`}>
+                    <div
+                      className={`text-danger text-center mt-2 h6 ${
+                        notify?.error ? "alert-danger alert" : ""
+                      }`}
+                    >
                       <span>{notify.error ? notify.error.message : ""}</span>
                     </div>
                   </div>
                 ) : (
                   <></>
                 )}
-
                 {content}
               </div>
             </div>

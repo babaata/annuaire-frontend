@@ -95,6 +95,7 @@
 
 .show_compo {
   display: flex;
+  flex-wrap: wrap;
 }
 
 
@@ -136,6 +137,7 @@
 
 
 .react-tag-input {
+  cursor: pointer !important;
   color: #5F439A !important;
   border: 1px solid #BDB4D7 !important;
 }
@@ -143,8 +145,17 @@
   background: transparent;
   color: #333;
 }
-.react-tag-input__input::placeholder, .react-tag-input__input:-moz-placeholder, .react-tag-input__input:-ms-input-placeholder, .react-tag-input__input::-moz-placeholder, .react-tag-input__input::-webkit-input-placeholder {
+.react-tag-input__input::placeholder,
+.react-tag-input__input:-moz-placeholder,
+.react-tag-input__input:-ms-input-placeholder,
+.react-tag-input__input::-moz-placeholder,
+.react-tag-input__input::-webkit-input-placeholder {
   color: #333; /* Input placeholder */
+}
+
+.react-tag-input__tag__edit {
+  cursor: pointer;
+  color: #FFFFFF!important;
 }
 
 .react-tag-input__tag__content {
@@ -241,12 +252,5 @@
     font-size: 11px;
     border-radius: 2.5px;
     width: 100%;
-  }
-  .added_compo span {
-    color: #5f439a;
-    background: #cfc9e2;
-    padding: 0 5px;
-    font-size: 15px;
-    border-radius: 4px;
   }
 }
