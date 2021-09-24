@@ -9,6 +9,8 @@ import { postDataAPI } from "../../../utils/fetchData";
 
 const ForgetPassword = () => {
   const [loader, setLoader] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const [close, setClose] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
     email: Yup.string()
@@ -18,54 +20,153 @@ const ForgetPassword = () => {
       .required("Ce champ est requis !"),
   });
 
+  const SchemaResetValidation = Yup.object().shape({
+    code: Yup.string().required("Ce champ est requis !"),
+    password: Yup.string()
+      .min(8, "trop court!")
+      .required("Ce champ est requis !"),
+    passwordConfirmation: Yup.string()
+      .min(8, "trop court!")
+      .required("Ce champ est requis !")
+      .oneOf([Yup.ref("password"), null], "Pas identique !"),
+  });
+
   const history = useHistory();
 
   const dispatch = useDispatch();
 
-  const submitForm = async (values, formIk) => {
-    console.log(values);
+  const submitEmailForm = async (values, formIk) => {
     setLoader(true);
     const res = await postDataAPI("user/forgot-password", values);
     setLoader(false);
-    console.log(res.data?.errors);
-    if (res.data?.errors) {
+    if (!res.data?.status) {
       formIk.setErrors({ email: res?.data?.message });
+    } else {
+      setEmailSent(true);
     }
-    console.log(res.data);
+  };
 
-    history.push("/");
+  const submitResetForm = async (values, formIk) => {
+    setLoader(true);
+    const res = await postDataAPI("user/reset-password", values);
+    setLoader(false);
+    console.log(res.data);
+    if (!res.data?.status) {
+      console.log(res?.data?.errors?.password);
+      formIk.setErrors({
+        code: res?.data?.message,
+        password: res?.data?.errors?.password,
+        passwordConfirmation: res?.data?.errors?.passwordConfirmation,
+      });
+    } else {
+      setClose(true);
+      history.push("/");
+    }
   };
 
   return (
     <>
       <ModalComponent
+        close={close}
+        setClose={setClose}
         button={<span className="clique-text"> Cliquez ici</span>}
         title={"Mot de passe oublié ?"}
         content={
           <>
             <Formik
-              validationSchema={SchemaValidation}
-              onSubmit={(e, { setErrors }) => submitForm(e, { setErrors })}
-              initialValues={{
-                email: "",
-              }}
+              validationSchema={
+                emailSent ? SchemaResetValidation : SchemaValidation
+              }
+              onSubmit={(e, { setErrors }) =>
+                emailSent
+                  ? submitResetForm(e, { setErrors })
+                  : submitEmailForm(e, { setErrors })
+              }
+              initialValues={
+                emailSent
+                  ? {
+                      code: "",
+                      password: "",
+                      passwordConfirmation: "",
+                    }
+                  : {
+                      email: "",
+                    }
+              }
             >
               {({ handleBlur, touched, errors }) => (
                 <Form>
-                  <div className="inputGroup">
-                    <label className="form-label">Email</label>
-                    <Field
-                      required
-                      onBlur={handleBlur}
-                      className="form-control form-input"
-                      name="email"
-                      type="email"
-                      placeholder="Saisissez votre email"
-                    />
-                    {errors.email && touched.email ? (
-                      <div className="text-danger">{errors.email}</div>
-                    ) : null}
-                  </div>
+                  {emailSent ? (
+                    <>
+                      <div className="inputGroup">
+                        <label className="form-label">Code</label>
+                        <Field
+                          required
+                          onBlur={handleBlur}
+                          className="form-control form-input"
+                          name="code"
+                          type="text"
+                          placeholder="Saisissez le code "
+                        />
+                        {errors.code && touched.code ? (
+                          <div className="text-danger">{errors.code}</div>
+                        ) : null}
+                      </div>
+
+                      <div className="inputGroup">
+                        <label className="form-label">
+                          Nouveau mot de passe
+                        </label>
+                        <Field
+                          required
+                          onBlur={handleBlur}
+                          className="form-control form-input"
+                          name="password"
+                          type="password"
+                          placeholder="Nouveau mot de passe"
+                        />
+
+                        {errors.password && touched.password ? (
+                          <div className="text-danger">{errors.password}</div>
+                        ) : null}
+                      </div>
+
+                      <div className="inputGroup">
+                        <label className="form-label">
+                          Confirmation mot de passe
+                        </label>
+                        <Field
+                          required
+                          onBlur={handleBlur}
+                          className="form-control form-input"
+                          name="passwordConfirmation"
+                          type="password"
+                          placeholder="Confirmez votre mot de passe"
+                        />
+                        {errors.passwordConfirmation &&
+                        touched.passwordConfirmation ? (
+                          <div className="text-danger">
+                            {errors.passwordConfirmation}
+                          </div>
+                        ) : null}
+                      </div>
+                    </>
+                  ) : (
+                    <div className="inputGroup">
+                      <label className="form-label">Email</label>
+                      <Field
+                        required
+                        onBlur={handleBlur}
+                        className="form-control form-input"
+                        name="email"
+                        type="email"
+                        placeholder="Saisissez votre email"
+                      />
+                      {errors.email && touched.email ? (
+                        <div className="text-danger">{errors.email}</div>
+                      ) : null}
+                    </div>
+                  )}
 
                   <div className="btn-submit-container">
                     <button
@@ -73,7 +174,7 @@ const ForgetPassword = () => {
                       type="submit"
                     >
                       {loader ? (
-                        <i class="fa fa-spinner fa-spin"></i>
+                        <i className="fa fa-spinner fa-spin" />
                       ) : (
                         "Envoyer"
                       )}

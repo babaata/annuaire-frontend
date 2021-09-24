@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import "./experience.style.css";
 import ModalComponent from "../modal.component";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
-import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import { addExperience } from "../../redux/actions/experienceAction";
@@ -38,6 +38,7 @@ const ExperienceAdd = ({ button, experience }) => {
     <>
       <ModalComponent
         close={close}
+        setClose={setClose}
         button={button}
         title={"Experience"}
         content={
