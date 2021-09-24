@@ -9,10 +9,11 @@ import { useHistory } from "react-router";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import Alert from "../../alert/Alert";
+import Login from '../Login/login.component';
 
 const Register = ({ button }) => {
-  const [loader, setLoader] = useState(false)
-  const [mail, setMail] = useState(false)
+  const [loader, setLoader] = useState(false);
+  const [mail, setMail] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
@@ -23,10 +24,6 @@ const Register = ({ button }) => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    // username: Yup.string()
-    //   .min(2, "trop court!")
-    //   .max(50, "trop long!")
-    //   .required("Ce champ est requis !"),
     telephone: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
@@ -48,24 +45,22 @@ const Register = ({ button }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const {notify} = useSelector(state => state)
+  const { notify } = useSelector((state) => state);
 
-  
   const submitForm = async (values, formik) => {
-    setLoader(true)
-    await dispatch(register(values))
+    setLoader(true);
+    await dispatch(register(values));
     setLoader(false);
-    formik.setErrors({ email: notify.error?.errors?.email })
-    formik.setErrors({ password: notify.error?.errors?.password })
+    formik.setErrors({ email: notify.error?.errors?.email });
+    formik.setErrors({ telephone: notify.error?.errors?.telephone });
+    formik.setErrors({ password: notify.error?.errors?.password });
     history.push("/");
   };
 
   return (
-    
-     <> 
-     <ModalComponent
-
-type="register"
+    <>
+      <ModalComponent
+        type="register"
         button={
           button ? (
             button
@@ -78,12 +73,11 @@ type="register"
           <>
             <Formik
               validationSchema={SchemaValidation}
-              onSubmit={(e,{setErrors}) => submitForm(e,{setErrors})}
+              onSubmit={(e, { setErrors }) => submitForm(e, { setErrors })}
               initialValues={{
                 nom: "",
                 prenom: "",
                 email: "",
-                // username: "",
                 telephone: "",
                 password: "",
               }}
@@ -128,21 +122,11 @@ type="register"
                       type="email"
                       placeholder="Saisissez votre email"
                     />
-
-                        {/* {notify.error ? <span>
-                      <span className="text-danger">
-                        {notify.error.errors.email}
-                      </span>
-                    </span> : 
-                      ""
-                    } */}
-                      
                     {errors.email && touched.email ? (
                       <div className="text-danger">{errors.email}</div>
                     ) : null}
                   </div>
 
-                  
                   <div className="inputGroup">
                     <label className="form-label">Téléphone</label>
                     <Field
@@ -152,9 +136,9 @@ type="register"
                       type="phone"
                       placeholder="Votre numero"
                     />
-                    {errors.telephone && touched.telephone ? 
+                    {errors.telephone && touched.telephone ? (
                       <div className="text-danger">{errors.telephone}</div>
-                     : null}
+                    ) : null}
                   </div>
 
                   <div className="inputGroup">
@@ -167,14 +151,6 @@ type="register"
                       type="password"
                       placeholder="Mot de passe"
                     />
-                    {/* {notify.error ? <span>
-                      <span className="text-danger">
-                        {notify.error.errors.password}
-                      </span>
-                    </span> : 
-                      ""
-                    } */}
-
 
                     {errors.password && touched.password ? (
                       <div className="text-danger">{errors.password}</div>
@@ -206,8 +182,18 @@ type="register"
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Créer mon compte' } 
+                      {loader ? (
+                        <i className="fa fa-spinner fa-spin" />
+                      ) : (
+                        "Créer mon compte"
+                      )}
                     </button>
+                  </div>
+                  <div className="form-footer">
+                  Vous avez déjà un compte ?
+                  </div>
+                  <div className="form-footer">
+                    <Login />
                   </div>
                 </Form>
               )}
@@ -215,7 +201,7 @@ type="register"
           </>
         }
       />
-     </>
+    </>
   );
 };
 

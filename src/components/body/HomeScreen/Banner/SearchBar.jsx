@@ -4,7 +4,7 @@ import "./searchbar.css";
 
 function SearchBar() {
   return (
-    <div className="search__bar px-0">
+    <div className="search__bar ">
       <div className="inputBar ">
         <i className="fas fa-user"></i>
         <input placeholder="Profession" />
@@ -18,7 +18,7 @@ function SearchBar() {
         <input placeholder="Pays de résidence" />
       </div>
       <Link to="/recherche">
-        <i className="fas fa-search loupe"></i>
+        <i className="fas fa-search loupe fa-2x"></i>
       </Link>
     </div>
   );

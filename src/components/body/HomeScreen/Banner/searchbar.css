@@ -9,12 +9,12 @@
   border-radius: 5px;
   width: 51%;
   margin: 0;
-  padding: 12px;
+  padding: 5px 5px 5px 10px;
 }
 
 .search__bar .inputBar i {
   color: #5f439a;
-  font-size: 20px;
+  font-size: 25px;
   margin-right: 1.5%;
 }
 .search__bar .fa-search{
@@ -31,7 +31,7 @@
 
 .search__bar .inputBar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -50,7 +50,6 @@
   margin: 0;
   padding: 1% 2%;
   font-size: 1rem;
-  margin-right: 2%;
   text-decoration: none;
 }
 
@@ -83,19 +82,22 @@
     border: 1px solid #5f439a;
     padding: 2%;
     border-radius: 10px;
+    background-color: #fff;
   }
   .search__bar .inputBar input{
-    color: #fff;
+    color: #000;
   }
   .search__bar .inputBar i{
     color: #5f439a;
     line-height: 45px;
   }
   .search__bar a {
-    margin-top: 20px;
+    margin-top: 10px;
+    padding: 4%;
   }
   .search__bar a i{
     color: #fff;
+    font-size: 30px;
 
   }
 }

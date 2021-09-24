@@ -8,20 +8,19 @@ export const LOADING = "LOADING"
 
 export const login = (data) => async (dispatch) => {
 
-
     dispatch({type: NOTIFY, payload: {loading: true}})
 
     const res = await postDataAPI("user/login", data)
-
+    
     if(res.data.access_token){
-      dispatch({  
+      dispatch({
         type: AUTH,
         payload: {
           data: res.data
         }
       })
 
-      localStorage.setItem('firstLogin', res.data.access_token)
+      localStorage.setItem('firstLogin', res.data?.access_token)
 
       dispatch({
         type: NOTIFY,
@@ -54,7 +53,7 @@ export const register = (data) => async (dispatch) => {
         }
       })
 
-      localStorage.setItem('firstLogin', res.data.access_token)
+      localStorage.setItem('firstLogin', res.data?.access_token)
 
       dispatch({
         type: NOTIFY,
@@ -63,21 +62,20 @@ export const register = (data) => async (dispatch) => {
         }
       })
     }else{
-
       dispatch({
         type: NOTIFY,
         payload: {
           error: res.data,
-          email: res.data.e
         }
       })
+
    
     }
 
 };
 
 export const logout = (token) => async (dispatch) => {
-
+  try {
 
     localStorage.removeItem('firstLogin')
 
@@ -87,4 +85,5 @@ export const logout = (token) => async (dispatch) => {
       type: AUTH,
       payload: {},
     });
+  } catch (err) {}
 };

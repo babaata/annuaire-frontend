@@ -7,12 +7,15 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { Button } from "react-bootstrap";
+import Register from '../Register/register.component';
+import ForgetPassword from "../ForgetPassword/forgetPassword.component";
 
 const Login = () => {
-  const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
     email: Yup.string()
+      .email("Cet email est invalid")
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
@@ -29,7 +32,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const submitForm = async (values) => {
-    setLoader(true)
+    setLoader(true);
     await dispatch(login(values));
     setLoader(false);
     history.push("/");
@@ -39,7 +42,6 @@ const Login = () => {
     <>
       <ModalComponent
         button={<Button className={"btn-outlined"}>Connexion</Button>}
-        type="login"
         title={"Connexion"}
         content={
           <>
@@ -51,7 +53,7 @@ const Login = () => {
                 password: "",
               }}
             >
-              {({handleBlur, touched, errors }) => (
+              {({ handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
                     <label className="form-label">Login</label>
@@ -95,11 +97,22 @@ const Login = () => {
                       className="btn-submit form-control form-input"
                       type="submit"
                     >
-                      { loader ? <i class="fa fa-spinner fa-spin"></i> : 'Se connecter' } 
+                      {loader ? (
+                        <i class="fa fa-spinner fa-spin"></i>
+                      ) : (
+                        "Se connecter"
+                      )}
                     </button>
                   </div>
                   <div className="form-footer">
-                    Mot de pass oublié ? <a href="#">Cliquez ici</a>
+                  Vous n'avez pas de compte ?
+                  </div>
+                  <div className="form-footer">
+                    <Register />
+                  </div>
+                  <br/>
+                  <div className="form-footer">
+                    Mot de pass oublié ? <ForgetPassword />
                   </div>
                 </Form>
               )}
