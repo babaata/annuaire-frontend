@@ -19,7 +19,7 @@ function CardProfile(props) {
         </span>
         <div className="card__info__bottom text-white text-decoration-none">
           <Link to={{
-            pathname: '/profils/'+ props.profile?.id_utilisateur,
+            pathname: '/profils/'+ props.profile?.nom_utilisateur,
             profile: props.profile,
             }}>
                 
