@@ -5,7 +5,7 @@ import "./CardProfile.css";
 function CardProfile(props) {
   return (
     <div className="card__profile">
-      
+    
       <div className="card__profil__img">
            <img src={props.image} alt={props.profile?.nom_utilisateur} />
       </div>

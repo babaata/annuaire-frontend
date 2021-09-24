@@ -5,10 +5,10 @@ function SearchContainCard(props) {
   return (
     <div className="search__contain__card">
       <div className="card_img">
-        <img src="./images/abdoul.jpeg" alt="" />
+        <img src="../images/abdoul.jpeg" alt="" />
       </div>
       <div className="card_info">
-        <h5>Abdoul Goudoussy Diallo</h5>
+        <h5>{`${props.profil?.prenom} ${props.profil?.nom}`}</h5>
         <p>Comptable</p>
         <span>
           <i className="fas fa-map-marker-alt"></i>
@@ -17,8 +17,9 @@ function SearchContainCard(props) {
       </div>
       <div className="info_plus">
         <Link to={{
-          pathname:'/profils/:id', 
-          id: props.id_utilisateur}}
+          pathname:'/profils/' + props.profil?.nom_utilisateur, 
+          profile: props.profil,
+          }}
           >
           Consulter <i className="fas fa-angle-double-right"></i>
         </Link>

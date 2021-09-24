@@ -3,8 +3,6 @@ import "./DetailSectionHead.css"
 
 function DetailSectionHead(props) {
 
-  console.log(props)
-
   return <div className="detail__section__head">
       <div className="head_img">
         <img src="../images/abdoul.jpeg" alt="" />
