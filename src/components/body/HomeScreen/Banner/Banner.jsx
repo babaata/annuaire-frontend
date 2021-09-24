@@ -6,7 +6,7 @@ export default function Banner() {
     return (
         <div className="Banner">
              <div className="banner_content">
-                <h1 className="firstText h6">Toutes les compétences Guinéennes en un clic&nbsp;!</h1>
+                <h1 className="firstText">Toutes les compétences Guinéennes en un clic&nbsp;!</h1>
                 <SearchBar/>
              </div>
         </div>

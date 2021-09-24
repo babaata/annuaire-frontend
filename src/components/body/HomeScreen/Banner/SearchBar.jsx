@@ -27,7 +27,7 @@ function SearchBar() {
       <Link 
         to={{
           pathname: inputs.length !== 0 ?`/recherche/req=` : '',
-          search: `${inputs?.profession ? inputs?.profession : ''}${inputs?.competences ? '&' + inputs?.competences : ''}${inputs?.pays ? '&' + inputs?.pays : ''}`
+          search: `${inputs?.profession ? 'profession=' + inputs?.profession : ''}${inputs?.competences ? '&competences=' + inputs?.competences : ''}${inputs?.pays ? '&pays=' + inputs?.pays : ''}`
          }}
       >
         <i className="fas fa-search loupe fa-2x"></i>
