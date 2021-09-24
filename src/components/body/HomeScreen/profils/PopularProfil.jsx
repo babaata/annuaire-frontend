@@ -21,6 +21,7 @@ function PopularProfil() {
   return (
     <div className="profiles my-5">
       <h1>Profils Populaires</h1>
+      {profils.length === 0 ? <div className="d-flex justify-content-center"><i className="fa fa-spinner fa-spin fa-2x"></i></div> : ''}
       <div className="card__section container my-5">
         <div className="row">
         {
