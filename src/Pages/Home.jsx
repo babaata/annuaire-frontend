@@ -15,7 +15,7 @@ function Home() {
       <PopularProfil />
       <Inscription
         status={true}
-        text="Vous êtes Guinéen, vous avez des compétences à faire valoir ?"
+        text="Vous êtes Guinéen(e), vous avez des compétences à faire valoir ?"
       />
       <Competences />
       <StatistiqueSection />
