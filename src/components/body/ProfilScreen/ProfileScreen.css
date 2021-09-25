@@ -4,11 +4,16 @@
   justify-content: center;
   align-items: center;
   margin: 5% 10%;
+  padding: 0 10%;
 }
 .profile__info .profile__btn {
   display: flex;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #F7F9FC;
+  padding:1% 5%;
+  border-radius: 5px;
+  font-size: ;
 }
 .btns {
   background-color: #5f439a;
@@ -27,8 +32,8 @@
 }
 .profil__left__side {
   display: flex;
-  justify-content: space-evenly;
-  padding: 0 15%;
+  justify-content: space-between;
+  padding: 0 0.5%;
 }
 .profil__left__side .upload__photo .photo {
   width: 300px;
@@ -53,7 +58,6 @@
 }
 .profile__personal__info {
   width: 50%;
-  padding: 3%;
 }
 .mg-left {
   margin-left: 41%;
@@ -122,6 +126,7 @@
   font-size: 22.5px;
   font-family: "Open sans semiBold";
   font-weight: bold;
+  display: none;
 }
 .input_info_combobox {
   display: flex;
@@ -183,6 +188,7 @@
 /*Tablette*/
 @media screen and (min-width: 768px) and (max-width:968px) {
   .info__title{
+    display: block;
     font-size: 25px !important;
   }
   .profile__personal__info{
@@ -191,6 +197,9 @@
 }
 /*Mobile Responsive*/
 @media screen and (min-width: 360px) and (max-width: 768px) {
+  .profile__info .profile__btn{
+    background:none;
+  }
   .mg-left {
     margin-left: 0;
   }
@@ -235,7 +244,7 @@
   }
   .btns.left {
     text-align: center;
-    font-size: 19px;
+    font-size: 14px !important;
   }
   .nextBtn {
     display: block;
@@ -252,5 +261,12 @@
     font-size: 11px;
     border-radius: 2.5px;
     width: 100%;
+    font-size: 14px !important;
+  }
+  .info__title{
+    display: block;
+  }
+  .profile__info{
+    margin:0;
   }
 }
