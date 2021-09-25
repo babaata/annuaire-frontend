@@ -5,27 +5,18 @@ import SearchPage from "./Pages/SearchPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfilList from "./Pages/ProfilList";
 import ProfiDetails from "./Pages/ProfilDetails";
-import NotFound from './components/NotFound';
 import CreateProfilePage from "./Pages/CreateProfilePage";
-import NotAuth from "./components/NotAuth";
 import Login from "./components/auth/Login/login.component";
-import ModalComponent from './components/modal.component';
 
 
 function App() {
-
-  const token = localStorage.getItem('firstLogin')
-
-  console.log(token)
-
-
   return (
     <div>
       <Router>
         <div className="App">
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/recherche" exact component={SearchPage} />
+            <Route path="/recherche/:req" exact component={SearchPage} />
             <Route path="/profils" exact component={ProfilList} />
             <Route path="/profils/:profilsId" exact component={ProfiDetails} />
             <Route path="/profile" exact component={CreateProfilePage} />

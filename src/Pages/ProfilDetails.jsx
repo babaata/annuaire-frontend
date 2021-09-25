@@ -10,11 +10,12 @@ import { getDataAPI } from '../utils/fetchData';
 function ProfilDetails(props) {
   const [profile, setProfile] = useState()
 
+
   const getProfil = async (id) => {
     const res = await getDataAPI(`user/${id}`)
     setProfile(res.data?.user)
   }
-
+  
   if (!profile) {
     if (props.location.profile) {
       setProfile(props.location.profile)

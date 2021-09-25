@@ -1,9 +1,10 @@
 .professionComponent_head{
     background: #F3F3F3;
     border-radius: 5px;
-    padding: 20px;
+    padding: 3% 5%;
     text-align:left;
-    margin-bottom: 15px;
+    margin-bottom: 3.1%;
+    width:320px;
 }
 .professionComponent_head > h2{
     padding: 0;
@@ -13,7 +14,7 @@
 .profession_title{
     background: #5F439A;
     color: #ffff;
-    border-radius: 2px;
+    border-radius: 6px;
     width: 45%;
     font-size: 20px;
     text-align: center;
@@ -55,18 +56,20 @@
     background:#F3F3F3;
     width: 100%;
     border-radius: 5px;
+    padding:0.5%;
+    padding-bottom: 3.2%;
 }
 .competenceComponent_global > h2{
     padding: 0;
     font-size: 30px;
-     padding:2%;
+    padding: 0.5% 1%;
      margin-bottom: 0;
 }
 .competencetitle_head{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin:2%;
+    margin:0.5% 1%;
 }
 .competencetitle{
     background: #FBB017;
@@ -85,8 +88,8 @@
 }
 .detailSection{
     display: flex;
-    justify-content: space-between;
-    margin:5%;
+    justify-content: space-around;
+    margin:6%;
 }
 .detailleft{
     width: 75% !important;
@@ -96,28 +99,37 @@
     border-radius: 5px;
     margin-top: 1%;
     margin-bottom: 20%;
+    padding:0.5%;
 }
 .experienceComponent h2{
     font-size: 30px;
-    padding:1%;
     margin-bottom: 0;
 }
-
+.experienceComponent h2, .competenceComponent_global h2 {
+    padding: 1% 1%;
+}
 .experiencecard{
     display: flex;
-    padding: 15px;
+    padding:0 1%;
     justify-content: space-between;
 }
 .title_years{
     width: 100%;
 }
 .see_more{   
+    width: 10%;
    
 }
-.see_more a{
-    font-size: 20px;
+.title_years p a{
+    font-size: 15px;
+    color: #009B95;
+    margin-left: 20%;
+    font-family: "Open sans semiBold";
+}
+.first_page_title a i{
     color: #009B95;
 }
+
 .first_page_title
 {
     color: #5F439A;
@@ -127,9 +139,14 @@
     font-size: 25px;
     color: #009B95;
 }
+.title_years > span{
+    color:#5F439A;
+}
 .title_years > p{
     font-size: 18px;
     color: #5F439A;
+    margin-bottom: 0;
+    font-family: "Open sans SemiBold";
 }
 
 /*Tablette*/

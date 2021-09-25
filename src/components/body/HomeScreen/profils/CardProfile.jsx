@@ -4,8 +4,7 @@ import "./CardProfile.css";
 
 function CardProfile(props) {
   return (
-    <div className="card__profile">
-      
+    <div className="card__profile">    
       <div className="card__profil__img">
            <img src={props.image} alt={props.profile?.nom_utilisateur} />
       </div>
@@ -19,7 +18,7 @@ function CardProfile(props) {
         </span>
         <div className="card__info__bottom text-white text-decoration-none">
           <Link to={{
-            pathname: '/profils/'+ props.profile?.id_utilisateur,
+            pathname: '/profils/'+ props.profile?.nom_utilisateur,
             profile: props.profile,
             }}>
                 
@@ -30,6 +29,7 @@ function CardProfile(props) {
             </span>
           </Link>
         </div>
+        <div className="card__gradient"></div>
       </div>
     </div>
   );

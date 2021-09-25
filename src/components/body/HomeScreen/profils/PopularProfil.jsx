@@ -20,18 +20,29 @@ function PopularProfil() {
 
   return (
     <div className="profiles my-5">
-      <h1>Profils Populaires</h1>
-      {profils.length === 0 ? <div className="d-flex justify-content-center"><i className="fa fa-spinner fa-spin fa-2x"></i></div> : ''}
+      <h1>Profils Récents</h1>
+      {profils.length === 0 ? (
+        <div className="d-flex justify-content-center">
+          <i
+            className="fa fa-spinner fa-spin fa-2x"
+            style={{ color: "#5F439A" }}
+          ></i>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="card__section container my-5">
         <div className="row">
-        {
-          profils?.map((p) => (
+          {profils?.map((p) => (
             <div className="col-6 col-lg-3" key={p.id_utilisateur}>
-              <CardProfile image="./images/abdoul.jpeg" color="orange" profile={p}/>
+              <CardProfile
+                image="./images/abdoul.jpeg"
+                color="orange"
+                profile={p}
+              />
             </div>
-          ))
-        }
-          
+          ))}
+
           {/* <div className="col-6 col-lg-3">
             <CardProfile image="./images/model.jpeg" color="#009B95" />
           </div>
@@ -56,9 +67,7 @@ function PopularProfil() {
         </div>
       </div>
       <Link to="/profils">
-        <button>
-          Voir tous les profiles 
-        </button>
+        <button className="btns">Voir tous les profils</button>
       </Link>
     </div>
   );
