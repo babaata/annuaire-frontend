@@ -5,7 +5,7 @@ function SearchContainCard(props) {
   return (
     <div className="search__contain__card">
       <div className="card_img">
-        <img src="../images/abdoul.jpeg" alt="" />
+        <img src={props.profil?.url_photo !== "" ? props.profil?.url_photo : "./images/loading.gif"} alt="" />
       </div>
       <div className="card_info">
         <h5>{`${props.profil?.prenom} ${props.profil?.nom}`}</h5>

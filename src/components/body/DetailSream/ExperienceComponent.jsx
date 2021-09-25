@@ -9,7 +9,7 @@ export default function ExperienceComponent() {
             <p className="first_page_title">
               Lead designer chez <span>Google</span>
               <a href="/">
-                <i class="fas fa-chevron-right"></i>En savoir plus
+                <i className="fas fa-chevron-right"></i>En savoir plus
               </a>
             </p>
             <span>2018 - à nos jours</span>

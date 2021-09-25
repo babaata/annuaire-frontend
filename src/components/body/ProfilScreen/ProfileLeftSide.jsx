@@ -40,7 +40,7 @@ function ProfileLeftSide() {
       formData.append("image", file, file?.name);
 
       // Details of the uploaded file
-      console.log(file);
+      // console.log(file);
 
       // Request made to the backend api
       // Send formData object
@@ -150,7 +150,7 @@ function ProfileLeftSide() {
             </div>
           ) : (
             <img
-              src={imageUrl !== "" ? imageUrl : "./Images/abdoul.jpeg"}
+              src={imageUrl !== "" ? imageUrl : "./Images/loading.gif"}
               alt=""
             />
           )}

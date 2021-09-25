@@ -22,7 +22,7 @@ function ProfilList(props) {
       getProfil(props.match.params.profilsId);
     }
   }
-  console.log(users);
+  
   return (
     <div className="profil_list">
       <Menubar />
@@ -42,7 +42,7 @@ function ProfilList(props) {
               key={u.id_utilisateur}
             >
               <CardProfile
-                image="./images/souare.jpeg"
+                image={u.url_photo !== "" ? u.url_photo : "./images/loading.gif"}
                 color="#326FB4"
                 profile={u}
               />
