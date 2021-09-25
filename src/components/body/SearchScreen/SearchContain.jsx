@@ -3,11 +3,11 @@ import SearchContainLeft from "./SearchContainLeft";
 import SearchContainrRight from "./SearchContainrRight";
 import "./SearchContain.css";
 
-function SearchContain() {
+function SearchContain(props) {
   return (
     <div className="search__contain">
       <SearchContainLeft />
-      <SearchContainrRight />
+      <SearchContainrRight profils={props?.profils}/>
     </div>
   );
 }

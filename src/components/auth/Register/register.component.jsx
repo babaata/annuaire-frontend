@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./register.style.css";
 import { Formik, Form, Field } from "formik";
 import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { register } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import Alert from "../../alert/Alert";
+import Login from "../Login/login.component";
 
 const Register = ({ button }) => {
+  const [close, setClose] = useState(false);
   const [loader, setLoader] = useState(false);
-  const [mail, setMail] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
     nom: Yup.string()
@@ -28,12 +28,10 @@ const Register = ({ button }) => {
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
     password: Yup.string()
-      .min(2, "trop court!")
-      .max(50, "trop long!")
+      .min(8, "trop court!")
       .required("Ce champ est requis !"),
     passwordConfirmation: Yup.string()
-      .min(2, "trop court!")
-      .max(50, "trop long!")
+      .min(8, "trop court!")
       .required("Ce champ est requis !")
       .oneOf([Yup.ref("password"), null], "Pas identique !"),
     email: Yup.string()
@@ -44,21 +42,24 @@ const Register = ({ button }) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const { notify } = useSelector((state) => state);
-
   const submitForm = async (values, formik) => {
     setLoader(true);
-    await dispatch(register(values));
+    const res = await dispatch(register(values));
     setLoader(false);
-    formik.setErrors({ email: notify.error?.errors?.email });
-    formik.setErrors({ telephone: notify.error?.errors?.telephone });
-    formik.setErrors({ password: notify.error?.errors?.password });
+    console.log(res);
+    formik.setErrors({
+      email: res.errors?.email,
+      telephone: res.errors?.telephone,
+      password: res.errors?.password,
+    });
     history.push("/");
   };
 
   return (
     <>
       <ModalComponent
+        close={close}
+        setClose={setClose}
         type="register"
         button={
           button ? (
@@ -158,7 +159,7 @@ const Register = ({ button }) => {
 
                   <div className="inputGroup">
                     <label className="form-label">
-                      Confirmation mot de pass
+                      Confirmation mot de passe
                     </label>
                     <Field
                       required
@@ -187,6 +188,10 @@ const Register = ({ button }) => {
                         "Créer mon compte"
                       )}
                     </button>
+                  </div>
+                  <div className="form-footer">Vous avez déjà un compte ?</div>
+                  <div className="form-footer">
+                    <Login />
                   </div>
                 </Form>
               )}

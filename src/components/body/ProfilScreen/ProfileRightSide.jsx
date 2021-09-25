@@ -6,13 +6,14 @@ import { Field, Form, Formik } from "formik";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import "./ProfileScreen.css";
-import { removeExperience } from "../../../redux/actions/experienceAction";
+import {
+  removeExperience,
+  initExperiences,
+} from "../../../redux/actions/experienceAction";
 
 function ProfileRightSide() {
   const dispatch = useDispatch();
   const { notify } = useSelector((state) => state);
-  // get experiences stored in the state
-  const { experiences } = useSelector((state) => state);
   const [loader, setLoader] = useState(false);
 
   // TODO remplacer cette valeur initiale par les donnée du profile du user connecté venant de la base de donnée
@@ -31,19 +32,15 @@ function ProfileRightSide() {
         occupation: "manager",
         name: "Google",
         description: "manager à google",
-        date: {
-          dateDebut: "30/12/2019",
-          dateFin: "30/12/2020",
-        },
+        dateDebut: "30/12/2016",
+        dateFin: "30/12/2020",
       },
       {
         occupation: "chef",
         name: "MIT",
         description: "chef à MIT",
-        date: {
-          dateDebut: "30/12/2016",
-          dateFin: "30/12/2020",
-        },
+        dateDebut: "30/12/2016",
+        dateFin: "30/12/2020",
       },
     ],
   });
@@ -52,16 +49,25 @@ function ProfileRightSide() {
     profile.experiences
   );
 
+  // Init Experiences from state by incoming database's experiences
+  useEffect(() => {
+    dispatch(initExperiences(profile.experiences));
+  }, [profile.experiences]);
+
+  // get experiences stored in the state
+  const { experiences } = useSelector((state) => state);
+
   // Everytime experiences from state change, change it in local too
   useEffect(() => {
     setExperiencesLocal(experiences?.experiences);
   }, [experiences]);
 
   // Remove an experience in the state
-  const removeExpe = (occupation) => {
+  const removeExperienceLocal = (occupation) => {
     dispatch(removeExperience(occupation));
   };
 
+  // Form Validation
   const SchemaValidation = Yup.object().shape({
     profession: Yup.string()
       .min(2, "trop court!")
@@ -80,11 +86,11 @@ function ProfileRightSide() {
   });
 
   const submitForm = async (values, formik) => {
+    values["experiences"] = experiencesLocal;
     setLoader(true);
     // dispatch(createProfil(profile));
     setLoader(false);
     formik.setErrors({ email: notify.error?.errors?.email });
-    values["experiences"] = experiencesLocal;
     console.log(values);
     // history.push("/");
   };
@@ -189,11 +195,20 @@ function ProfileRightSide() {
                             key={experience.occupation + "_" + index}
                             className="react-tag-input__tag"
                           >
+                            <ExperienceAdd
+                              button={
+                                <i className="fas fa-pen react-tag-input__tag__edit" />
+                              }
+                              experience={experience}
+                            />
+
                             <span className="react-tag-input__tag__content">
                               {experience.occupation}
                             </span>
                             <span
-                              onClick={() => removeExpe(experience.occupation)}
+                              onClick={() =>
+                                removeExperienceLocal(experience.occupation)
+                              }
                               className="react-tag-input__tag__remove"
                             />
                           </span>
@@ -201,7 +216,14 @@ function ProfileRightSide() {
                       })}
                     </div>
                     <hr />
-                    <ExperienceAdd />
+                    <ExperienceAdd
+                      button={
+                        <button type={"button"} className="add_experience">
+                          <i className="fas fa-plus-square" />
+                          Ajouter une nouvelle experience ou realiser
+                        </button>
+                      }
+                    />
                   </div>
                   <i className="fas fa-pen" />
                 </div>

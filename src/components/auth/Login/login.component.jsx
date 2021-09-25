@@ -3,10 +3,11 @@ import ModalComponent from "../../modal.component";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../redux/actions/authAction";
 import { useHistory } from "react-router";
 import { Button } from "react-bootstrap";
+import Register from "../Register/register.component";
 import ForgetPassword from "../ForgetPassword/forgetPassword.component";
 
 const Login = () => {
@@ -34,6 +35,7 @@ const Login = () => {
     setLoader(true);
     await dispatch(login(values));
     setLoader(false);
+
     history.push("/");
   };
 
@@ -81,9 +83,9 @@ const Login = () => {
                     />
                     <small onClick={() => setTypePass(!typePass)}>
                       {typePass ? (
-                        <i className=" fas fa-eye"></i>
+                        <i className=" fas fa-eye" />
                       ) : (
-                        <i className="fas fa-eye-slash"></i>
+                        <i className="fas fa-eye-slash" />
                       )}
                     </small>
                     {errors.password && touched.password ? (
@@ -97,14 +99,21 @@ const Login = () => {
                       type="submit"
                     >
                       {loader ? (
-                        <i class="fa fa-spinner fa-spin"></i>
+                        <i className="fa fa-spinner fa-spin" />
                       ) : (
                         "Se connecter"
                       )}
                     </button>
                   </div>
+                  <div className="form-footer">Vous n'avez pas de compte ?</div>
                   <div className="form-footer">
-                    Mot de pass oublié ? <ForgetPassword />
+                    <Register />
+                  </div>
+
+                  <br />
+                  <div className="form-footer">
+                    Mot de pass oublié ?
+                    <ForgetPassword />
                   </div>
                 </Form>
               )}
