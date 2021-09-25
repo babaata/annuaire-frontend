@@ -2,3 +2,9 @@
     justify-items: center;
     margin:5%;
 }
+
+.justify__center{
+    display: flex;
+align-items: center;
+justify-content: center !important;
+}

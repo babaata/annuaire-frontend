@@ -7,6 +7,9 @@
     padding: 20px;
     font-family: "Open sans semiBold";
 }
+.header_title h2{
+    font-family: "Open sans semiBold";
+}
 .fonction_name{
     color: #5F439A;
     width: 60%;

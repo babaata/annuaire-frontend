@@ -13,3 +13,12 @@
     margin-right: 10px;
     cursor: pointer;
 }
+
+.clique-text {
+    cursor: pointer;
+    padding-left: 5px;
+    text-decoration: underline;
+    letter-spacing: -0.64px;
+    color: #5F439A;
+    opacity: 1;
+}

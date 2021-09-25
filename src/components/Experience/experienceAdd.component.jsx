@@ -6,16 +6,20 @@ import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { Col, Row } from "react-bootstrap";
 import { addExperience } from "../../redux/actions/experienceAction";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const ExperienceAdd = ({ button, experience }) => {
   const [close, setClose] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+  const [endtDate, setEndtDate] = useState(new Date());
 
   const SchemaValidation = Yup.object().shape({
-    occupation: Yup.string()
+    poste: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    name: Yup.string()
+    entreprise: Yup.string()
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
@@ -23,8 +27,6 @@ const ExperienceAdd = ({ button, experience }) => {
       .min(2, "trop court!")
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
-    dateDebut: Yup.string().required("Ce champ est requis !"),
-    dateFin: Yup.string().required("Ce champ est requis !"),
   });
 
   const dispatch = useDispatch();
@@ -50,11 +52,11 @@ const ExperienceAdd = ({ button, experience }) => {
                 experience
                   ? experience
                   : {
-                      occupation: "",
-                      name: "",
+                      poste: "",
+                      entreprise: "",
                       description: "",
-                      dateDebut: "",
-                      dateFin: "",
+                      date_debut: "",
+                      date_fin: "",
                     }
               }
             >
@@ -68,12 +70,12 @@ const ExperienceAdd = ({ button, experience }) => {
                       required
                       onBlur={handleBlur}
                       className="form-control form-input"
-                      name="occupation"
+                      name="poste"
                       type="text"
                       placeholder="Quel était votre poste ou role"
                     />
-                    {errors.occupation && touched.occupation ? (
-                      <div className="text-danger">{errors.occupation}</div>
+                    {errors.poste && touched.poste ? (
+                      <div className="text-danger">{errors.poste}</div>
                     ) : null}
                   </div>
                   <div className="inputGroup">
@@ -82,12 +84,12 @@ const ExperienceAdd = ({ button, experience }) => {
                       required
                       onBlur={handleBlur}
                       className="form-control form-input"
-                      name="name"
+                      name="entreprise"
                       type="text"
                       placeholder="Nom de l'organisation"
                     />
-                    {errors.name && touched.name ? (
-                      <div className="text-danger">{errors.name}</div>
+                    {errors.entreprise && touched.entreprise ? (
+                      <div className="text-danger">{errors.entreprise}</div>
                     ) : null}
                   </div>
                   <div className="inputGroup">
@@ -112,31 +114,39 @@ const ExperienceAdd = ({ button, experience }) => {
                     <div>
                       <Row>
                         <Col>
-                          <Field
-                            required
+                          <DatePicker
                             onBlur={handleBlur}
                             className="form-control form-input"
-                            name="dateDebut"
-                            type="text"
+                            name="date_debut"
+                            dateFormat="yyyy-MM-dd"
+                            selected={startDate}
+                            onChange={(date) => {
+                              setFieldValue("date_debut", date);
+                              setStartDate(date);
+                            }}
                             placeholder="01/01/2021"
                           />
-                          {errors.dateDebut && touched.dateDebut ? (
+                          {errors.date_debut && touched.date_debut ? (
                             <div className="text-danger">
-                              {errors.dateDebut}
+                              {errors.date_debut}
                             </div>
                           ) : null}
                         </Col>
                         <Col>
-                          <Field
-                            required
+                          <DatePicker
                             onBlur={handleBlur}
                             className="form-control form-input"
-                            name="dateFin"
-                            type="text"
+                            name="date_fin"
+                            dateFormat="yyyy-MM-dd"
+                            selected={endtDate}
+                            onChange={(date) => {
+                              setFieldValue("date_fin", date);
+                              setEndtDate(date);
+                            }}
                             placeholder="01/01/2021"
                           />
-                          {errors.dateFin && touched.dateFin ? (
-                            <div className="text-danger">{errors.dateFin}</div>
+                          {errors.date_fin && touched.date_fin ? (
+                            <div className="text-danger">{errors.date_fin}</div>
                           ) : null}
                         </Col>
                       </Row>

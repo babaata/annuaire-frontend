@@ -1,44 +1,53 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import Inscription from "../components/body/HomeScreen/InscriptionSection/Inscription";
 import Menubar from "../components/body/HomeScreen/Navbar/Menubar";
 import CardProfile from "../components/body/HomeScreen/profils/CardProfile";
 import Footer from "../components/footer/Footer";
 import "../components/body/HomeScreen/profils/PopularProfil.css";
 import "./ProfilList.css";
-import { getDataAPI } from '../utils/fetchData';
+import { getDataAPI } from "../utils/fetchData";
 
 function ProfilList(props) {
-
-  const [users, setUsers] = useState()
+  const [users, setUsers] = useState();
 
   const getProfil = async (id) => {
-    const res = await getDataAPI('users')
-    setUsers(res.data?.users)
-  }
+    const res = await getDataAPI("users");
+    setUsers(res.data?.users);
+  };
 
   if (!users) {
     if (props.location.profile) {
-      setUsers(props.location.profile)
+      setUsers(props.location.profile);
     } else {
-      getProfil(props.match.params.profilsId)
+      getProfil(props.match.params.profilsId);
     }
   }
-  console.log(users)
+  console.log(users);
   return (
     <div className="profil_list">
       <Menubar />
       <Inscription margin="2%" text="Tous les profils" />
       <div className="card__section items">
-        <div className="row justify-content-center">
-          {!users ? <div className="d-flex justify-content-center"><i className="fa fa-spinner fa-spin fa-2x"></i></div> : ''} 
-          {
-            users?.map((u) => (
-              <div className="col-6 col-lg-3" key={u.id_utilisateur}>
-                <CardProfile image="./images/souare.jpeg" color="#326FB4" profile={u}/>
-              </div>
-            ))
-          }
-          
+        <div className="row ">
+          {!users ? (
+            <div className="d-flex justify-content-center">
+              <i className="fa fa-spinner fa-spin fa-2x" />
+            </div>
+          ) : (
+            ""
+          )}
+          {users?.map((u) => (
+            <div
+              className="col-6 col-lg-3 justify__center"
+              key={u.id_utilisateur}
+            >
+              <CardProfile
+                image="./images/souare.jpeg"
+                color="#326FB4"
+                profile={u}
+              />
+            </div>
+          ))}
         </div>
       </div>
       <Footer />

@@ -21,11 +21,11 @@ export const initExperiences = (experiences) => {
   };
 };
 
-export const removeExperience = (occupation) => {
+export const removeExperience = (poste) => {
   return (dispatch) => {
     dispatch({
       type: REMOVE_EXPERIENCE,
-      payload: { occupation: occupation },
+      payload: { poste: poste },
     });
   };
 };
