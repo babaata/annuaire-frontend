@@ -79,7 +79,6 @@ function ProfileLeftSide() {
     getConnectedUser().then(async (res) => {
       if (res.data?.user) {
         const user = res.data?.user;
-        console.log(user);
         setNom(user.nom);
         setPrenom(user.prenom);
         setEmail(user.email);

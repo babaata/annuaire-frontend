@@ -70,6 +70,20 @@ function ProfileRightSide() {
     console.log(values);
     const token = localStorage.getItem("firstLogin");
     values["experiences"] = experiencesLocal;
+
+    if (values["experiences"].length) {
+      values["experiences"].map((experiences) => {
+        experiences.date_debut = experiences.date_debut
+          ? experiences.date_debut.toISOString().split("T")[0]
+          : "";
+        experiences.date_fin = experiences.date_fin
+          ? experiences.date_fin.toISOString().split("T")[0]
+          : "";
+      });
+    }
+
+    console.log(values);
+
     setLoader(true);
     const res = await postDataAPI("user/profil", values, token);
 
