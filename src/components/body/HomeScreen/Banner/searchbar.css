@@ -35,7 +35,7 @@
   border-right: 1px solid #cccccc;
   margin-left: 1%;
 }
-.search__bar:nth-child(3){
+.inputBar.border-none{
   border-right: none;
 }
 
