@@ -10,6 +10,11 @@
   justify-content: space-around;
   width: 70%;
 }
+
+.x50 {
+  font-size: 50px;
+}
+
 .btns {
   background-color: #5f439a;
   padding: 0.5% 2%;
@@ -45,6 +50,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.upload__photo .fa-pen {
+  color: #cfc9e2;
 }
 .profil__left__side .upload__photo p {
   color: #5f439a;
@@ -98,8 +106,9 @@
   flex-wrap: wrap;
 }
 
-
 .add_experience {
+  font-size: 12px;
+  border-radius: 2px;
   background: #af3862;
   padding: 2px;
   color: #fff;
@@ -116,7 +125,7 @@
   margin-left: 20px;
 }
 .info__title {
-  display: flex;
+  display: none;
   justify-content: center;
   color: #5f439a;
   font-size: 22.5px;
@@ -130,7 +139,7 @@
 .input_info_combobox select {
   width: 100%;
   padding: 0.35rem 0.35rem;
-  border: 1px solid #ced4da;
+  border: 1px solid #644b98;
   border-radius: 5px;
   margin-bottom: 4%;
 }
@@ -183,6 +192,8 @@
 /*Tablette*/
 @media screen and (min-width: 768px) and (max-width:968px) {
   .info__title{
+    display: flex;
+    text-align: center;
     font-size: 25px !important;
   }
   .profile__personal__info{
@@ -191,6 +202,11 @@
 }
 /*Mobile Responsive*/
 @media screen and (min-width: 360px) and (max-width: 768px) {
+  .info__title{
+    text-align: center;
+    display: flex;
+    font-size: 25px !important;
+  }
   .mg-left {
     margin-left: 0;
   }
@@ -249,8 +265,13 @@
     margin-left: 5px;
   }
   .add_experience {
-    font-size: 11px;
-    border-radius: 2.5px;
+    font-size: 12px;
+    border-radius: 2px;
     width: 100%;
   }
+}
+
+option:checked {
+  background-color: #5f439a !important;
+  color: #FFFFFF !important;
 }

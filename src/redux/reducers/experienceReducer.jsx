@@ -20,7 +20,7 @@ const experienceReducer = (state = initState, action) => {
       let experiences = [...state.experiences, action.payload.experience];
 
       // pour eviter les dupplications
-      const key = "occupation";
+      const key = "poste";
       experiences = [
         ...new Map(experiences.map((item) => [item[key], item])).values(),
       ];
@@ -32,7 +32,7 @@ const experienceReducer = (state = initState, action) => {
     case REMOVE_EXPERIENCE:
       return {
         experiences: state.experiences.filter(
-          (experience) => experience.occupation !== action.payload.occupation
+          (experience) => experience.poste !== action.payload.poste
         ),
       };
 

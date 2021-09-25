@@ -10,10 +10,7 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
 export default function Menubar() {
-
-
-
-  const token = localStorage.getItem('firstLogin')
+  const token = localStorage.getItem("firstLogin");
 
   const history = useHistory("/");
   const dispatch = useDispatch();
@@ -30,12 +27,11 @@ export default function Menubar() {
         </Link>
       </div>
       <div className="link_button">
-  
         <ul>
           {token ? (
             <>
-            <Link to="/profile" style={{listStyle:"none"}}>
-              <li>
+              <Link to="/profile" style={{ listStyle: "none" }}>
+                <li>
                   <i
                     className="pr-4 fa-3x fas fa-user-circle"
                     style={{
@@ -46,12 +42,15 @@ export default function Menubar() {
                       cursor: "pointer",
                     }}
                   />
-              </li>
+                </li>
               </Link>
 
               <li>
-                <Button className={"btn-outlined pull-right"} onClick={() => handleShow()}>
-                   <i className="fa fa-sign-out"></i> Deconnection
+                <Button
+                  className={"btn-outlined pull-right"}
+                  onClick={() => handleShow()}
+                >
+                  <i className="fa fa-sign-out" /> Déconnexion
                 </Button>
               </li>
             </>

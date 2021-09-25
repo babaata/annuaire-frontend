@@ -5,7 +5,14 @@ import "./modal.style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { NOTIFY } from "../redux/actions/authAction";
 
-const ModalComponent = ({ title, button, content, close, setClose }) => {
+const ModalComponent = ({
+  title,
+  button,
+  content,
+  close,
+  setClose,
+  subtitle,
+}) => {
   const [show, setShow] = useState(false);
 
   const { notify } = useSelector((state) => state);
@@ -66,16 +73,27 @@ const ModalComponent = ({ title, button, content, close, setClose }) => {
                 <div className="form-title">
                   {title}
                   <div
-                    className={`text-danger text-center mt-2 h6 ${
-                      notify?.error ? "alert-danger alert" : ""
+                    className={`text-center mt-2 h6 ${
+                      notify?.error
+                        ? "alert-danger text-danger alert"
+                        : notify?.success
+                        ? "alert-success alert"
+                        : ""
                     }`}
                   >
-                    <span>{notify.error ? notify.error.message : ""}</span>
+                    <span>
+                      {notify.error
+                        ? notify.error.message
+                        : notify?.success
+                        ? notify?.success?.message
+                        : ""}
+                    </span>
                   </div>
                 </div>
               ) : (
                 <></>
               )}
+              <div className="text-center">{subtitle}</div>
               {content}
             </div>
           </div>
