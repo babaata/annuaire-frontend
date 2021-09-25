@@ -67,7 +67,6 @@ function ProfileRightSide() {
   });
 
   const submitForm = async (values, formik) => {
-    console.log(values);
     const token = localStorage.getItem("firstLogin");
     values["experiences"] = experiencesLocal;
 
@@ -81,8 +80,6 @@ function ProfileRightSide() {
           : "";
       });
     }
-
-    console.log(values);
 
     setLoader(true);
     const res = await postDataAPI("user/profil", values, token);
