@@ -15,9 +15,9 @@
     box-shadow: 1px -1px 29px 0px rgba(109, 109, 109, 0.45);
 }
 
-.card__profile:hover {
+/* .card__profile:hover {
     cursor: pointer;
-}
+} */
 
 .card__profil__img {
     position: relative;
