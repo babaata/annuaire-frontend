@@ -30,6 +30,7 @@ function CardProfile(props) {
             </span>
           </Link>
         </div>
+        <div className="card__gradient"></div>
       </div>
     </div>
   );
