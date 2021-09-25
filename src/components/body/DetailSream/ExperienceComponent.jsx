@@ -8,16 +8,15 @@ export default function ExperienceComponent() {
           <div className="title_years">
             <p className="first_page_title">
               Lead designer chez <span>Google</span>
+              <a href="/">
+                <i class="fas fa-chevron-right"></i>En savoir plus
+              </a>
             </p>
-            <p>2018 - à nos jours</p>
+            <span>2018 - à nos jours</span>
+            <hr />
           </div>
-          {/* <div className="see_more">
-            <a href="/">
-              <i class="fas fa-chevron-right"></i>En savoir plus
-            </a>
-          </div> */}
+          <div className="see_more"></div>
         </div>
-        <hr />
       </div>
     );
 }
