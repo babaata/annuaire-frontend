@@ -20,12 +20,12 @@ function ProfileLeftSide() {
   const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
-  const [ville, setVille] = useState("");
   const [langues, setLangues] = useState([]);
   const [allLangues, setAllLangues] = useState([]);
   const [sexe, setSexe] = useState("Homme");
   const [imageUrl, setimageUrl] = useState("");
   const [message, setMessage] = useState("");
+  const [pays, setPays] = React.useState([]);
   const [status, setStatus] = useState(true);
 
   const uploadButton = () => {
@@ -84,8 +84,8 @@ function ProfileLeftSide() {
         setPrenom(user.prenom);
         setEmail(user.email);
         setTelephone(user.telephone);
-        setVille(user.ville);
         setSexe(user.sexe);
+        setPays(user.pays);
         setimageUrl(user.url_photo);
         if (user.langues?.length) {
           const langues = [];
@@ -120,7 +120,6 @@ function ProfileLeftSide() {
       .max(50, "trop long!")
       .required("Ce champ est requis !"),
     telephone: Yup.string().min(2, "trop court!").max(50, "trop long!"),
-    ville: Yup.string().min(2, "trop court!").max(50, "trop long!"),
     sexe: Yup.string().nullable().required("Ce champ est requis !"),
   });
 
@@ -175,8 +174,8 @@ function ProfileLeftSide() {
               prenom: prenom,
               email: email,
               telephone: telephone,
-              ville: ville,
               langues: langues,
+              pays: pays,
               sexe: sexe,
             }}
           >
@@ -301,24 +300,30 @@ function ProfileLeftSide() {
                 </div>
 
                 <div className="input_info">
-                  <label>Ville</label>
+                  <label>Pays</label>
                   <div className="inputbar">
                     <Field
                       onChange={(e) => {
-                        setFieldValue("ville", e.target.value);
-                        setVille(e.target.value);
+                        setFieldValue("pays", e.target.value);
+                        setPays(e.target.value);
                       }}
-                      value={ville}
+                      value={pays}
                       onBlur={handleBlur}
+                      as="select"
                       className="form-control form-input"
-                      name="ville"
-                      type="text"
-                      placeholder="Saisissez votre ville"
-                    />
+                      name="pays"
+                    >
+                      <option value={0} />
+                      <option value={1}>Guinée</option>
+                      <option value={2}>Maroc</option>
+                      <option value={3}>France</option>
+                      <option value={4}>USA</option>
+                    </Field>
+
                     <i className="fas fa-pen" />
                   </div>
-                  {errors.ville && touched.ville ? (
-                    <div className="text-danger px-4">{errors.ville}</div>
+                  {errors.pays && touched.pays ? (
+                    <div className="text-danger px-4">{errors.pays}</div>
                   ) : null}
                 </div>
 
