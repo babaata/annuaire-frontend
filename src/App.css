@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-.fa-spinner, .fa-spin {
-    color: #5f439a;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
