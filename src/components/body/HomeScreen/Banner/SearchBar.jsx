@@ -20,7 +20,7 @@ function SearchBar() {
         <i className="fas fa-folder"></i>
         <input placeholder="Compétences" name="competences" onChange={changeHandler}/>
       </div>
-      <div className="inputBar">
+      <div className="inputBar border-none">
         <i className="fas fa-map-marker-alt "></i>
         <input placeholder="Pays de résidence" name="pays" onChange={changeHandler}/>
       </div>
