@@ -189,7 +189,7 @@ const Register = ({ button }) => {
                       )}
                     </button>
                   </div>
-                  <div className="form-footer">Vous avez déjà un compte ?</div>
+                  <div className="form-footer">Vous avez déjà un compte ? </div>
                   <div className="form-footer">
                     <Login />
                   </div>
