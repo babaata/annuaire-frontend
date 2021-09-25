@@ -36,7 +36,7 @@ function PopularProfil() {
         </div>
       </div>
       <Link to="/profils">
-        <button>
+        <button className="btns">
           Voir tous les profiles 
         </button>
       </Link>
