@@ -16,7 +16,7 @@ export const initExperiences = (experiences) => {
   return (dispatch) => {
     dispatch({
       type: INIT_EXPERIENCES,
-      payload: { experiences: experiences },
+      payload: { experiences },
     });
   };
 };

@@ -7,7 +7,11 @@ import * as Yup from "yup";
 
 function ProfileLeftSide() {
   const { notify } = useSelector((state) => state);
+  
+  const { auth } = useSelector((state) => state);
   const [loader, setLoader] = useState(false);
+
+  console.log(auth);
 
   // TODO remplacer cette valeur initiale par les donnée du user Connnecté venant de la base de donnée
   const [user, setUser] = useState({

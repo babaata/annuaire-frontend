@@ -10,9 +10,21 @@ import CreateProfilePage from "./Pages/CreateProfilePage";
 import NotAuth from "./components/NotAuth";
 import Login from "./components/auth/Login/login.component";
 import ModalComponent from './components/modal.component';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { readProfil } from "./redux/actions/profilAction";
 
 
 function App() {
+
+  const token = localStorage.getItem("firstLogin")
+
+  console.log(token);
+
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(readProfil(token))
+  },[token])
 
 
   return (
