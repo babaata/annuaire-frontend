@@ -7,9 +7,8 @@ import { getDataAPI } from '../utils/fetchData';
 
 function SearchPage(props) {
   const [profils, setProfils] = useState([])
-
   const getProfils = async () => {
-    const res = await getDataAPI('users/search?profil')
+    const res = await getDataAPI('users/search' + props?.location?.search)
     setProfils(res.data?.users)
   }
 
@@ -25,7 +24,7 @@ function SearchPage(props) {
       <Inscription
         status={false}
         margin="3%"
-        text="Resultat de Recherche "
+        text='Resultat de Recherche'
       />
       {profils.length === 0 ? <div className="d-flex justify-content-center"><i className="fa fa-spinner fa-spin fa-2x"></i></div> : ''}
       <SearchContain profils={profils}/>
