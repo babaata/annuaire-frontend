@@ -7,7 +7,7 @@ function Inscription(props) {
     <div
       className="inscription my-5"
       style={{
-        backgroundImage: `url("./images/motif.png")`,
+        backgroundImage: `url("../images/motif.png")`,
         backgroundSize: "cover",
         margin: `${props.margin}`,
       }}
