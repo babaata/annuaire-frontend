@@ -10,7 +10,7 @@ import { Button } from "react-bootstrap";
 import Register from "../Register/register.component";
 import ForgetPassword from "../ForgetPassword/forgetPassword.component";
 
-const Login = () => {
+const Login = ({ button }) => {
   const [loader, setLoader] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
@@ -42,7 +42,13 @@ const Login = () => {
   return (
     <>
       <ModalComponent
-        button={<Button className={"btn-outlined"}>Connexion</Button>}
+        button={
+          button ? (
+            button
+          ) : (
+            <Button className={"btn-outlined"}>Connexion</Button>
+          )
+        }
         title={"Connexion"}
         content={
           <>
@@ -105,9 +111,13 @@ const Login = () => {
                       )}
                     </button>
                   </div>
-                  <div className="form-footer">Vous n'avez pas de compte ?</div>
                   <div className="form-footer">
-                    <Register />
+                    Vous n'avez pas de compte ?{" "}
+                    <Register
+                      button={
+                        <span className="clique-text"> S'inscrire ici</span>
+                      }
+                    />
                   </div>
 
                   <br />

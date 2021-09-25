@@ -1,4 +1,5 @@
 import { getDataAPI, postDataAPI } from "../../utils/fetchData";
+import { setConnectedUser } from "./userAction";
 
 export const AUTH = "AUTH";
 export const NOTIFY = "NOTIFY";
@@ -18,12 +19,18 @@ export const login = (data) => async (dispatch) => {
       },
     });
 
+    const userResponse = await getDataAPI("user/me", res.data?.access_token);
+
+    if (userResponse.data?.user) {
+      dispatch(setConnectedUser(userResponse.data?.user));
+    }
+
     localStorage.setItem("firstLogin", res.data?.access_token);
 
     dispatch({
       type: NOTIFY,
       payload: {
-        success: "login success",
+        success: "register success",
       },
     });
   } else {
@@ -49,6 +56,12 @@ export const register = (data) => async (dispatch) => {
         data: res.data,
       },
     });
+
+    const userResponse = await getDataAPI("user/me", res.data?.access_token);
+
+    if (userResponse.data?.user) {
+      dispatch(setConnectedUser(userResponse.data?.user));
+    }
 
     localStorage.setItem("firstLogin", res.data?.access_token);
 

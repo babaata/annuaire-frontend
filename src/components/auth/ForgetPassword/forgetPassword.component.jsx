@@ -5,8 +5,12 @@ import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { postDataAPI } from "../../../utils/fetchData";
+import { NOTIFY } from "../../../redux/actions/authAction";
+import { useDispatch } from "react-redux";
+import Register from "../Register/register.component";
 
 const ForgetPassword = () => {
+  const dispatch = useDispatch();
   const [loader, setLoader] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [close, setClose] = useState(false);
@@ -36,11 +40,30 @@ const ForgetPassword = () => {
     setLoader(true);
     const res = await postDataAPI("user/forgot-password", values);
     setLoader(false);
+
     if (!res.data?.status) {
-      formIk.setErrors({ email: res?.data?.message });
+      dispatch({
+        type: NOTIFY,
+        payload: {
+          error: { message: res.data?.message },
+        },
+      });
     } else {
+      dispatch({
+        type: NOTIFY,
+        payload: {
+          success: { message: res.data?.message },
+        },
+      });
       setEmailSent(true);
     }
+
+    setTimeout(() => {
+      dispatch({
+        type: NOTIFY,
+        payload: {},
+      });
+    }, 6000);
   };
 
   const submitResetForm = async (values, formIk) => {
@@ -48,12 +71,24 @@ const ForgetPassword = () => {
     const res = await postDataAPI("user/reset-password", values);
     setLoader(false);
     if (!res.data?.status) {
+      dispatch({
+        type: NOTIFY,
+        payload: {
+          error: { message: res.data?.message },
+        },
+      });
       formIk.setErrors({
         code: res?.data?.message,
         password: res?.data?.errors?.password,
         password_confirmation: res?.data?.errors?.password_confirmation,
       });
     } else {
+      dispatch({
+        type: NOTIFY,
+        payload: {
+          success: { message: res.data?.message },
+        },
+      });
       setClose(true);
       history.push("/");
     }
@@ -65,7 +100,16 @@ const ForgetPassword = () => {
         close={close}
         setClose={setClose}
         button={<span className="clique-text"> Cliquez ici</span>}
-        title={"Mot de passe oublié ?"}
+        title={
+          emailSent
+            ? "Réinitialisé votre mot de passe"
+            : "Mot de passe oublié ?"
+        }
+        subtitle={
+          emailSent
+            ? "Veuillez entrer le code que vous avez reçu par e-mail et entrez votre nouveau mot de passe."
+            : "Veuillez saisir votre adresse e-mail. Vous recevrez un lien pour créer un nouveau mot de passe par e-mail."
+        }
         content={
           <>
             <Formik
@@ -174,6 +218,21 @@ const ForgetPassword = () => {
                         "Envoyer"
                       )}
                     </button>
+                  </div>
+                  <div className="form-footer">
+                    {emailSent ? (
+                      <>
+                        renvoyer un nouveau code ?
+                        <span
+                          onClick={() => setEmailSent(false)}
+                          className="clique-text"
+                        >
+                          renvoyer
+                        </span>
+                      </>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </Form>
               )}
