@@ -67,7 +67,13 @@ function PopularProfil() {
         </div>
       </div>
       <Link to="/profils">
+<<<<<<< HEAD
         <button className="btns">Voir tous les profiles</button>
+=======
+        <button className="btns">
+          Voir tous les profils 
+        </button>
+>>>>>>> 60efb734bba7e89f5af70a50d28c2eb821aaeb36
       </Link>
     </div>
   );

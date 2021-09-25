@@ -25,7 +25,7 @@ function SearchPage(props) {
       <Inscription
         status={false}
         margin="3%"
-        text="Resultat de Recherche:UX design"
+        text="Resultat de Recherche "
       />
       {profils.length === 0 ? <div className="d-flex justify-content-center"><i className="fa fa-spinner fa-spin fa-2x"></i></div> : ''}
       <SearchContain profils={profils}/>
