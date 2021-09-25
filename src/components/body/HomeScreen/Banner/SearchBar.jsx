@@ -4,7 +4,7 @@ import "./searchbar.css";
 
 function SearchBar() {
   const [inputs, setInputs] = useState([])
-
+  
   const changeHandler = (e) => {
     e.preventDefault();
     setInputs({...inputs, [e.target.name]: e.target.value})
