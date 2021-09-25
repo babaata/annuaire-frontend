@@ -5,7 +5,7 @@ function DetailSectionHead(props) {
 
   return <div className="detail__section__head">
       <div className="head_img">
-        <img src="../images/abdoul.jpeg" alt="" />
+        <img src={props.profile?.url_photo !== "" ? props.profile?.url_photo : "./images/loading.gif"} alt="" />
       </div>
       <div className="head__info" style={{ backgroundImage: `url("../images/motif.png")`}}>
          <h5>{`${props.profile?.prenom.charAt(0).toUpperCase()}${props.profile?.prenom.slice(1)} ${props.profile?.nom}`}</h5>

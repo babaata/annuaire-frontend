@@ -6,7 +6,7 @@ function SearchContainrRight(props) {
   return (
     <div className="search__contain__right">
       {props?.profils?.map((p) => (
-        <SearchContainCard profil={p}/>
+        <SearchContainCard profil={p} key={p}/>
       ))}
     </div>
   );
