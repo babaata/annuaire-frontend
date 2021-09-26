@@ -13,7 +13,7 @@ export default function ExperienceComponent(props) {
                 <i className="fas fa-chevron-right"></i>En savoir plus
               </a>
             </p>
-            <span>{e.date_debut} - {e.date_fin}</span>
+            <span>{`${(new Date(e.date_debut)).getDate()}/${(new Date(e.date_debut)).getMonth()+1}/${(new Date(e.date_debut)).getFullYear()}`} - {`${(new Date(e.date_fin)).getDate()}/${(new Date(e.date_fin)).getMonth()+1}/${(new Date(e.date_fin)).getFullYear()}`}</span>
             <hr />
           </div>
           <div className="see_more"></div>

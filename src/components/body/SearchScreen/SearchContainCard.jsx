@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SearchContainCard.css";
 function SearchContainCard(props) {
+
   return (
     <div className="search__contain__card">
       <div className="card_img">
@@ -9,7 +10,7 @@ function SearchContainCard(props) {
       </div>
       <div className="card_info">
         <h5>{`${props.profil?.prenom} ${props.profil?.nom}`}</h5>
-        <p>Comptable</p>
+        <p>{props.profil?.profil?.titre}</p>
         <span>
           <i className="fas fa-map-marker-alt"></i>
           Conakry
