@@ -5,7 +5,7 @@ export default function ProfessionComponent(props) {
     <div className="professionComponent_head">
       <h2 className="header_title">Profession</h2>
       <div className="profession_title">
-        <p>Designer</p>
+        <p>{props.profile?.profil?.titre}</p>
       </div>
       <div className="email_user">
         <i className="fas fa-envelope"></i>
@@ -13,7 +13,7 @@ export default function ProfessionComponent(props) {
       </div>
       <div className="email_user">
         <i className="fas fa-phone"></i>
-        <a href="/">{props.profile?.telephone}</a>
+        <a href={`tel:${props.profile?.telephone}`}>{props.profile?.telephone}</a>
       </div>
       <div className="avis_title">
         <i className="fas fa-thumbs-up"></i>

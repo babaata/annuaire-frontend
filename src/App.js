@@ -8,7 +8,6 @@ import ProfiDetails from "./Pages/ProfilDetails";
 import CreateProfilePage from "./Pages/CreateProfilePage";
 import Login from "./components/auth/Login/login.component";
 
-
 function App() {
   return (
     <div>

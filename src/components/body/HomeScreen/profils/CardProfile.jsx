@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./CardProfile.css";
 
 function CardProfile(props) {
+  
   return (
     <div className="card__profile">    
       <div className="card__profil__img">
@@ -14,7 +15,7 @@ function CardProfile(props) {
           className="card__info-job text-white"
           style={{ backgroundColor: `${props.color}` }}
         >
-          Comptable
+          {props.profile?.profil?.titre}
         </span>
         <div className="card__info__bottom text-white text-decoration-none">
           <Link to={{
