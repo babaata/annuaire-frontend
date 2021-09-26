@@ -353,7 +353,7 @@ function ProfileLeftSide() {
                       )}
                     </Field>
                   </div>
-                  <label>
+                  <label className="helper-web">
                     Maintenez control (crtl) pour sélectionner plusieurs
                   </label>
                   {errors.langues && touched.langues ? (
