@@ -11,11 +11,11 @@ export default function DetailSection(props) {
         <div className="detailSection">
              <div className="detailRight">
              <ProfessionComponent profile={props.profile}/>
-             <LangueSection/>
+             <LangueSection langues={props.profile?.langues}/>
              </div>
             <div className="detailleft">
-            <CompetenceComponent />
-            <ExperienceComponent workTitle="Experiences /Professionels" />
+            <CompetenceComponent competences={props.profile?.profil?.competences}/>
+            <ExperienceComponent workTitle="Experiences /Professionels" profil={props.profile?.profil?.experience_professionnelles}/>
             </div>
         </div>
     )

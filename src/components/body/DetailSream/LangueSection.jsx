@@ -1,11 +1,16 @@
 import React from 'react'
 import './LangueSection.css'
 
-function LangueSection() {
+function LangueSection(props) {
     return (
         <div className="langue__section">
             <h2>Langues</h2>
-            <span>Français</span>
+            {props.langues?.map((l) => (
+                <>
+                    <span>{l.nom}</span>
+                    <br/>
+                </>
+            ))}
         </div>
     )
 }

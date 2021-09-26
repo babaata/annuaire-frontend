@@ -15,7 +15,7 @@ function CardProfile(props) {
           className="card__info-job text-white"
           style={{ backgroundColor: `${props.color}` }}
         >
-          Comptable
+          {props.profile?.profil?.titre}
         </span>
         <div className="card__info__bottom text-white text-decoration-none">
           <Link to={{
