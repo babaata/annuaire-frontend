@@ -178,6 +178,9 @@ function ProfileRightSide() {
 
                   <div className="input_info">
                     <label>Competence</label>
+                    <div>
+                      <label>Saisissez une compétence et tapez entrer</label>
+                    </div>
                     <div className="inputbar">
                       <ReactTagInput
                         value={competences}

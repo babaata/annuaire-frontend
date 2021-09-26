@@ -193,6 +193,11 @@
   background: #5F439A !important; /* X icon in remove button */
 }
 
+.ml-19 {
+  margin-left: 19px;
+  margin-bottom: 5px;
+}
+
 /*Tablette*/
 @media screen and (min-width: 768px) and (max-width:968px) {
   .info__title{
@@ -203,9 +208,15 @@
   .profile__personal__info{
     margin-top: 5% !important;
   }
+  .helper-web {
+    display: none;
+  }
 }
 /*Mobile Responsive*/
 @media screen and (min-width: 360px) and (max-width: 768px) {
+  .helper-web {
+    display: none;
+  }
   .profile__info .profile__btn{
     background:none;
   }
