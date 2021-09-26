@@ -108,7 +108,7 @@ const ForgetPassword = () => {
         subtitle={
           emailSent
             ? "Veuillez entrer le code que vous avez reçu par e-mail et entrez votre nouveau mot de passe."
-            : "Veuillez saisir votre adresse e-mail. Vous recevrez un lien pour créer un nouveau mot de passe par e-mail."
+            : "Saisissez votre adresse électronique ci-dessous et nous vous enverrons les instructions pour en créer un nouveau."
         }
         content={
           <>
