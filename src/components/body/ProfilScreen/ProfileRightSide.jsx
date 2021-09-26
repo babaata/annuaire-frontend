@@ -29,6 +29,7 @@ function ProfileRightSide() {
     getConnectedUser().then((res) => {
       if (res.data?.user?.profil) {
         const profil = res.data?.user?.profil;
+        console.log(res.data?.user);
         setTitre(profil.titre);
         setResume(profil.resume);
 
@@ -71,13 +72,21 @@ function ProfileRightSide() {
     values["experiences"] = experiencesLocal;
 
     if (values["experiences"].length) {
-      values["experiences"].map((experiences) => {
-        experiences.dateDebut = experiences.dateDebut
-          ? experiences.dateDebut.toISOString().split("T")[0]
+      values["experiences"].map((experience) => {
+        // formatage date for the backend
+        experience.dateDebut = experience.dateDebut
+          ? experience.dateDebut.toISOString().split("T")[0]
           : "";
-        experiences.dateFin = experiences.dateFin
-          ? experiences.dateFin.toISOString().split("T")[0]
+        experience.dateFin = experience.dateFin
+          ? experience.dateFin.toISOString().split("T")[0]
           : "";
+
+        if (experience.date_debut && experience.date_debut !== "") {
+          experience.dateDebut = experience.date_debut;
+        }
+        if (experience.date_fin && experience.date_fin !== "") {
+          experience.dateFin = experience.date_fin;
+        }
       });
     }
 
@@ -96,7 +105,7 @@ function ProfileRightSide() {
 
     setLoader(false);
     formik.setErrors({ email: notify.error?.errors?.email });
-    formik.setTouched();
+    formik.setSubmitting(false);
   };
 
   return (
@@ -111,8 +120,8 @@ function ProfileRightSide() {
           ) : (
             <Formik
               validationSchema={SchemaValidation}
-              onSubmit={(e, { setErrors, setTouched }) =>
-                submitForm(e, { setErrors, setTouched })
+              onSubmit={(e, { setErrors, setSubmitting }) =>
+                submitForm(e, { setErrors, setSubmitting })
               }
               initialValues={{
                 titre: titre,
