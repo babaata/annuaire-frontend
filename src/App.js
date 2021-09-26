@@ -7,14 +7,28 @@ import ProfilList from "./Pages/ProfilList";
 import ProfiDetails from "./Pages/ProfilDetails";
 import CreateProfilePage from "./Pages/CreateProfilePage";
 import Login from "./components/auth/Login/login.component";
+import { useEffect, useState } from 'react';
+import { getDataAPI } from './utils/fetchData';
 
 function App() {
+  const [profils, setProfils] = useState([])
+
+  const getProfils = async () => {
+    const res = await getDataAPI('users')
+    setProfils(res.data?.users)
+  }
+
+  useEffect(() => {
+    if(profils?.length === 0) {
+      getProfils()
+    }
+  })
   return (
     <div>
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact><Home profils={profils}/></Route>
             <Route path="/recherche/:req" exact component={SearchPage} />
             <Route path="/profils" exact component={ProfilList} />
             <Route path="/profils/:profilsId" exact component={ProfiDetails} />
