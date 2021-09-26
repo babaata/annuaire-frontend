@@ -7,12 +7,12 @@ import PopularProfil from "../components/body/HomeScreen/profils/PopularProfil";
 import StatistiqueSection from "../components/body/HomeScreen/StatistiqueSection/StatistiqueSection";
 import Footer from "../components/footer/Footer";
 
-function Home() {
+function Home(props) {
   return (
     <div>
       <Menubar page="home" />
       <Banner />
-      <PopularProfil />
+      <PopularProfil profils={props.profils}/>
       <Inscription
         status={true}
         text="Vous êtes Guinéen(e), vous avez des compétences à faire valoir ?"
