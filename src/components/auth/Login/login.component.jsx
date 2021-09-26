@@ -63,7 +63,7 @@ const Login = ({ button }) => {
               {({ handleBlur, touched, errors }) => (
                 <Form>
                   <div className="inputGroup">
-                    <label className="form-label">Login</label>
+                    <label className="form-label">E-mail</label>
                     <Field
                       required
                       onBlur={handleBlur}
