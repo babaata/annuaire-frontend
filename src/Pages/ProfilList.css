@@ -3,8 +3,36 @@
     margin:5%;
 }
 
-.justify__center{
+.paginationBttns{
+    width: 80%;
+    height: 40px;
+    list-style: none;
     display: flex;
-align-items: center;
-justify-content: center !important;
+    justify-content: center;
+  } 
+  
+  .paginationBttns a{
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #2b2eff;
+    border-radius: 5px;
+    color: #2b2eff;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover{
+    color: white;
+    background-color: #2b2eff;
+  }
+  
+  .paginationActive a{
+    color: white;
+    background-color: #2b2eff;
+  }
+.active a{
+    background-color: gray;
+}
+
+.disable{
+    background-color: black;
 }

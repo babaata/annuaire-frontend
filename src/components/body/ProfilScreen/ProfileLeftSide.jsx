@@ -12,6 +12,8 @@ import {
 const token = localStorage.getItem("firstLogin");
 function ProfileLeftSide() {
   const { notify } = useSelector((state) => state);
+  
+  const { auth } = useSelector((state) => state);
   const [loader, setLoader] = useState(false);
   const [loadFormValue, setLoadFormValue] = useState(false);
   const [loadFileValue, setLoadFileValue] = useState(false);
@@ -157,7 +159,7 @@ function ProfileLeftSide() {
         </div>
         {uploadButton()}
       </div>
-      {/* FOrmulaire */}
+      {/* Formulaire */}
       <div className="profile__personal__info">
         <p className="info__title">Informations personnelles</p>
         {loadFormValue ? (

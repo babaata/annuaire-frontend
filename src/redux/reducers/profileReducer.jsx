@@ -30,20 +30,23 @@ const profilReducer = (state = initState, action) => {
         profil: action.payload.items,
       };
 
-    case UPDATE_PROFIL:
-      return {
-        ...state,
-        profil: state.profil.map((product) => {
-          if (product.id !== action.payload.id) {
-            return product;
-          }
-          return {
-            ...product,
-            name: action.payload.data.name,
-            price: action.payload.data.price,
-          };
-        }),
-      };
+    // case UPDATE_PROFIL:
+    //   return {
+    //     ...state,
+    //     profil: state.profil.map((product) => {
+    //       if(profil.id !== action.payload.id) {
+    //         return product
+    //       }
+    //       return {
+    //         ...profil,
+    //         nom: action.payload.data.nom,
+    //         prenom: action.payload.data.prenom,
+    //         telephone: action.payload.data.telephone,
+    //         email: action.payload.data.email,
+    //         password: action.payload.data.password,
+    //       };
+    //     }),
+    //   };
 
     case DELETE_PROFIL:
       return {
