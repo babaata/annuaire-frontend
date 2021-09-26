@@ -7,7 +7,7 @@ function LangueSection(props) {
             <h2>Langues</h2>
             {props.langues?.map((l) => (
                 <>
-                    <span>{l.nom}</span>
+                    <span key={l.id_langue}>{l.nom}</span>
                     <br/>
                 </>
             ))}
