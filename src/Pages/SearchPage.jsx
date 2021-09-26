@@ -23,9 +23,6 @@ function SearchPage(props) {
     }
   })
   
-
-  console.log(t)
-
   return (
     <div>
       <Menubar page="profdetails" />

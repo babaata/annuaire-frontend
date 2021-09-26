@@ -18,7 +18,7 @@ function Home(props) {
         text="Vous êtes Guinéen(e), vous avez des compétences à faire valoir ?"
       />
       <Competences />
-      <StatistiqueSection />
+      <StatistiqueSection statistiques={props.statistiques}/>
       <Footer />
     </div>
   );
