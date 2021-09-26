@@ -333,24 +333,29 @@ function ProfileLeftSide() {
                   <div className="input_info_combobox">
                     <i className="fas fa-pen" />
                     <Field
+                      className="text-center"
                       multiple
                       onBlur={handleBlur}
                       as="select"
                       name="langues"
                     >
-                      {allLangues?.map((langue, key) => {
-                        return (
-                          <option
-                            key={key + "_" + langue.id_langue}
-                            value={langue.id_langue}
-                          >
-                            {langue.nom}
-                          </option>
-                        );
-                      })}
+                      {allLangues.length ? (
+                        allLangues?.map((langue, key) => {
+                          return (
+                            <option
+                              key={key + "_" + langue.id_langue}
+                              value={langue.id_langue}
+                            >
+                              {langue.nom}
+                            </option>
+                          );
+                        })
+                      ) : (
+                        <option value={0} className="fa fa-spinner fa-spin" />
+                      )}
                     </Field>
                   </div>
-                  <label>
+                  <label className="helper-web">
                     Maintenez control (crtl) pour sélectionner plusieurs
                   </label>
                   {errors.langues && touched.langues ? (
