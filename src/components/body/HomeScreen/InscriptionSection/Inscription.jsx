@@ -3,6 +3,7 @@ import "./Inscription.css";
 import Register from "../../../auth/Register/register.component";
 
 function Inscription(props) {
+  const token = localStorage.getItem("firstLogin");
   return (
     <div
       className="inscription my-5"
@@ -13,7 +14,7 @@ function Inscription(props) {
       }}
     >
       <h2>{props.text}</h2>
-      {props.status ? (
+      {props.status && !token ? (
         <Register
           button={<button className="btn btn-filled">Inscrivez-vous</button>}
         />
