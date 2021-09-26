@@ -40,7 +40,7 @@ function ProfileRightSide() {
           setCompetences(competences);
         }
 
-        setExperiencesLocal(profil.experiences);
+        setExperiencesLocal(profil.experience_professionnelles);
         dispatch(initExperiences(profil.experience_professionnelles));
       }
       setLoadFormValue(false);
@@ -72,11 +72,11 @@ function ProfileRightSide() {
 
     if (values["experiences"].length) {
       values["experiences"].map((experiences) => {
-        experiences.date_debut = experiences.date_debut
-          ? experiences.date_debut.toISOString().split("T")[0]
+        experiences.dateDebut = experiences.dateDebut
+          ? experiences.dateDebut.toISOString().split("T")[0]
           : "";
-        experiences.date_fin = experiences.date_fin
-          ? experiences.date_fin.toISOString().split("T")[0]
+        experiences.dateFin = experiences.dateFin
+          ? experiences.dateFin.toISOString().split("T")[0]
           : "";
       });
     }

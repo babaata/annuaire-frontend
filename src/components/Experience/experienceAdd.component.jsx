@@ -11,8 +11,12 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const ExperienceAdd = ({ button, experience }) => {
   const [close, setClose] = useState(false);
-  const [startDate, setStartDate] = useState(new Date());
-  const [endtDate, setEndtDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(
+    experience && experience?.date_debut ? new Date(experience?.date_debut) : ""
+  );
+  const [endDate, setEndDate] = useState(
+    experience && experience?.date_fin ? new Date(experience?.date_fin) : ""
+  );
 
   const SchemaValidation = Yup.object().shape({
     poste: Yup.string()
@@ -55,8 +59,8 @@ const ExperienceAdd = ({ button, experience }) => {
                       poste: "",
                       entreprise: "",
                       description: "",
-                      date_debut: "",
-                      date_fin: "",
+                      dateDebut: "",
+                      dateFin: "",
                     }
               }
             >
@@ -117,18 +121,18 @@ const ExperienceAdd = ({ button, experience }) => {
                           <DatePicker
                             onBlur={handleBlur}
                             className="form-control form-input"
-                            name="date_debut"
+                            name="dateDebut"
                             dateFormat="yyyy-MM-dd"
                             selected={startDate}
                             onChange={(date) => {
-                              setFieldValue("date_debut", date);
+                              setFieldValue("dateDebut", date);
                               setStartDate(date);
                             }}
                             placeholder="01/01/2021"
                           />
-                          {errors.date_debut && touched.date_debut ? (
+                          {errors.dateDebut && touched.dateDebut ? (
                             <div className="text-danger">
-                              {errors.date_debut}
+                              {errors.dateDebut}
                             </div>
                           ) : null}
                         </Col>
@@ -136,17 +140,17 @@ const ExperienceAdd = ({ button, experience }) => {
                           <DatePicker
                             onBlur={handleBlur}
                             className="form-control form-input"
-                            name="date_fin"
+                            name="dateFin"
                             dateFormat="yyyy-MM-dd"
-                            selected={endtDate}
+                            selected={endDate}
                             onChange={(date) => {
-                              setFieldValue("date_fin", date);
-                              setEndtDate(date);
+                              setFieldValue("dateFin", date);
+                              setEndDate(date);
                             }}
                             placeholder="01/01/2021"
                           />
-                          {errors.date_fin && touched.date_fin ? (
-                            <div className="text-danger">{errors.date_fin}</div>
+                          {errors.dateFin && touched.dateFin ? (
+                            <div className="text-danger">{errors.dateFin}</div>
                           ) : null}
                         </Col>
                       </Row>
