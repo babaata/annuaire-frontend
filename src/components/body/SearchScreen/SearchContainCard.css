@@ -16,6 +16,8 @@
 }
 .search__contain__card .card_img img{
     width: 100px;
+    height: 100px;
+    background-size: cover;
     line-height: 100px;
 }
 .search__contain__card .card_info{
