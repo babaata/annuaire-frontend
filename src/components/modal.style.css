@@ -122,6 +122,10 @@
   opacity: 1;
 }
 
+.text-center{
+  margin-bottom: 30px;
+}
+
 .close {
   cursor: pointer;
   margin: 15px;
