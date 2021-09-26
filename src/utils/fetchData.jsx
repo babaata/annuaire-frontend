@@ -13,7 +13,7 @@ export const postDataAPI = async (url, post) => {
   return await axios.post(`https://babaata.eviltech.org/api/${url}`, post, {
     headers: {
       Accept: "application/json",
-    },
+    },  
   });
 };
 

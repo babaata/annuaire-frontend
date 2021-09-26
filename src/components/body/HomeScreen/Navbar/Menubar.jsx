@@ -51,7 +51,7 @@ export default function Menubar() {
 
               <li>
                 <Button className={"btn-outlined pull-right"} onClick={() => handleShow()}>
-                   <i className="fa fa-sign-out"></i> Deconnection
+                   <i className="fa fa-sign-out"></i> Deconnexion
                 </Button>
               </li>
             </>

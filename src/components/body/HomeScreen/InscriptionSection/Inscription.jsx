@@ -8,12 +8,15 @@ function Inscription(props) {
       className="inscription my-5"
       style={{
         backgroundImage: `url("./images/motif.png")`,
+        backgroundSize: "cover",
         margin: `${props.margin}`,
       }}
     >
       <h2>{props.text}</h2>
       {props.status ? (
-        <Register button={<button className="btn btn-filled">Inscrivez-vous</button>} />
+        <Register
+          button={<button className="btn btn-filled">Inscrivez-vous</button>}
+        />
       ) : (
         ""
       )}

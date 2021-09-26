@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createProfil } from "../../../redux/actions/profilAction";
 import "./ProfileScreen.css";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -55,7 +54,7 @@ function ProfileLeftSide() {
     // dispatch(createProfil(values));
     setLoader(false);
     formik.setErrors({ email: notify.error?.errors?.email });
-    console.log(values);
+    // console.log(values);
     // history.push("/");
   };
 
@@ -68,7 +67,7 @@ function ProfileLeftSide() {
         <i className="fas fa-pen" />
         <p className="text-center mt-2 mb-0">Changer la photo de profil</p>
       </div>
-      {/* FOrmulaire */}
+      {/* Formulaire */}
       <div className="profile__personal__info">
         <p className="info__title">Informations personnelles</p>
         <Formik
