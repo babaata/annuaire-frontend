@@ -3,17 +3,27 @@ import axios from "axios";
 export const getDataAPI = async (url, token) => {
   return await axios.get(`https://babaata.eviltech.org/api/${url}`, {
     headers: {
-      Authorisation: `Bearer ${token}`,
       Accept: "application/json",
+      Authorization: `Bearer ${token}`,
     },
   });
 };
 
-export const postDataAPI = async (url, post) => {
+export const postDataAPI = async (url, post, token) => {
   return await axios.post(`https://babaata.eviltech.org/api/${url}`, post, {
     headers: {
       Accept: "application/json",
-    },  
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const postDataFileAPI = async (url, post, token) => {
+  return await axios.post(`https://babaata.eviltech.org/api/${url}`, post, {
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   });
 };
 

@@ -29,3 +29,10 @@
     color: white;
     background-color: #2b2eff;
   }
+.active a{
+    background-color: gray;
+}
+
+.disable{
+    background-color: black;
+}

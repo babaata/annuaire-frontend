@@ -189,9 +189,13 @@ const Register = ({ button }) => {
                       )}
                     </button>
                   </div>
-                  <div className="form-footer">Vous avez déjà un compte ?</div>
                   <div className="form-footer">
-                    <Login />
+                    Vous avez déjà un compte ?{" "}
+                    <Login
+                      button={
+                        <span className="clique-text"> Se connecter</span>
+                      }
+                    />
                   </div>
                 </Form>
               )}

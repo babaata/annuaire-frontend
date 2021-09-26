@@ -4,8 +4,7 @@ import "./CardProfile.css";
 
 function CardProfile(props) {
   return (
-    <div className="card__profile">
-    
+    <div className="card__profile">    
       <div className="card__profil__img">
            <img src={props.image} alt={props.profile?.nom_utilisateur} />
       </div>
@@ -23,7 +22,7 @@ function CardProfile(props) {
             profile: props.profile,
             }}>
                 
-            <h5 className="text-decoration-none">{props.profile?.nom_utilisateur}</h5>
+            <h5 className="text-decoration-none">{`${props.profile?.prenom.charAt(0).toUpperCase()}${props.profile?.prenom.slice(1)} ${props.profile?.nom}`}</h5>
             
             <span>
               <i className="fas fa-map-marker-alt"></i> Conakry

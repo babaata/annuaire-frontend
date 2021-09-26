@@ -4,12 +4,21 @@
   justify-content: center;
   align-items: center;
   margin: 5% 10%;
+  padding: 0 10%;
 }
 .profile__info .profile__btn {
   display: flex;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #F7F9FC;
+  padding:1% 5%;
+  border-radius: 5px;
 }
+
+.x50 {
+  font-size: 50px;
+}
+
 .btns {
   background-color: #5f439a;
   padding: 0.5% 2%;
@@ -22,13 +31,14 @@
   margin-left: 19px;
 }
 .profil__center__content {
+  min-height: 570px;
   width: 100%;
   margin-top: 2%;
 }
 .profil__left__side {
   display: flex;
-  justify-content: space-evenly;
-  padding: 0 15%;
+  justify-content: space-between;
+  padding: 0 0.5%;
 }
 .profil__left__side .upload__photo .photo {
   width: 300px;
@@ -46,6 +56,9 @@
   flex-direction: column;
   justify-content: center;
 }
+.upload__photo .fa-pen {
+  color: #cfc9e2;
+}
 .profil__left__side .upload__photo p {
   color: #5f439a;
   text-decoration: underline;
@@ -53,7 +66,6 @@
 }
 .profile__personal__info {
   width: 50%;
-  padding: 3%;
 }
 .mg-left {
   margin-left: 41%;
@@ -98,8 +110,9 @@
   flex-wrap: wrap;
 }
 
-
 .add_experience {
+  font-size: 16px !important;
+  border-radius: 2px;
   background: #af3862;
   padding: 2px;
   color: #fff;
@@ -116,7 +129,7 @@
   margin-left: 20px;
 }
 .info__title {
-  display: flex;
+  display: none;
   justify-content: center;
   color: #5f439a;
   font-size: 22.5px;
@@ -130,7 +143,7 @@
 .input_info_combobox select {
   width: 100%;
   padding: 0.35rem 0.35rem;
-  border: 1px solid #ced4da;
+  border: 1px solid #644b98;
   border-radius: 5px;
   margin-bottom: 4%;
 }
@@ -183,6 +196,8 @@
 /*Tablette*/
 @media screen and (min-width: 768px) and (max-width:968px) {
   .info__title{
+    display: flex;
+    text-align: center;
     font-size: 25px !important;
   }
   .profile__personal__info{
@@ -191,6 +206,14 @@
 }
 /*Mobile Responsive*/
 @media screen and (min-width: 360px) and (max-width: 768px) {
+  .profile__info .profile__btn{
+    background:none;
+  }
+  .info__title{
+    text-align: center;
+    display: flex;
+    font-size: 25px !important;
+  }
   .mg-left {
     margin-left: 0;
   }
@@ -235,7 +258,7 @@
   }
   .btns.left {
     text-align: center;
-    font-size: 19px;
+    font-size: 14px !important;
   }
   .nextBtn {
     display: block;
@@ -249,8 +272,19 @@
     margin-left: 5px;
   }
   .add_experience {
-    font-size: 11px;
-    border-radius: 2.5px;
+    border-radius: 2px;
     width: 100%;
+    font-size: 12px !important;
   }
+  .info__title{
+    display: block;
+  }
+  .profile__info{
+    margin:0;
+  }
+}
+
+option:checked {
+  background-color: #5f439a !important;
+  color: #FFFFFF !important;
 }
