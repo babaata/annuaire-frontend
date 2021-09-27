@@ -28,14 +28,18 @@ const Login = ({ button }) => {
 
   const [typePass, setTypePass] = useState(true);
 
+  const history = useHistory();
+
   const dispatch = useDispatch();
 
   const submitForm = async (values) => {
     setLoader(true);
-    await dispatch(login(values));
+    const res = await dispatch(login(values));
     setLoader(false);
-    setClose(true);
-    window.location.href = "/";
+    if (res.access_token) {
+      setClose(true);
+      window.location.href = "/";
+    }
   };
 
   return (

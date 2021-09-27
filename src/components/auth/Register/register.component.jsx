@@ -39,6 +39,7 @@ const Register = ({ button }) => {
       .required("Ce champ est requis !"),
   });
 
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const submitForm = async (values, formik) => {
@@ -50,7 +51,10 @@ const Register = ({ button }) => {
       telephone: res.errors?.telephone,
       password: res.errors?.password,
     });
-    window.location.href = "/";
+    if (res.access_token) {
+      setClose(true);
+      window.location.href = "/";
+    }
   };
 
   return (
