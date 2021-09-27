@@ -4,9 +4,9 @@
     padding: 2% 5%;
     color: #5F439A;
     font-family: "Open sans semiBold";
-    margin-bottom: 20px;
 }
 .langue__section span{
+    display: block;
     color: #ffffff;
     background-color: #ffa500;
     padding:2%;
