@@ -41,11 +41,11 @@ function ProfilList(props) {
       <Menubar />
       <Inscription margin="2%" text="Tous les profils" />
       <div className="card__section items">
-        <div className="row justify-content-center">
+        <div className="row" >
           {!users ? <div className="d-flex justify-content-center"><i className="fa fa-spinner fa-spin fa-2x"></i></div> : ''} 
           {
             users?.map((u) => (
-              <div className="col-6 col-lg-3" key={u.id_utilisateur}>
+              <div className="col-6 col-lg-3 justify-center" key={u.id_utilisateur}>
                 <CardProfile image={u.url_photo !== "" ? u.url_photo : "./images/loading.gif"} color="#326FB4" profile={u}/>
               </div>
             ))
