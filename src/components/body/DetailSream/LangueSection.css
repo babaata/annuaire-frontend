@@ -18,5 +18,8 @@
     .langue__section span{
         padding:1%;
     };
+    .langue__section {
+        margin-bottom: 25px;
+    }
    
 }
