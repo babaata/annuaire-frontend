@@ -46,13 +46,15 @@ const Register = ({ button }) => {
     setLoader(true);
     const res = await dispatch(register(values));
     setLoader(false);
-    console.log(res);
     formik.setErrors({
       email: res.errors?.email,
       telephone: res.errors?.telephone,
       password: res.errors?.password,
     });
-    history.push("/");
+    if (res.access_token) {
+      setClose(true);
+      window.location.href = "/";
+    }
   };
 
   return (

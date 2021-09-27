@@ -5,12 +5,14 @@
     color: #5F439A;
     font-family: "Open sans semiBold";
 }
-.langue__section span{
-    display: block;
+.langue__section li{
+    list-style-type: none;
     color: #ffffff;
     background-color: #ffa500;
     padding:2%;
     border-radius: 3px;
+    width: 40%;
+    margin-bottom: 2px;
 }
 @media screen and (min-width: 768px) {
     .langue__section span{

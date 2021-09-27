@@ -14,7 +14,7 @@ function ProfilList(props) {
   const [users, setUsers] = useState()
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState()
-  const [size, setSize] = useState(8)
+  const [size, setSize] = useState(16)
 
   useEffect(()=>{
     const getProfil = async (id) => {

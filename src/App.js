@@ -12,9 +12,12 @@ import { getDataAPI } from './utils/fetchData';
 
 function App() {
   const [profils, setProfils] = useState([])
+  const [statistiques, setStatistiques] = useState([])
 
   const getProfils = async () => {
     const res = await getDataAPI('users')
+    const rt = await getDataAPI('statistiques')
+    setStatistiques(rt.data?.statistiques)
     setProfils(res.data?.users)
   }
 
@@ -28,7 +31,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/" exact><Home profils={profils}/></Route>
+            <Route path="/" exact><Home profils={profils} statistiques={statistiques}/></Route>
             <Route path="/recherche/:req" exact component={SearchPage} />
             <Route path="/profils" exact component={ProfilList} />
             <Route path="/profils/:profilsId" exact component={ProfiDetails} />
