@@ -1,26 +1,19 @@
-.detail__section__head{
-    display: flex; 
-    justify-content: space-evenly;
-    margin:4% 3%;   
-}
 .head_img{
     width: 300px;
     height: 300px;
     overflow: hidden;
     border-radius: 50%;
-    -webkit-box-shadow: 0px 1px 17px -3px rgba(0,0,0,0.27); 
+    -webkit-box-shadow: 0px 1px 17px -3px rgba(0,0,0,0.27);
     box-shadow: 0px 1px 17px -3px rgba(0,0,0,0.27);
     object-fit: cover;
-
 }
+
 .head_img img{
     width: 100%;
     height: 100%;
 }
+
 .head__info {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
     color:white;
     background-blend-mode: soft-light;
     object-fit: cover;
@@ -28,12 +21,13 @@
     background-color: rgb(51, 51, 51);
     border-radius: 10px;
     padding: 2.5%;
-    width: 70%;
 }
+
 .head__info h5{
     font-size: 35px;
     font-family: "Open sans semiBold";
 }
+
 .head__info .fonction{
     background-color: #FBB017;
     width: 24%;
@@ -43,10 +37,12 @@
     font-family: "Open sans semiBold";
     text-align: center;
 }
+
 .head__info span i{
     color: #FBB017;
     margin-right: 5px;
 }
+
 .head__info span{
     font-size: 17px;
 }
@@ -56,7 +52,7 @@
     .head_img{
         width: 300px !important;
         height: 300px !important;
-        margin-bottom: 0 !important;
+        margin-bottom: 16px !important;
     }
     .head_img img{
         width: 300px !important;
@@ -64,24 +60,26 @@
 }
 
 /*Mobile Responsive*/
-@media screen and (max-width:768px) and (min-width:360px) {
+@media screen and (max-width:768px) and (min-width:320px) {
     .detail__section__head{
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        margin:4%;
-        
+        margin-top: 32px;
     }
+
     .head__info{
         align-items: center;
         padding: 4%;
         width: 100%;
     }
+
     .head__info h5 {
         font-size: 28px;
         text-align: center;
     }
+
     .head__info .fonction{
         width: 100%;
         font-size: 24px;
@@ -89,14 +87,17 @@
     .head__info span{
         font-size: 25px;
     }
+
     .head__info p{
         text-align: center;
     }
+
     .head_img{
         margin:4% 0;
         width: 200px;
         height: 200px;
     }
+
     .head_img img{
         width: 200px;
     }
