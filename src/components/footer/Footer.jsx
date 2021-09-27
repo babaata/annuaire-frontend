@@ -6,13 +6,13 @@ function Footer() {
     <div className="footer">
       <div className="footer__content__top">
         <div className="social__media">
-          <a href="/">
+          <a href="https://www.facebook.com/babaata224" target="_blank" rel="noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="/">
+          <a href="https://twitter.com/Babaata224?s=09" target="_blank" rel="noreferrer">
             <i className="fab fa-twitter"></i>
           </a>
-          <a href="/">
+          <a href="https://www.linkedin.com/in/babaata-social-media-b63574220" target="_blank" rel="noreferrer">
             <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
