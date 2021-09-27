@@ -39,20 +39,18 @@ const Register = ({ button }) => {
       .required("Ce champ est requis !"),
   });
 
-  const history = useHistory();
   const dispatch = useDispatch();
 
   const submitForm = async (values, formik) => {
     setLoader(true);
     const res = await dispatch(register(values));
     setLoader(false);
-    console.log(res);
     formik.setErrors({
       email: res.errors?.email,
       telephone: res.errors?.telephone,
       password: res.errors?.password,
     });
-    history.push("/");
+    window.location.href = "/";
   };
 
   return (

@@ -12,6 +12,7 @@ import ForgetPassword from "../ForgetPassword/forgetPassword.component";
 
 const Login = ({ button }) => {
   const [loader, setLoader] = useState(false);
+  const [close, setClose] = useState(false);
 
   const SchemaValidation = Yup.object().shape({
     email: Yup.string()
@@ -27,21 +28,21 @@ const Login = ({ button }) => {
 
   const [typePass, setTypePass] = useState(true);
 
-  const history = useHistory();
-
   const dispatch = useDispatch();
 
   const submitForm = async (values) => {
     setLoader(true);
     await dispatch(login(values));
     setLoader(false);
-
-    history.push("/");
+    setClose(true);
+    window.location.href = "/";
   };
 
   return (
     <>
       <ModalComponent
+        close={close}
+        setClose={setClose}
         button={
           button ? (
             button
