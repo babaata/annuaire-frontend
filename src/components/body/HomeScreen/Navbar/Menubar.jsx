@@ -14,9 +14,9 @@ export default function Menubar() {
 
   const history = useHistory("/");
   const dispatch = useDispatch();
-  function handleShow() {
+  function handleClick() {
     dispatch(logout(token));
-    history.push("/");
+    window.location.href = "/";
   }
 
   return (
@@ -48,7 +48,7 @@ export default function Menubar() {
               <li>
                 <Button
                   className={"btn-outlined pull-right"}
-                  onClick={() => handleShow()}
+                  onClick={() => handleClick()}
                 >
                   <i className="fa fa-sign-out" /> Déconnexion
                 </Button>
