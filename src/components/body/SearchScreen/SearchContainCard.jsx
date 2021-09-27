@@ -5,7 +5,8 @@ function SearchContainCard(props) {
 
   return (
     <div className="search__contain__card">
-      <div className="card_img">
+    <div className="leftContent">
+    <div className="card_img">
         <img src={props.profil?.url_photo !== "" ? props.profil?.url_photo : "./images/loading.gif"} alt="" />
       </div>
       <div className="card_info">
@@ -16,6 +17,7 @@ function SearchContainCard(props) {
           Conakry
         </span>
       </div>
+    </div>
       <div className="info_plus">
         <Link to={{
           pathname:'/profils/' + props.profil?.nom_utilisateur, 
