@@ -1,16 +1,17 @@
 .professionComponent_head{
     background: #F3F3F3;
     border-radius: 5px;
-    padding: 3% 5%;
+    padding: 10px 16px;
     text-align:left;
     margin-bottom: 3.1%;
-    width:320px;
 }
+
 .professionComponent_head > h2{
     padding: 0;
     font-size: 30px;
     margin-bottom: 0;
 }
+
 .profession_title{
     background: #5F439A;
     color: #ffff;
@@ -18,10 +19,13 @@
     font-size: 20px;
     text-align: center;
     margin-bottom: 10px;
+    padding: 5px 10px;
 }
+
 .profession_title p{
     margin-bottom: 0;
 }
+
 .email_user{
     display: flex;
     align-items: center;
@@ -29,15 +33,19 @@
     color: #5F439A;
     margin-bottom: 10px;
 }
+
 .email_user i{
     color:#FBB017;
 }
+
 .email_user i{
     margin-right: 5px;
 }
+
 .avis_title i{
     margin-right: 13px;
 }
+
 .avis_title{
     display: flex;
     align-items: center;
@@ -47,100 +55,97 @@
     justify-content: center;
     border-radius: 2px;
 }
+
 .avis_title a{
     text-decoration: none;
     color:#ffff;
 }
+
 .competenceComponent_global{
     background:#F3F3F3;
     width: 100%;
     border-radius: 5px;
-    padding:0.5%;
+    padding: 10px 16px;
     padding-bottom: 3.2%;
 }
+
 .competenceComponent_global > h2{
     padding: 0;
     font-size: 30px;
     padding: 0.5% 1%;
      margin-bottom: 0;
 }
+
 .competencetitle_head{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin:0.5% 1%;
 }
+
 .competencetitle{
     background: #FBB017;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5%;
+    padding: 5px 10px;
     border-radius: 2px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    margin: 10px 10px 10px 0;
+    border-radius: 5px;
 }
+
 .competencetitle > p{
     color: #5F439A;
     font-size: 20px;
     margin-bottom: 0;
 }
+
 .detailSection{
     display: flex;
     justify-content: space-around;
-    margin:6%;
 }
-.detailleft{
-    width: 75% !important;
-}
+
 .experienceComponent{
     background: #F3F3F3;
     border-radius: 5px;
-    margin-top: 1%;
-    margin-bottom: 20%;
-    padding:0.5%;
+    padding: 10px 16px;
 }
-.experienceComponent h2{
+
+.experienceComponent > h2{
+    padding: 0;
     font-size: 30px;
     margin-bottom: 0;
 }
-.experienceComponent h2, .competenceComponent_global h2 {
-    padding: 1% 1%;
-}
-.experiencecard{
-    display: flex;
-    padding:0 1%;
-    justify-content: space-between;
-}
+
 .title_years{
     width: 100%;
 }
-.see_more{   
-    width: 10%;
-   
-}
-.title_years p a{
+
+.see_more_text {
     font-size: 15px;
     color: #009B95;
-    margin-left: 20%;
     font-family: "Open sans semiBold";
 }
-.first_page_title a i{
+
+.see_more_text i{
     color: #009B95;
 }
 
-.first_page_title
-{
+.first_page_title {
     color: #5F439A;
     font-size: 28px;
 }
+
 .first_page_title span{
     font-size: 25px;
     color: #009B95;
 }
-.title_years > span{
+
+.experiences_date {
     color:#5F439A;
+    font-size: 14px;
 }
+
 .title_years > p{
     font-size: 18px;
     color: #5F439A;
@@ -170,7 +175,7 @@
 }
 
 /*Mobile Responsive*/
-@media screen and (max-width:768px) and (min-width:360px) {
+@media screen and (max-width:768px) and (min-width:320px) {
     .detailSection{
         flex-direction: column;
     }
@@ -181,28 +186,28 @@
     .competenceComponent_global{
         display: flex;
         flex-direction: column;
-        width: 320px;   
         justify-content: center;
-        align-items: center;    
-        border-radius: 5px; 
+        align-items: center;
+        border-radius: 5px;
         margin-bottom: 20px;
     }
+
     .competencetitle_head{
         justify-content: center;
     }
+
     .experienceComponent{
-        width: 320px;
         margin-bottom: 10px;
     }
+
     .experiencecard{
         flex-direction: column;
     }
+
     .competencetitle{
         width: 100%;
     }
-    .competencetitle > p{
-        font-size: 15px;
-    }
+
     .competencetitle_head{
         margin:4%;
     }

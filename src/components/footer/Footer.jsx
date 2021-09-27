@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer mt-5">
       <div className="footer__content__top">
         <div className="social__media">
           <a href="https://www.facebook.com/babaata224" target="_blank" rel="noreferrer">
