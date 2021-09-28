@@ -15,10 +15,10 @@ export default function ProfessionComponent(props) {
         <i className="fas fa-phone"></i>
         <a href={`tel:${props.profile?.telephone}`}>{props.profile?.telephone}</a>
       </div>
-      <div className="avis_title">
+      {/* <div className="avis_title">
         <i className="fas fa-thumbs-up"></i>
         <a href="/">Je recommande (270)</a>
-      </div>
+      </div> */}
     </div>
   );
 }

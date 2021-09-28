@@ -22,6 +22,9 @@ function ProfileInfo() {
         >
           Informations Personelles
         </button>
+        <a href="" className="voir_profil">
+           Mon profil
+        </a>
         <button
           onClick={handleClickright}
           className={`btns ${btnVal === 1 ? "noBg" : " "}`}
