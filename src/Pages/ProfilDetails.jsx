@@ -6,6 +6,7 @@ import ProfessionComponent from "../components/body/DetailSream/ProfessionCompon
 import Menubar from "../components/body/HomeScreen/Navbar/Menubar";
 import Footer from "../components/footer/Footer";
 import { getDataAPI } from '../utils/fetchData';
+import { Redirect } from 'react-router-dom';
 
 function ProfilDetails(props) {
   const [profile, setProfile] = useState()
@@ -22,6 +23,10 @@ function ProfilDetails(props) {
     } else {
       getProfil(props.match.params.profilsId)
     }
+  }
+
+  if (profile === null) { 
+    window.location.href = "/";
   }
 
   return (
