@@ -26,7 +26,7 @@ function SearchBar() {
       </div>
       <Link 
         to={{
-          pathname: inputs.length !== 0 ?`/recherche/req=` : '',
+          pathname: inputs.length !== 0 ?`/recherche/` : '',
           search: `${inputs?.profession ? 'profession=' + inputs?.profession : ''}${inputs?.competences ? '&competences=' + inputs?.competences : ''}${inputs?.pays ? '&pays=' + inputs?.pays : ''}`
          }}
       >
