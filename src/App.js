@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import SearchPage from "./Pages/SearchPage";
@@ -9,8 +10,14 @@ import CreateProfilePage from "./Pages/CreateProfilePage";
 import Login from "./components/auth/Login/login.component";
 import { useEffect, useState } from 'react';
 import { getDataAPI } from './utils/fetchData';
+import AppContext from './redux/actions/AppContext';
 
 function App() {
+  const token = localStorage.getItem("firstLogin");
+  const [user, setUser] = useState(null)
+  const getCurrentUser = async (token) => {
+    return await getDataAPI("user/me", token).then(setUser).catch(() => setUser(false));
+  };
   const [profils, setProfils] = useState([])
   const [statistiques, setStatistiques] = useState([])
 
@@ -22,25 +29,36 @@ function App() {
   }
 
   useEffect(() => {
+    if (user === null && token) {
+      getCurrentUser(token)
+    }
     if(profils?.length === 0) {
       getProfils()
     }
-  })
+  }, [user, token, profils])
+
   return (
-    <div>
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route path="/" exact><Home profils={profils} statistiques={statistiques}/></Route>
-            <Route path="/recherche/" exact component={SearchPage} />
-            <Route path="/profils" exact component={ProfilList} />
-            <Route path="/profils/:profilsId" exact component={ProfiDetails} />
-            <Route path="/profile" exact component={CreateProfilePage} />
-            <Route path="*" exact component={<Login />} />
-          </Switch>
-        </div>
-      </Router>
-    </div>
+    <AppContext.Provider value={user}>
+      <div>
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route path="/" exact><Home profils={profils} statistiques={statistiques}/></Route>
+              <Route path="/recherche/" exact component={SearchPage} />
+              <Route path="/profils" exact component={ProfilList} />
+              <Route path="/profils/:profilsId" exact component={ProfiDetails} />
+              {user ?
+                <Route path="/profile" exact component={CreateProfilePage} />
+              : '' }
+              
+              <Route path="*" exact>
+                <Redirect to="/" />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div> 
+    </AppContext.Provider>
   );
 }
 

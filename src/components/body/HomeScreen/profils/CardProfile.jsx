@@ -26,7 +26,7 @@ function CardProfile(props) {
             <h5 className="text-decoration-none">{`${props.profile?.prenom.charAt(0).toUpperCase()}${props.profile?.prenom.slice(1)} ${props.profile?.nom}`}</h5>
             
             <span>
-              <i className="fas fa-map-marker-alt"></i> Conakry
+              <i className="fas fa-map-marker-alt"></i> {props.profile?.ville}
             </span>
           </Link>
         </div>
