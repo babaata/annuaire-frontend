@@ -32,7 +32,7 @@ function App() {
         <div className="App">
           <Switch>
             <Route path="/" exact><Home profils={profils} statistiques={statistiques}/></Route>
-            <Route path="/recherche/:req" exact component={SearchPage} />
+            <Route path="/recherche/" exact component={SearchPage} />
             <Route path="/profils" exact component={ProfilList} />
             <Route path="/profils/:profilsId" exact component={ProfiDetails} />
             <Route path="/profile" exact component={CreateProfilePage} />

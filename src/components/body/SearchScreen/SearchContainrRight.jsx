@@ -6,9 +6,11 @@ function SearchContainrRight(props) {
   
   return (
     <div className="search__contain__right">
-      {props?.profils?.map((p) => (
+      {props.found === false ? <div className="container"><div className="alert alert-primary text-center"><p>Aucun profil n'a été trouvé</p></div></div> :
+      props?.profils?.map((p) => (
         <SearchContainCard profil={p} key={p.id_utilisateur}/>
-      ))}
+      ))
+      }
     </div>
   );
 }
