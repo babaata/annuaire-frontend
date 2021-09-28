@@ -5,7 +5,9 @@ export default function CompetenceComponent(props) {
     return (
         <div className="competenceComponent_global mb-lg-4">
             <h2 className="header_title mb-2">Compétences</h2>
-            <div className="competencetitle_head">
+            
+            {props.competences?.length > 0 ? (
+                <div className="competencetitle_head">
                 {props.competences?.map((c) => (
                     <div className="competencetitle" key={c.id_competence}>
                         <p>
@@ -13,7 +15,9 @@ export default function CompetenceComponent(props) {
                         </p>
                     </div>
                 ))}
-            </div>
+                </div>
+            ) : "Aucune competence ajoutée"}
+                
         </div>
     )
 }
