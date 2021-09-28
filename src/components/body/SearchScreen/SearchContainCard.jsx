@@ -14,7 +14,7 @@ function SearchContainCard(props) {
         <p>{props.profil?.profil?.titre}</p>
         <span>
           <i className="fas fa-map-marker-alt"></i>
-          Conakry
+          {props.profil?.ville}
         </span>
       </div>
     </div>
