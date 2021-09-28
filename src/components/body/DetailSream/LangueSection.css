@@ -14,6 +14,9 @@
 
 .langue__section ul {
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .langue__section ul li{
