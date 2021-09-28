@@ -4,7 +4,9 @@ export default function ExperienceComponent(props) {
   return (
     <div className="experienceComponent">
       <h2 className="header_title mb-3">Expériences / Réalisations</h2>
-      {props.profil?.map((e) => (
+      {props.profil?.length > 0 ? (
+        <div>
+        {props.profil?.map((e) => (
         <div className="experiencecard" key={e.id_experience_professionnelle}>
           <div className="row">
             <div className="col-12 col-lg-7">
@@ -24,6 +26,8 @@ export default function ExperienceComponent(props) {
           <hr />
         </div>
       ))}
+        </div>
+      ) : "Aucune Experience / Realisation Ajoutée"}
     </div>
   );
 }
