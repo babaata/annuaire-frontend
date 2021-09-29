@@ -155,10 +155,8 @@
   font-size: 1.2rem;
   padding: 3px 6px;
   color: #5f439a;
-
+  background: none;
 }
-
-
 .react-tag-input {
   cursor: pointer !important;
   color: #5F439A !important;

@@ -20,20 +20,22 @@ function ProfileInfo(props) {
   return (
     <div className="profile__info">
       <div className="profile__btn ">
-        <Link to={{
-            pathname: '/profils/'+ user?.data?.user?.nom_utilisateur,
-            profile: user?.data?.user,
-            }}>
-          <span className="voir_profil btn">
-            Mon profil
-          </span>
-        </Link>
         <button
           onClick={handleClickleft}
           className={`btns ${btnVal === 0 ? "noBg" : " "}`}
         >
           Informations Personelles
         </button>
+        <div className="voir_profil">
+        <Link to={{
+            pathname: '/profils/'+ user?.data?.user?.nom_utilisateur,
+            profile: user?.data?.user,
+            }}>
+          <span className="voir_profil btn btn-filled">
+            Mon profil
+          </span>
+        </Link>
+        </div>
         <button
           onClick={handleClickright}
           className={`btns ${btnVal === 1 ? "noBg" : " "}`}
