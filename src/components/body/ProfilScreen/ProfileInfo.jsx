@@ -27,14 +27,16 @@ function ProfileInfo(props) {
           Informations Personelles
         </button>
         <div className="voir_profil">
-        <Link to={{
-            pathname: '/profils/'+ user?.data?.user?.nom_utilisateur,
-            profile: user?.data?.user,
-            }}>
-          <span className="voir_profil btn btn-filled">
-            Mon profil
-          </span>
-        </Link>
+          <Link
+            to={{
+              pathname: "/profils/" + user?.data?.user?.nom_utilisateur,
+              profile: user?.data?.user,
+            }}
+          >
+            <span className="voir_profil btn btn-filled">
+              Mon profil public
+            </span>
+          </Link>
         </div>
         <button
           onClick={handleClickright}
