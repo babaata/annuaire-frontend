@@ -13,11 +13,11 @@ h1 {
     font-size: 40px;
     margin:1%;
     font-family: "Open sans" !important;
-    font-weight: 600px;
+    font-weight: 600 !important;
 }
 button{
     padding: 4px 15px !important;
     font-family: "Open sans" !important;
     font-size: 20px !important;
-    font-weight: 600px;
+    font-weight: 600 !important;
 }
