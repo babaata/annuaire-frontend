@@ -132,3 +132,9 @@
         height: 300px;
     }
 }
+
+@media screen and (max-width:768px) and (min-width:360px) {
+    .card__info > .card__info-job {
+        font-size: 10px;
+    }
+}
