@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ProfileLeftSide from "./ProfileLeftSide";
 import ProfileRightSide from "./ProfileRightSide";
 import "./ProfileScreen.css";
+import { Link } from 'react-router-dom';
+import AppContext from '../../../redux/actions/AppContext';
 
-function ProfileInfo() {
+function ProfileInfo(props) {
   const [btnVal, setbtnVal] = useState(0);
   const handleClickleft = () => {
     setbtnVal(0);
@@ -12,6 +14,8 @@ function ProfileInfo() {
     setbtnVal(1);
   };
   useEffect(() => {}, []);
+
+  const user = useContext(AppContext)
 
   return (
     <div className="profile__info">
@@ -22,6 +26,16 @@ function ProfileInfo() {
         >
           Informations Personelles
         </button>
+        <div className="voir_profil">
+        <Link to={{
+            pathname: '/profils/'+ user?.data?.user?.nom_utilisateur,
+            profile: user?.data?.user,
+            }}>
+          <span className="voir_profil btn btn-filled">
+            Mon profil
+          </span>
+        </Link>
+        </div>
         <button
           onClick={handleClickright}
           className={`btns ${btnVal === 1 ? "noBg" : " "}`}

@@ -7,7 +7,7 @@ function SearchContain(props) {
   return (
     <div className="search__contain">
       <SearchContainLeft />
-      <SearchContainrRight profils={props?.profils}/>
+      <SearchContainrRight profils={props?.profils} found={props.found}/>
     </div>
   );
 }

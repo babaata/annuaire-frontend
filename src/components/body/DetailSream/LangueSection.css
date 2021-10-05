@@ -1,11 +1,25 @@
 .langue__section{
     background-color: #F3F3F3;
     border-radius: 5px;
-    padding: 2% 5%;
+    padding: 10px 16px;
     color: #5F439A;
     font-family: "Open sans semiBold";
+    margin-bottom: 20px;
 }
-.langue__section li{
+
+.langue__section > h2 {
+    padding: 0;
+    font-size: 30px;
+}
+
+.langue__section ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.langue__section ul li{
     list-style-type: none;
     color: #ffffff;
     background-color: #ffa500;
@@ -14,9 +28,9 @@
     width: 40%;
     margin-bottom: 2px;
 }
+
 @media screen and (min-width: 768px) {
     .langue__section span{
         padding:1%;
-    };
-   
+    }
 }

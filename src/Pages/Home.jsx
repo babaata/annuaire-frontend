@@ -15,7 +15,7 @@ function Home(props) {
       <PopularProfil profils={props.profils}/>
       <Inscription
         status={true}
-        text="Vous êtes Guinéen(e), vous avez des compétences à faire valoir ?"
+        text="Guinéen-ne-s, Faites valoir vos compétences"
       />
       <Competences />
       <StatistiqueSection statistiques={props.statistiques}/>

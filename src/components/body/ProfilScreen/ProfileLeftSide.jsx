@@ -12,7 +12,7 @@ import {
 const token = localStorage.getItem("firstLogin");
 function ProfileLeftSide() {
   const { notify } = useSelector((state) => state);
-  
+
   const { auth } = useSelector((state) => state);
   const [loader, setLoader] = useState(false);
   const [loadFormValue, setLoadFormValue] = useState(false);
@@ -24,10 +24,12 @@ function ProfileLeftSide() {
   const [telephone, setTelephone] = useState("");
   const [langues, setLangues] = useState([]);
   const [allLangues, setAllLangues] = useState([]);
+  const [allPays, setAllPays] = useState([]);
   const [sexe, setSexe] = useState("Homme");
+  const [ville, setVille] = useState("");
   const [imageUrl, setimageUrl] = useState("");
   const [message, setMessage] = useState("");
-  const [pays, setPays] = React.useState([]);
+  const [pays, setPays] = React.useState(null);
   const [status, setStatus] = useState(true);
 
   const uploadButton = () => {
@@ -86,7 +88,8 @@ function ProfileLeftSide() {
         setEmail(user.email);
         setTelephone(user.telephone);
         setSexe(user.sexe);
-        setPays(user.pays);
+        setVille(user.ville);
+        setPays(user.id_pays);
         setimageUrl(user.url_photo);
         if (user.langues?.length) {
           const langues = [];
@@ -100,6 +103,11 @@ function ProfileLeftSide() {
       getAllLangues().then((res) => {
         if (res.data?.langues) {
           setAllLangues(res.data.langues);
+        }
+      });
+      getAllContries().then((res) => {
+        if (res.data?.pays) {
+          setAllPays(res.data?.pays);
         }
       });
       setLoadFormValue(false);
@@ -175,9 +183,10 @@ function ProfileLeftSide() {
               prenom: prenom,
               email: email,
               telephone: telephone,
-              langues: langues,
-              pays: pays,
               sexe: sexe,
+              pays: pays,
+              ville: ville,
+              langues: langues,
             }}
           >
             {({ handleBlur, touched, errors, setFieldValue }) => (
@@ -305,26 +314,56 @@ function ProfileLeftSide() {
                   <div className="inputbar">
                     <Field
                       onChange={(e) => {
-                        setFieldValue("pays", e.target.value);
-                        setPays(e.target.value);
+                        setFieldValue("pays", parseInt(e.target.value));
+                        setPays(parseInt(e.target.value));
                       }}
-                      value={pays}
                       onBlur={handleBlur}
                       as="select"
                       className="form-control form-input"
                       name="pays"
                     >
-                      <option value={0} />
-                      <option value={1}>Guinée</option>
-                      <option value={2}>Maroc</option>
-                      <option value={3}>France</option>
-                      <option value={4}>USA</option>
+                      {allPays.length ? (
+                        allPays?.map((pays, key) => {
+                          return (
+                            <option
+                              key={key + "_" + pays.id_pays}
+                              value={pays.id_pays}
+                            >
+                              {pays.nom}
+                            </option>
+                          );
+                        })
+                      ) : (
+                        <option value={0} className="fa fa-spinner fa-spin" />
+                      )}
                     </Field>
 
                     <i className="fas fa-pen" />
                   </div>
                   {errors.pays && touched.pays ? (
                     <div className="text-danger px-4">{errors.pays}</div>
+                  ) : null}
+                </div>
+
+                <div className="input_info">
+                  <label>Ville</label>
+                  <div className="inputbar">
+                    <Field
+                      onChange={(e) => {
+                        setFieldValue("ville", e.target.value);
+                        setVille(e.target.value);
+                      }}
+                      value={ville}
+                      onBlur={handleBlur}
+                      className="form-control form-input"
+                      name="ville"
+                      type="text"
+                      placeholder="Saisissez votre ville"
+                    />
+                    <i className="fas fa-pen" />
+                  </div>
+                  {errors.ville && touched.ville ? (
+                    <div className="text-danger px-4">{errors.ville}</div>
                   ) : null}
                 </div>
 
@@ -396,6 +435,10 @@ const getConnectedUser = async () => {
 
 const getAllLangues = async () => {
   return await getDataAPI("langues");
+};
+
+const getAllContries = async () => {
+  return await getDataAPI("pays");
 };
 
 export default ProfileLeftSide;
