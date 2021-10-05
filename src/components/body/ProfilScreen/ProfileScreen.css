@@ -269,7 +269,18 @@
   .profile__info .profile__btn .btns {
     display: none;
   }
-
+  .voir_profil{
+    width:100%;
+    display:flex;
+    justify-content:center;
+   
+  }
+  .voir_profil  a{
+    text-decoration: none;
+  }
+  .voir_profil span{
+    width: 300px;
+  }
   .profile__personal__info {
     margin-top: 10%;
   }
