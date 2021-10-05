@@ -6,11 +6,13 @@
     color:#5F439A;
     font-size: 45px;
     padding: 20px;
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight: 600;
 }
 
 .header_title h2{
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight: 600;
 }
 
 .fonction_name{

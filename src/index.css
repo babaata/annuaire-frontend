@@ -12,10 +12,12 @@ h1 {
     text-align: center;
     font-size: 40px;
     margin:1%;
-    font-family: "Open sans semiBold" !important;
+    font-family: "Open sans" !important;
+    font-weight: 600px;
 }
 button{
     padding: 4px 15px !important;
-    font-family: "Open sans semiBold" !important;
+    font-family: "Open sans" !important;
     font-size: 20px !important;
+    font-weight: 600px;
 }

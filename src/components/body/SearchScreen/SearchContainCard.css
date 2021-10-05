@@ -38,7 +38,8 @@
     border-radius: 5px;
     margin-bottom: 5px;
     font-size: 18px;
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight: 600;
 }
 .search__contain__card .card_info span i{
     margin-right: 5px;

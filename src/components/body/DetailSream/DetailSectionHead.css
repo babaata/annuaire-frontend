@@ -25,7 +25,8 @@
 
 .head__info h5{
     font-size: 35px;
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight:600;
 }
 
 .head__info .fonction{
@@ -34,7 +35,8 @@
     padding: 0.5%;
     font-size: 20px;
     border-radius: 5px;
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight:600;
     text-align: center;
 }
 

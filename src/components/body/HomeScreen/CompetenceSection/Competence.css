@@ -3,7 +3,8 @@
   margin:2% 2%;
 }
 .competences h1{
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight: 600;
 }
 
 .competence__element-column {

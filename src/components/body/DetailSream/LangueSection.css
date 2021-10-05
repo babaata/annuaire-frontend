@@ -3,7 +3,8 @@
     border-radius: 5px;
     padding: 10px 16px;
     color: #5F439A;
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight:600;
     margin-bottom: 20px;
 }
 
