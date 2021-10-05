@@ -135,7 +135,8 @@
   justify-content: center;
   color: #5f439a;
   font-size: 22.5px;
-  font-family: "Open sans semiBold";
+  font-family: "Open sans";
+  font-weight: 600;
   font-weight: bold;
 }
 .input_info_combobox {

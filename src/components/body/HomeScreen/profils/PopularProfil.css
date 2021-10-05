@@ -5,7 +5,8 @@
     justify-content: center;
 }
 .profiles h1{
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight: 600;
 }
 
 .profiles button {

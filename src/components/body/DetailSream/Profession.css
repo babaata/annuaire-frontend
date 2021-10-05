@@ -124,7 +124,8 @@
 .see_more_text {
     font-size: 15px;
     color: #009B95;
-    font-family: "Open sans semiBold";
+    font-family: "Open sans";
+    font-weight:600;
 }
 
 .see_more_text i{
@@ -150,7 +151,8 @@
     font-size: 18px;
     color: #5F439A;
     margin-bottom: 0;
-    font-family: "Open sans SemiBold";
+    font-family: "Open sans";
+    font-weight:600;
 }
 
 /*Tablette*/
