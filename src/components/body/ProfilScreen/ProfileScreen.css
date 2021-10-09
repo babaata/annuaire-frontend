@@ -21,11 +21,13 @@
 
 .btns {
   background-color: #5f439a;
-  padding: 1% 8% !important;
   color: #fff;
   border-radius: 5px;
   border: none;
   font-size: 20px;
+}
+.a {
+  padding: 1% 8% !important;
 }
 .bt.left {
   margin-left: 19px;
