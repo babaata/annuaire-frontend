@@ -33,7 +33,7 @@ export default function Menubar() {
               <Link to="/profile" style={{ listStyle: "none" }}>
                 <li>
                   <i
-                    className="pr-4 fa-3x fas fa-user-circle"
+                    className="pr-4 fa-3x fas fa-user-circle avatar"
                     style={{
                       color: "#5F439A",
                       transform: "translateY(-6px)",
