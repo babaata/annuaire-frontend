@@ -22,7 +22,7 @@ function ProfileInfo(props) {
       <div className="profile__btn ">
         <button
           onClick={handleClickleft}
-          className={`btns ${btnVal === 1 ? "noBg" : " "}`}
+          className={`btns a ${btnVal === 1 ? "noBg" : " "}`}
         >
           Informations Personelles
         </button>
