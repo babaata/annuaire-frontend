@@ -11,7 +11,7 @@
   justify-content: space-between;
   width: 100%;
   background-color: #F7F9FC;
-  padding:1% 5%;
+  padding:1% 1%;
   border-radius: 5px;
 }
 
@@ -21,7 +21,7 @@
 
 .btns {
   background-color: #5f439a;
-  padding: 0.5% 2%;
+  padding: 1% 8% !important;
   color: #fff;
   border-radius: 5px;
   border: none;
@@ -56,7 +56,8 @@
 .profil__left__side .upload__photo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 20%;
 }
 .upload__photo .fa-pen {
   color: #cfc9e2;
@@ -84,7 +85,13 @@
 }
 .input_info {
   margin-bottom: 4%;
+  margin-left: 15%;
 }
+.input_inf{
+  margin-left: 37%;
+  width: 85%;
+}
+
 .input_info_combobox .fa-pen {
   color: #cfc9e2;
 }
@@ -97,7 +104,6 @@
 .btns.noBg {
   background: none;
   color: #5f439a;
-  border: 2px solid #5f439a;
 }
 
 .added_compo {
@@ -128,7 +134,13 @@
   resize: none;
 }
 .btns.left {
-  margin-left: 20px;
+  margin-left: 20%;
+  width: 85%;
+}
+
+.lefts{
+  margin-left: 42% !important;
+  width: 85%;
 }
 .info__title {
   display: none;
@@ -157,6 +169,8 @@
   padding: 3px 6px;
   color: #5f439a;
   background: none;
+  text-align: center;
+  margin-top: 10px;
 }
 .react-tag-input {
   cursor: pointer !important;
@@ -313,9 +327,24 @@
   .profile__info{
     margin:0;
   }
+
+  .input_info {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .input_inf{
+    width: 100%;
+    margin-left: 0;
+  }
+  .lefts {
+    width: 100%;
+    margin-left: 10px !important;
+  }
 }
 
 option:checked {
   background-color: #5f439a !important;
   color: #FFFFFF !important;
+  padding: 1% 50% !important;
 }

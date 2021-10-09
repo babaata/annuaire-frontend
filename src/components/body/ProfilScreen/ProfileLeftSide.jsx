@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./ProfileScreen.css";
 import { Formik, Form, Field } from "formik";
@@ -8,6 +8,8 @@ import {
   postDataAPI,
   postDataFileAPI,
 } from "../../../utils/fetchData";
+import { Link } from 'react-router-dom';
+import AppContext from '../../../redux/actions/AppContext';
 
 const token = localStorage.getItem("firstLogin");
 function ProfileLeftSide() {
@@ -74,6 +76,18 @@ function ProfileLeftSide() {
           ref={hiddenFileInput}
           style={{ display: "none" }}
         />
+        <div className="voir_profil">
+          <Link
+            to={{
+              pathname: "/profils/" + user?.data?.user?.nom_utilisateur,
+              profile: user?.data?.user,
+            }}
+          >
+            <span className="voir_profil btn btn-filled">
+              Mon profil public
+            </span>
+          </Link>
+        </div>
       </>
     );
   };
@@ -150,6 +164,8 @@ function ProfileLeftSide() {
     formik.setErrors({ email: notify.error?.errors?.email });
   };
 
+  const user = useContext(AppContext)
+
   return (
     <div className="profil__left__side">
       <div className="upload__photo">
@@ -167,6 +183,7 @@ function ProfileLeftSide() {
         </div>
         {uploadButton()}
       </div>
+      
       {/* Formulaire */}
       <div className="profile__personal__info">
         <p className="info__title">Informations personnelles</p>
