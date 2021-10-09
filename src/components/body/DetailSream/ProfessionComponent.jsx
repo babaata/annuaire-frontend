@@ -19,6 +19,7 @@ export default function ProfessionComponent(props) {
         <i className="fas fa-thumbs-up"></i>
         <a href="/">Je recommande (270)</a>
       </div> */}
+      .di
     </div>
   );
 }
