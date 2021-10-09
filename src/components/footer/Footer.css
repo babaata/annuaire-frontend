@@ -36,6 +36,9 @@
 
 .footer__content__top .news__letter__form button i {
     color:#ffffffd6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer__content__top .news__letter__form > i{
