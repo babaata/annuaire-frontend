@@ -131,7 +131,7 @@ function ProfileRightSide() {
             >
               {({ handleBlur, touched, errors, setFieldValue }) => (
                 <Form>
-                  <div className="input_info">
+                  <div className="input_info input_inf">
                     <label>Profession</label>
                     <div className="inputbar">
                       <Field
@@ -153,7 +153,7 @@ function ProfileRightSide() {
                     ) : null}
                   </div>
 
-                  <div className="input_info">
+                  <div className="input_info input_inf">
                     <label>Resumé</label>
                     <div className="inputbar">
                       <Field
@@ -176,7 +176,7 @@ function ProfileRightSide() {
                     ) : null}
                   </div>
 
-                  <div className="input_info">
+                  <div className="input_info input_inf">
                     <label>Competence</label>
                     <div>
                       <label>Saisissez une compétence et tapez entrer</label>
@@ -206,7 +206,7 @@ function ProfileRightSide() {
                     ) : null}
                   </div>
 
-                  <div className="input_info">
+                  <div className="input_info input_inf">
                     <label>Experience / Realisation</label>
                     <div className="inputbar">
                       <div className="added_compo">
@@ -255,7 +255,7 @@ function ProfileRightSide() {
                     </div>
                   </div>
 
-                  <button type="submit" className="btns left">
+                  <button type="submit" className="btns left lefts">
                     {loader ? (
                       <i className="fa fa-spinner fa-spin" />
                     ) : (
