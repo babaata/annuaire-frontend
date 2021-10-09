@@ -117,5 +117,8 @@
     .link_button ul >a {
         text-decoration: none;
     }
+    .btn-outlined{
+        border: 2px solid #5F439A !important;
+    }
     
 }
