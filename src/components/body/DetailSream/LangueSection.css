@@ -4,7 +4,6 @@
     padding: 10px 16px;
     color: #5F439A;
     font-family: "Open sans";
-    font-weight:600;
     margin-bottom: 20px;
 }
 
@@ -17,17 +16,17 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .langue__section ul li{
     list-style-type: none;
-    color: #ffffff;
+    color:  #5F439A;
     background-color: #ffa500;
-    padding:2%;
+    padding: 5px 10px;
     border-radius: 3px;
-    width: 40%;
-    margin-bottom: 2px;
+    margin: 10px 10px 10px 0;
+    font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {
