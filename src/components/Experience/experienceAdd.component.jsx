@@ -29,7 +29,7 @@ const ExperienceAdd = ({ button, experience }) => {
       .required("Ce champ est requis !"),
     description: Yup.string()
       .min(2, "trop court!")
-      .max(50, "trop long!")
+      .max(800, "trop long!")
       .required("Ce champ est requis !"),
   });
 
