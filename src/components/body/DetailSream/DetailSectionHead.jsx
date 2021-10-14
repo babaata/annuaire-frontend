@@ -23,7 +23,7 @@ function DetailSectionHead(props) {
             className="head__info"
             style={{
               backgroundImage: `url("../images/motif.png")`,
-              textAlign: "center",
+              
             }}
           >
             <h5>{`${props.profile?.prenom
