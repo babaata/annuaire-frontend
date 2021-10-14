@@ -74,6 +74,7 @@
     font-size: 30px;
     padding: 0.5% 1%;
      margin-bottom: 0;
+     
 }
 
 .competencetitle_head{
@@ -81,6 +82,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin:0.5% 1%;
+    margin-top: 0;
 }
 
 .competencetitle{
@@ -212,5 +214,6 @@
 
     .competencetitle_head{
         margin:4%;
+        margin-top: 0;
     }
 }

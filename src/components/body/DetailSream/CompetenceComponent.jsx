@@ -4,7 +4,7 @@ export default function CompetenceComponent(props) {
 
     return (
         <div className="competenceComponent_global mb-lg-4">
-            <h2 className="header_title mb-2">Compétences</h2>
+            <h2 className="header_title mb-3">Compétences</h2>
             
             {props.competences?.length > 0 ? (
                 <div className="competencetitle_head">
