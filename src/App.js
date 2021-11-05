@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ProfilList from "./Pages/ProfilList";
 import ProfiDetails from "./Pages/ProfilDetails";
 import CreateProfilePage from "./Pages/CreateProfilePage";
-import Login from "./components/auth/Login/login.component";
 import { useEffect, useState } from 'react';
 import { getDataAPI } from './utils/fetchData';
 import AppContext from './redux/actions/AppContext';

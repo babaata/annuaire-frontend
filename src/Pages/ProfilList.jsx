@@ -16,18 +16,18 @@ function ProfilList(props) {
   const [total, setTotal] = useState()
   const [size, setSize] = useState(16)
 
-  useEffect(()=>{
+  useEffect(() => {
     const getProfil = async (id) => {
       const res = await getDataAPI(`users/pagination?size=${size}&page=${page}`)
       setUsers(res.data?.users?.data)
       setTotal(res.data?.users?.total)
     }
     
-        if (props.location.profile) {
-          setUsers(props.location.profile)
-        } else {
-          getProfil(props.match.params.profilsId)
-        }  
+    if (props.location.profile) {
+      setUsers(props.location.profile)
+    } else {
+      getProfil(props.match.params.profilsId)
+    }  
   },[page])
 
 
