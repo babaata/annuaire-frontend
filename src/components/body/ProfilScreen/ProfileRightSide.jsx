@@ -64,7 +64,7 @@ function ProfileRightSide() {
   // Form Validation
   const SchemaValidation = Yup.object().shape({
     titre: Yup.string().min(2, "trop court!").max(50, "trop long!"),
-    resume: Yup.string().min(2, "trop court!").max(50, "trop long!"),
+    resume: Yup.string().min(2, "trop court!").max(800, "trop long!"),
   });
 
   const submitForm = async (values, formik) => {
