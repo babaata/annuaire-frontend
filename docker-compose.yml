@@ -9,6 +9,7 @@ services:
     container_name: annuaire-front
     volumes:
       - ./share_data:/share_data
+    restart: always
     networks:
       - default
       - proxy_https_default
